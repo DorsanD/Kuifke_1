@@ -59,6 +59,21 @@ body {
   height: 100px;
 }
 
+a{
+  color: #8E0606;  
+}
+
+a:hover{
+  color: #810606; 
+}
+
+a:active{
+  color: #810606;
+}
+
+a:visited{
+  color: #810606;
+}
 
 /*
  * Main content
