@@ -216,3 +216,4 @@ pip-log.txt
 *.properties
 *.xml
 *.properties
+*.xml

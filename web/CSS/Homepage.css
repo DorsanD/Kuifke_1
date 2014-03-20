@@ -70,22 +70,26 @@ background-color: #8E0606;
 height: 80px;
 }
 
-.navbar-brand .KuifStore {
-    margin-left: 500px;
+.navbar-inverse .navbar-nav > li > a {
+    color:#FFFFFF;
+    font-weight: bold;
+}
+
+.KuifStore {
+    margin-left: 180px;
 }
 
 .logo {
-    margin-left: 200px;
-   
+    margin-left:200px;
 }
 
 .navbar-brand {
-    padding-left: 20px;
+    padding-left: 30px;
     font-weight: bold;
     font-family: Logo;
     padding-top: 33px;
     font-size: 40px;
-    float: right;
+    float:right;
 }
 
 .navbar-inverse .navbar-brand {
