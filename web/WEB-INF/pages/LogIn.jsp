@@ -20,7 +20,7 @@
         <title>JSP Page</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="CSS/bootstrap.min.css" rel="stylesheet">
+        <link href="CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="CSS/Registratie.css" rel="stylesheet">
