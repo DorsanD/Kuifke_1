@@ -220,3 +220,5 @@ pip-log.txt
 *.xml
 *.properties
 *.xml
+nbproject/private/private.properties
+nbproject/private/private.xml

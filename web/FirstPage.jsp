@@ -9,10 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
         <link href="./CSS/FirstPage.css" rel="stylesheet">
         <title>Kuifke | Enjoy your music here !</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="Welcome-container">
+            <div class="titel">Kuifke</div>
+            <div class="tekst"><p>Enjoy your music here !</p></div>
+        </div>
+        <div class="SignUp-container">
+            
+        </div>
     </body>
 </html>
