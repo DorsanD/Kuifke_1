@@ -39,6 +39,8 @@ body {
 .carousel {
   height: 500px;
   margin-bottom: 60px;
+  max-width: 1000px;
+  margin: auto;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {

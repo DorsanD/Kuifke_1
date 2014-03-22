@@ -69,6 +69,7 @@
          
         </div>
         
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -111,7 +112,7 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
-    
+          </div>
     
 
     <!-- Bootstrap core JavaScript
