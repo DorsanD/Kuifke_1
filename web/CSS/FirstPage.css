@@ -19,16 +19,16 @@
     color: white;
     font-weight:bold;
     font-size: 28px;
-    padding-left: 130px;
+    padding-left: 145px;
     padding-top: 10px;
     border-bottom:2px solid white;   
 }
 
-.tekst {
+.Welcome-container .tekst {
     padding-top: 10px;
     font-size: 18px;
     color: white;
-    padding-left: 90px; 
+    padding-left: 95px; 
 }
 
 .SignUp-container {
@@ -38,4 +38,39 @@
     opacity: 0.8;
     margin-left: 70px;
     z-index:0;
+    
+}
+
+.SignUp-container .tekst {
+    color: black;
+    font-weight:bold;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 75px;
+}
+
+.knop {
+    margin-left:120px;
+    margin-top: 20px;
+}
+.btn-danger {
+    color: #FFF;
+    background-color: #8E0606;
+    border-color: #8E0606;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right:30px;
+    padding-left: 30px;
+    font-size: 16px;  
+}
+
+.login {
+    font-size: 15px;
+    padding-top: 25px;
+    padding-left: 80px;
+}
+
+.login a {
+    color:black;
+    font-weight:bold;
 }
