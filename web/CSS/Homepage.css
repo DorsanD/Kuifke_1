@@ -68,6 +68,7 @@ body {
 .navbar {
 background-color: #8E0606;
 height: 80px;
+border-color: #FFF;
 }
 
 .navbar-inverse .navbar-nav > li > a {

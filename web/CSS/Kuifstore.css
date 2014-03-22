@@ -111,3 +111,7 @@ a:visited{
   display: inline-block;
   border-radius: 50%;
 }
+
+.navbar{
+    border-color: #FFF;
+}

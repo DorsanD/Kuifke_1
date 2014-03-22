@@ -37,8 +37,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Kuifke</a>
-          <a href="Kuifstore.jsp"><img class="KuifStore" src="Images/KuifStore.png" height=60px width=150px></a>
+          <a class="navbar-brand" href="Homepage.jsp">Kuifke</a>
+          <a class="KuifStore" href="Kuifstore.jsp"><img src="Images/KuifStore.png" height=60px width=150px></a>
           <img class="logo" src="Images/Logo.png" height=80px width=100px>
         </div>
         <div class="navbar-collapse collapse">
