@@ -1,14 +1,13 @@
-<%-- 
-    Document   : FirstPage
-    Created on : 21-mrt-2014, 12:22:38
-    Author     : 3120210
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    
         <link href="./CSS/Bootstrap CSS/bootstrap.css" rel="stylesheet">
         <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
         <link href="./CSS/FirstPage.css" rel="stylesheet">
