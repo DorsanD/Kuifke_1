@@ -1,3 +1,13 @@
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="Kuifke_1.dao.WebsiteDao"%>
+<%@page import="Kuifke_1.domain.WebsiteBean"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,10 +32,10 @@
         <div class="SignUp-container">
             <div class="tekst"><p>Start listening right now !</p></div>
             <div class="knop"><a class="btn btn-default btn-danger" data-target="#RegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up </a></div>
-            <div class="login"><p>Already have an account? <a href="./WEB-INF/pages/LogIn.jsp">Log in </a> here. </p></div>
+            <div class="login"><p>Already have an account? <a data-target="#LoginModal" data-toggle="modal">Log in </a> here. </p></div>
         </div>
         
-                    <!-- Modal -->
+                    <!-- Modal Sign up-->
             <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -50,6 +60,7 @@
                                             <option value="engels">English</option>
                                     </select></br></br></br>
                                 <input class="btn btn-lg btn-primary btn-block" type="submit" value="Verder" />
+                            </form>
                   </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -57,8 +68,31 @@
                 </div>
               </div>
             </div>
-        
-        
+          
+            <!-- Modal Log in-->
+            <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel">Please Log in</h2>
+                  </div>
+                  <div class="modal-body">
+                            <form class="form-signin" action="LoginCheck.jsp" method="post">
+                                    <h2 class="form-signin-heading">Please sign in</h2>
+                                    <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
+                                    <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
+
+                                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
+                             </form>
+                  </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+                    
         <div class="footer">
             <p>Project Programmeren &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
                Wouter Baeckelmans | Kevin Reyns | Dorsan Demaeght &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
