@@ -1,6 +1,6 @@
 package Kuifke_1.web;
 
-import Kuifke_1.domain.WebsiteBean;
+import Kuifke_1.domain.CustomerBean;
 import static Kuifke_1.web.Constants.WEBSITE_BEAN;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -39,7 +39,7 @@ public class QuestionServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        WebsiteBean bean = (WebsiteBean) req.getSession().getAttribute(WEBSITE_BEAN);
+        CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
 
         String page = req.getParameter("page");
         int answer = Integer.parseInt(req.getParameter("answer"));

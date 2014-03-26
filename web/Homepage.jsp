@@ -44,7 +44,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="Login">Login</a></li>
-            <li><a href="Registratie">Sign Up</a></li>
+            <li><a href="RegistratieServlet">Sign Up</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

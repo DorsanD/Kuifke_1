@@ -7,7 +7,7 @@ import java.util.Date;
  *
  * @author Noel Vaes
  */
-public class WebsiteBean implements Serializable {
+public class CustomerBean implements Serializable {
     private int CustomerId;
     private Date Date;
     private String Last_Name;
@@ -18,6 +18,47 @@ public class WebsiteBean implements Serializable {
     private String Password;
     private String Language;
     private int[] answers = new int[1];
+    private String salt;
+
+    public int getCustomerId() {
+        return CustomerId;
+    }
+
+    public void setCustomerId(int CustomerId) {
+        this.CustomerId = CustomerId;
+    }
+
+    public String getLast_Name() {
+        return Last_Name;
+    }
+
+    public void setLast_Name(String Last_Name) {
+        this.Last_Name = Last_Name;
+    }
+
+    public String getFirst_Name() {
+        return First_Name;
+    }
+
+    public void setFirst_Name(String First_Name) {
+        this.First_Name = First_Name;
+    }
+
+    public String getEmail_Address() {
+        return Email_Address;
+    }
+
+    public void setEmail_Address(String Email_Address) {
+        this.Email_Address = Email_Address;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
 
 
     public int getId() {

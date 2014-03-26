@@ -23,8 +23,7 @@
         <br/>
         Username:        ${websiteBean.username}
         <br/>
-        Password:        ${websiteBean.password}
-        <br/>
+        
         Language:         ${websiteBean.language}
         <br/>
 

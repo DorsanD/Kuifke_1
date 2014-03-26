@@ -1,7 +1,7 @@
 package Kuifke_1.web;
 
 import Kuifke_1.dao.WebsiteDao;
-import Kuifke_1.domain.WebsiteBean;
+import Kuifke_1.domain.CustomerBean;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
@@ -30,7 +30,7 @@ public class ConfirmServlet extends HttpServlet implements Constants {
 
     @Override
     public void init() throws ServletException {
-        try {
+        
             confirmPage = getInitParameter("confirmPage");
             String driver = getInitParameter("driver");
             String url = getInitParameter("url");
@@ -39,26 +39,14 @@ public class ConfirmServlet extends HttpServlet implements Constants {
             if (confirmPage == null || driver == null || url == null || user == null || password == null) {
                 throw new ServletException("Missing parameter");
             }
-            dao = new WebsiteDao();
-            dao.setDriver(driver);
-            dao.setUser(user);
-            dao.setPassword(password);
-            dao.setUrl(url);
-        } catch (ClassNotFoundException ex) {
-            throw new ServletException(ex);
-        }
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            WebsiteBean bean = (WebsiteBean) req.getSession().getAttribute(WEBSITE_BEAN);
+            CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
             bean.setDate(new Date());
-            dao.addCustomerItem(bean);
             req.getRequestDispatcher(confirmPage).forward(req, resp);
             req.getSession().invalidate();
-        } catch (SQLException ex) {
-            throw new ServletException(ex);
-        }
     }
 }

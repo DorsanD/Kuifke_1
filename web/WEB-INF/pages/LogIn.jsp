@@ -10,9 +10,10 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="Kuifke_1.dao.WebsiteDao"%>
-<%@page import="Kuifke_1.domain.WebsiteBean"%>
+<%@page import="Kuifke_1.domain.CustomerBean"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>    </head>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +30,7 @@
     <body>
         
         
-        <form class="form-signin" action="LoginCheck.jsp" method="post">
+        <form class="form-signin" action="Login" method="post">
             <h2 class="form-signin-heading">Please sign in</h2>
             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
