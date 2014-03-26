@@ -6,7 +6,6 @@
 <%@page import="Kuifke_1.dao.WebsiteDao"%>
 <%@page import="Kuifke_1.domain.CustomerBean"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,10 +40,10 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="myModalLabel">Please sign up</h2>
+                    <h2 class="modal-title" id="myModalLabel">Sign up</h2>
                   </div>
                   <div class="modal-body">
-                            <form class="form-signin" role="form" method="post" action="RegistratieServlet">
+                            <form class="form-signin" role="form" method="post" action="NaarConfirm?">
                                 <input type="text" class="form-control" placeholder="Name" name="name" required="true" />
                                 <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
                                 <input type="email" class="form-control" placeholder="Email-Address" name="email" required="true" /> 
@@ -59,7 +58,7 @@
                                             <option value="nederlands">Nederlands</option>
                                             <option value="engels">English</option>
                                     </select></br></br></br>
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">Verder</button>
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
                             </form>
                   </div>
                     <div class="modal-footer">
@@ -75,7 +74,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h2 class="modal-title" id="myModalLabel">Please Log in</h2>
+                    <h2 class="modal-title" id="myModalLabel">Log in</h2>
                   </div>
                   <div class="modal-body">
                             <form class="form-signin" action="LoginCheck.jsp" method="post">

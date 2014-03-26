@@ -31,7 +31,7 @@
         
         
         <form class="form-signin" action="Login" method="post">
-            <h2 class="form-signin-heading">Please sign in</h2>
+            <h2 class="form-signin-heading">Sign in</h2>
             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
 

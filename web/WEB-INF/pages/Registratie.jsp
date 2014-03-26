@@ -26,7 +26,7 @@
 
         
         <form class="form-signin" role="form" method="post">
-            <h2 class="form-signin-heading">Please sign up</h2>
+            <h2 class="form-signin-heading">Sign up</h2>
             <input type="text" class="form-control" placeholder="Name" name="name" required="true" />
             <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
             <input type="email" class="form-control" placeholder="Email-Address" name="email" required="true" /> 
