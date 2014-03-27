@@ -3,12 +3,13 @@
     background-repeat:no-repeat;
     background-size:cover;
     z-index:-1;
+    height: 100%;
 } 
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  src: url('../Fonts/glyphicons-halflings-regular.eot');
+  src: url('../Fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../Fonts/glyphicons-halflings-regular.woff') format('woff'), url('../Fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../Fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
 .Welcome-container {
@@ -86,12 +87,18 @@
     font-weight: bold;
     opacity:0.63;
     background-color: #000;
+    position: fixed;
     height: 45px;
     width: 100%;
-    position: fixed;
-    bottom:0;
-    padding-top: 10px;
-    padding-left: 200px;
+    margin: auto;
+}
+
+#footer-left{
+    text-align: left;
+}
+
+#footer-right{
+    text-align: right;
 }
 
 .btn:hover{

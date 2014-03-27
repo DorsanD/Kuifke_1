@@ -1,0 +1,38 @@
+
+.navbar-default  {
+    background-color: #ADAAAA;
+}
+
+.navbar-default .navbar-nav > li a {
+    color:#FFFFFF;
+    font-weight:bold;
+}
+
+.navbar-default .navbar-nav > li> a:hover {
+    background-color: #8E0606;
+    color: #FFFFFF;
+    font-weight:bold;
+}
+
+.container {
+    width:100%;
+    margin:0px
+}
+
+.navbar-header .navbar-logo {
+    margin-left: 35px;
+    padding-bottom: 0px;
+}
+
+.navbar-header .navbar-account {
+    padding-left: 55px;
+    padding-right: 150px;
+    color: #8E0606;
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.dropdown {
+    color: #000000;
+}
+
