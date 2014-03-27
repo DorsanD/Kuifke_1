@@ -101,13 +101,14 @@ public class WebsiteDao {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("User Check Geinitieerd");
-        CustomerBean cust = null;
+        CustomerBean cust = new CustomerBean();
 
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(GET_USER_INFO);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
             stmt.setString(1, username);
             stmt1.execute();
+            System.out.println(stmt.toString());
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 cust.setLast_Name(rs.getString(1));

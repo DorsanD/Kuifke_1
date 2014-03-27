@@ -43,7 +43,7 @@
                         <h2 class="modal-title" id="myModalLabel">Sign up</h2>
                     </div>
                     <div class="modal-body">
-                        <form class="form-signin" role="form" method="post">
+                        <form class="form-signin" role="form" method="post" >
                             <h2 class="form-signin-heading">Sign up</h2>
                             <input type="text" class="form-control" placeholder="Name" name="name" required="true" />
                             <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
@@ -77,7 +77,7 @@
                         <h2 class="modal-title" id="myModalLabel">Log in</h2>
                     </div>
                     <div class="modal-body">
-                        <form class="form-signin" action="LoginCheck.jsp" method="post">
+                        <form class="form-signin" method="post" action="Login">
                             <h2 class="form-signin-heading">Please sign in</h2>
                             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
                             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 

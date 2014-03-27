@@ -15,6 +15,7 @@ import Kuifke_1.dao.WebsiteDao;
 import Kuifke_1.domain.CustomerBean;
 import Kuifke_1.web.Constants;
 import Kuifke_1.domain.Password;
+import Kuifke_1.domain.PasswordCheck;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.security.GeneralSecurityException;
@@ -27,6 +28,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -72,4 +74,7 @@ public class RegistratieServlet extends HttpServlet implements Constants {
         }
         
     }
+    
+     
+    
 }

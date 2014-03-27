@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet implements Constants {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean websiteBean = new CustomerBean();
         req.getSession().setAttribute(WEBSITE_BEAN, websiteBean);
-        req.getRequestDispatcher("WEB-INF/pages/LogIn.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet implements Constants {
             if (pwCheck.check()) {
                 //pw matched
                 System.out.println("passwoord juist");
-                req.getRequestDispatcher("FirstPage.jsp").forward(req, resp);
+                doGet(req,resp);
                 try {
                     cust = dao.getUserDetails(req.getParameter("username"));
                 } catch (        ClassNotFoundException | SQLException ex) {
