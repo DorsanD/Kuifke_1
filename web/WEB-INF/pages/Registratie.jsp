@@ -35,13 +35,12 @@
             <select class="dropd" name="gender" required="true">
 			<option value="M">M</option>
 			<option value="F">F</option>
-			<option value="Other">Other</option>
 		</select>
             <select class="dropd" name="language">
 			<option value="nederlands">Nederlands</option>
 			<option value="engels">English</option>
 		</select></br></br></br>
-            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Verder" />
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up" />
         </form>
     </body>
 </html>

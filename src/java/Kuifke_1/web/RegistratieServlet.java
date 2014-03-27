@@ -40,12 +40,11 @@ public class RegistratieServlet extends HttpServlet implements Constants {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean websiteBean = new CustomerBean();
         req.getSession().setAttribute(WEBSITE_BEAN, websiteBean);
-        req.getRequestDispatcher("WEB-INF/pages/Registratie.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
         CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
         bean.setName(req.getParameter("name"));
         bean.setFirstname(req.getParameter("firstname"));
