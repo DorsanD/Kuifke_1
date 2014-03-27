@@ -19,8 +19,11 @@ public class WebsiteDao {
     private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language from Customer order by CustomerId";
     private static final String INSERT_QUERY = "insert into Customer (Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (sysdate(),?,?,?,?,?,?,?,?)";
     private static final String GET_USER_CREDENTIALS = "select Password, salt from customer where Username = ?;";
-    private static final String GET_USER_INFO = "select Last_Name, First_Name, Gender, Email_Address, Username, Language from customer where username = ?";
-
+    private static final String GET_USER_INFO = "select Last_Name, First_Name, Gender, Email_Address, Username, Language from customer where Username = ?";
+    private static final String ALTER_USERNAME = "update customer set username= ? where username= ?";
+    private static final String SELECT_FOR_DELETE = "select CustomerId from customer where username = ?";
+    private static final String DELETE_USER = "delete from customer where CustomerId=?;";
+    
     private String url;
     private String user;
     private String password;
@@ -122,4 +125,48 @@ public class WebsiteDao {
             return cust;
         }
     }
+    
+        public CustomerBean AlterUsername(CustomerBean Test, String username) throws SQLException, ClassNotFoundException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("User Check Geinitieerd");
+        CustomerBean cust = new CustomerBean();
+
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(ALTER_USERNAME);
+                PreparedStatement stmt1 = con.prepareStatement(INIT)) {
+            stmt.setString(1, Test.getNewUsername());
+            stmt.setString(2, username);
+            stmt1.execute();
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                cust.setUsername(rs.getString(2));
+            }
+        }
+        return cust;
+    }
+    
+    public CustomerBean DeleteUser(String username) throws ClassNotFoundException, SQLException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Delete User");
+        CustomerBean cust = new CustomerBean();
+
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(SELECT_FOR_DELETE);
+                PreparedStatement stmt1 = con.prepareStatement(DELETE_USER);
+                PreparedStatement stmt2 = con.prepareStatement(INIT)) {
+            stmt.setString(1, username);
+            stmt2.execute();
+            System.out.println(stmt.toString());
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                cust.setCustomerId(rs.getInt(1));
+            }
+            stmt1.setInt(1, cust.getCustomerId());
+            stmt1.execute();
+            return cust;
+        }
+    }
+        
 }

@@ -19,6 +19,15 @@ public class CustomerBean implements Serializable {
     private String Language;
     private int[] answers = new int[1];
     private String salt;
+    private String newUsername;
+
+    public String getNewUsername() {
+        return newUsername;
+    }
+
+    public void setNewUsername(String newUsername) {
+        this.newUsername = newUsername;
+    }
 
     public int getCustomerId() {
         return CustomerId;
