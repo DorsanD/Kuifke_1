@@ -47,7 +47,6 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">GENRES <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="divider"></li>
                 <li><a href="#">Dance</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Electro</a></li>
