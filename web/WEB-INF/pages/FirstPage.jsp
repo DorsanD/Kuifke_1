@@ -91,6 +91,27 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Modal Log in after sign up-->
+        <div class="modal fade" id="ThanksModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel">Log in</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Thanks for signing up to Kuifke!</p>
+                        <p>We hope you'll have a great time using Kuifke!</p>
+                        <p>Don't forget to log in here:</p>
+                        <button type="button" class="btn btn-default" data-target="#LoginModal" data-toggle="modal" data-dismiss="modal">Log in</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="footer">
             <div class="row">

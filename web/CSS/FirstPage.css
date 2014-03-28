@@ -108,7 +108,7 @@
     text-align: right;
 }
 
-.btn:hover{
+.btn:hover, .btn:focus, .btn:active{
     color:#FFF;
 }
 
@@ -117,3 +117,17 @@ h2{
     color:#8E0606;
     font-weight: bold;
 }
+
+.modal-dialog{
+    width: 400px;
+}
+
+.modal-body{
+    padding: 15px;
+}
+
+.form-control:active, .form-control:focus, .dropd:focus, .dropd:active, .dropd:hover{
+    border-color:#8E0606;
+}
+
+
