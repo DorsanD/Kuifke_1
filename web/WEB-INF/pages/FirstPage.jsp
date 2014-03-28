@@ -93,9 +93,11 @@
         </div>
 
         <div class="footer">
-            <p>Project Programmeren &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-                Wouter Baeckelmans | Kevin Reyns | Dorsan Demaeght &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-                (c)2014</p>
+            <div class="row">
+                <div class="col-md-4" id="footer-left">Project Programmeren</div>
+                <div class="col-md-4" id="footer-center">Kevin Reyns | Wouter Baeckelmans | Dorsan Demaeght</div>
+                <div class="col-md-4" id="footer-right">&#169; 2014</div>
+            </div>
         </div>
 
 

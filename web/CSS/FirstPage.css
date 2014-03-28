@@ -87,10 +87,17 @@
     font-weight: bold;
     opacity:0.63;
     background-color: #000;
-    position: fixed;
+    position: absolute;
+    bottom: 0px;
     height: 45px;
     width: 100%;
-    margin: auto;
+}
+
+.row{
+    margin-right: 0px;
+    line-height: 45px;
+    vertical-align: middle;
+    margin-left: 0px;
 }
 
 #footer-left{
