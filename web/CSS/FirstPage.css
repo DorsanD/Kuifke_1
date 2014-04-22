@@ -83,7 +83,7 @@
 }
 
 .footer {
-    color: #8E0606;
+    color: #d9534f;
     font-weight: bold;
     opacity:0.63;
     background-color: #000;
@@ -105,7 +105,7 @@
 }
 
 #footer-right{
-    text-align: right;
+    text-align: right;   
 }
 
 .btn:hover, .btn:focus, .btn:active{

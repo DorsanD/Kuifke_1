@@ -1,12 +1,16 @@
 
 .navbar-default  {
-    background-color: #ADAAAA;
+    background-color: #e7e7e7;
 }
 
 .navbar-default .navbar-nav > li> a:hover {
     background-color: #8E0606;
     color: #FFFFFF;
-    font-weight:bold;
+}
+
+.navbar-default .navbar-right > li > a:hover {
+    background-color: #8E0606;
+    color: #FFFFFF;
 }
 
 .container {
@@ -14,17 +18,20 @@
     margin:0px
 }
 
-.navbar-header .navbar-logo {
-    margin-left: 35px;
-    padding-bottom: 0px;
+.navbar-header {
+    padding-top: 12px;
 }
 
-.navbar-header .navbar-account {
+.navbar-header .navbar-welcome {
     padding-left: 55px;
     padding-right: 150px;
     color: #8E0606;
     font-size: 20px;
     font-weight:bold;
+}
+
+.navbar-header > a:hover {
+    //Welcome to ... nog het onderlijnen uitzetten, maar hoe ???
 }
 
 .dropdown {

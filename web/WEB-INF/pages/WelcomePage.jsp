@@ -38,12 +38,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-logo" href="WelcomePage.jsp"><img class="logo" src="Images/Logo.png" height=80px width=100px></a>
-          <a class="navbar-account" href="#">Welcome ${websiteBean.username}</a>
+          <a class="navbar-welcome" href="WelcomePage">Welcome ${websiteBean.username} to Kuifke</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="WelcomePage.jsp">HOME</a></li>
+            <li><a href="WelcomePage.jsp">HOME</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">GENRES <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -66,8 +65,8 @@
             <li><a href="#contact">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">MY ACCOUNT</a></li>
-            <li class="active"><a href="./">LOG OUT</a></li>
+            <li><a href="./">MY ACCOUNT</a></li>
+            <li><a href="./">LOG OUT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

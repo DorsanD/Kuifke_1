@@ -15,8 +15,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-
+        
+        <link rel="shortcut icon" href="./Images/Favicon.ico">
         <link href="./CSS/Bootstrap CSS/bootstrap.css" rel="stylesheet">
         <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
         <link href="CSS/Registratie.css" rel="stylesheet">
