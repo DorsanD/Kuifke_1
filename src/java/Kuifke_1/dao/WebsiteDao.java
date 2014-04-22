@@ -1,6 +1,7 @@
 package Kuifke_1.dao;
 
 import Kuifke_1.domain.CustomerBean;
+import Kuifke_1.domain.TrackBean;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,10 +20,11 @@ public class WebsiteDao {
     private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language from Customer order by CustomerId";
     private static final String INSERT_QUERY = "insert into Customer (Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (sysdate(),?,?,?,?,?,?,?,?)";
     private static final String GET_USER_CREDENTIALS = "select Password, salt from customer where Username = ?;";
-    private static final String GET_USER_INFO = "select Last_Name, First_Name, Gender, Email_Address, Username, Language from customer where Username = ?";
-    private static final String ALTER_USERNAME = "update customer set username= ? where username= ?";
-    private static final String SELECT_FOR_DELETE = "select CustomerId from customer where username = ?";
+    private static final String GET_USER_INFO = "select Last_Name, First_Name, Gender, Email_Address, Username, Language, CustomerId from customer where Username = ?";
+    private static final String ALTER_USERNAME = "update customer set First_Name= ? where CustomerId= ?";
     private static final String DELETE_USER = "delete from customer where CustomerId=?;";
+    private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
+
     
     private String url;
     private String user;
@@ -63,14 +65,15 @@ public class WebsiteDao {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 CustomerBean item = new CustomerBean();
-                item.setDate(rs.getDate(1));
-                item.setName(rs.getString(2));
-                item.setFirstname(rs.getString(3));
-                item.setGender(rs.getString(4));
-                item.setEmail(rs.getString(5));
-                item.setUsername(rs.getString(6));
-                item.setPassword(rs.getString(7));
-                item.setLanguage(rs.getString(8));
+                item.setCustomerId(rs.getInt(1));
+                item.setDate(rs.getDate(2));
+                item.setName(rs.getString(3));
+                item.setFirstname(rs.getString(4));
+                item.setGender(rs.getString(5));
+                item.setEmail(rs.getString(6));
+                item.setUsername(rs.getString(7));
+                item.setPassword(rs.getString(8));
+                item.setLanguage(rs.getString(9));
                 items.add(item);
             }
             return items;
@@ -120,53 +123,63 @@ public class WebsiteDao {
                 cust.setEmail_Address(rs.getString(4));
                 cust.setUsername(rs.getString(5));
                 cust.setLanguage(rs.getString(6));
+                cust.setCustomerId(rs.getInt(7));
 
             }
             return cust;
         }
     }
-    
-        public CustomerBean AlterUsername(CustomerBean Test, String username) throws SQLException, ClassNotFoundException {
+
+    public void AlterUsername(int CustomerId, String First_Name) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("User Check Geinitieerd");
-        CustomerBean cust = new CustomerBean();
 
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(ALTER_USERNAME);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
-            stmt.setString(1, Test.getNewUsername());
-            stmt.setString(2, username);
+            stmt.setString(1, First_Name);
+            stmt.setInt(2, CustomerId);
+            System.out.println("" + stmt.toString());
             stmt1.execute();
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                cust.setUsername(rs.getString(2));
-            }
+            stmt.execute();
+
         }
-        return cust;
+
     }
-    
-    public CustomerBean DeleteUser(String username) throws ClassNotFoundException, SQLException {
+
+    public void DeleteUser(int CustomerId) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Delete User");
-        CustomerBean cust = new CustomerBean();
 
         try (Connection con = connect.initCon();
-                PreparedStatement stmt = con.prepareStatement(SELECT_FOR_DELETE);
                 PreparedStatement stmt1 = con.prepareStatement(DELETE_USER);
                 PreparedStatement stmt2 = con.prepareStatement(INIT)) {
-            stmt.setString(1, username);
+            stmt1.setInt(1, CustomerId);
+             System.out.println("" + stmt1.toString());
             stmt2.execute();
-            System.out.println(stmt.toString());
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                cust.setCustomerId(rs.getInt(1));
-            }
-            stmt1.setInt(1, cust.getCustomerId());
-            stmt1.execute();
-            return cust;
+            stmt1.execute();           
         }
     }
-        
+    
+     public void addTrackItem(TrackBean item) throws SQLException, ClassNotFoundException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Add Track Item Geinitieerd");
+
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(INSERT_FILE_QUERY);
+                PreparedStatement stmt1 = con.prepareStatement(INIT)) {
+            stmt.setString(1, item.getTrack_Name());
+            stmt.setString(2, item.getGenre());
+            stmt.setInt(3, item.getLength());
+            stmt.setString(4, item.getFile_Location());
+            stmt.setString(5, item.getImage_Location());
+            stmt1.execute();
+            stmt.executeUpdate();
+        }
+    }
+    
+
 }
