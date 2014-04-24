@@ -50,25 +50,9 @@ public class DeleteUserServlet extends HttpServlet {
         processRequest(request, response);
     }
 
-    protected void DeleteArtist(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        int ArtistId = Integer.parseInt(request.getParameter("ArtistId"));
-        WebsiteDao dao = new WebsiteDao();
-        try {
-            dao.DeleteArtist(ArtistId);
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DeleteUserServlet.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Delete Artist werkt niet");
-        }
-        System.out.println("Delete Artist heeft gewerkt");
-        processRequest(request, response);
-    }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+
+
     @Override
     public String getServletInfo() {
         return "Short description";

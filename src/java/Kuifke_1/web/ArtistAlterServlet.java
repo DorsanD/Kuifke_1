@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Dorsan
  */
 @WebServlet(name = "AlterArtistServlet", urlPatterns = {"/AlterArtistServlet"})
-public class AlterArtistServlet extends HttpServlet {
+public class ArtistAlterServlet extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -52,7 +52,7 @@ public class AlterArtistServlet extends HttpServlet {
         try {
             dao.AlterArtistName(art.getArtistId(), First_Name);
         } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(AlterArtistServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArtistAlterServlet.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Update van First Name is mislukt");
         }
         System.out.println("Updaten van First Name is gelukt");

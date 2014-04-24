@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form action="ArtistDeleteServlet" method="post">
+            <input type="text" name="ArtistId"/>
+            <input type="submit">
+        </form>
     </body>
 </html>
