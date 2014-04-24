@@ -17,7 +17,6 @@ public class CustomerBean implements Serializable {
     private String Username;
     private String Password;
     private String Language;
-    private int[] answers = new int[1];
     private String salt;
     private String newUsername;
 
@@ -125,21 +124,6 @@ public class CustomerBean implements Serializable {
         return Language;
     }
     
-     public int[] getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(int[] answers) {
-        this.answers = answers;
-    }
-
-    public int getAnswer(int index) {
-        return answers[index];
-    }
-    
-    public void setAnswer(int index, int answer) {
-        answers[index] = answer;
-    }
 
     public void setLanguage(String language) {
         this.Language = language;

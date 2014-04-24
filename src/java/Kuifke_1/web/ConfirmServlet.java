@@ -45,7 +45,7 @@ public class ConfirmServlet extends HttpServlet implements Constants {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
             bean.setDate(new Date());
-            req.getRequestDispatcher(confirmPage).forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/pages/Confirm.jsp").forward(req, resp);
             req.getSession().invalidate();
     }
 }

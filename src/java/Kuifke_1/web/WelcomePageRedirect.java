@@ -6,6 +6,7 @@ package Kuifke_1.web;
 
 import Kuifke_1.domain.CustomerBean;
 import static Kuifke_1.web.Constants.WEBSITE_BEAN;
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -22,10 +23,15 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "WelcomePageRedirect", urlPatterns = {"/WelcomePageRedirect"})
 public class WelcomePageRedirect extends HttpServlet {
 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+    }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
-        bean.setDate(new Date());
-        req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
-    }}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(request, response);
+        processRequest(request, response);
+
+    }
+}
