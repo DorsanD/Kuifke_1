@@ -8,6 +8,7 @@ import Kuifke_1.domain.CustomerBean;
 import static Kuifke_1.web.Constants.WEBSITE_BEAN;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +25,7 @@ public class WelcomePageRedirect extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
+        bean.setDate(new Date());
         req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
     }}

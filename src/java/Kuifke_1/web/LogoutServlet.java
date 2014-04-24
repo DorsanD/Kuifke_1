@@ -6,6 +6,8 @@
 
 package Kuifke_1.web;
 
+import Kuifke_1.domain.CustomerBean;
+import static Kuifke_1.web.Constants.WEBSITE_BEAN;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -22,12 +24,20 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
 
+    
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        CustomerBean websiteBean = new CustomerBean();
+        req.getSession().setAttribute(WEBSITE_BEAN, websiteBean);
+        req.getRequestDispatcher("WEB-INF/pages/Logout.jsp").forward(req, resp);
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
      HttpSession session1 = request.getSession();
      session1.invalidate();
-     request.getRequestDispatcher("HomeServlet").forward(request, response);
+     request.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(request, response);
     }
     
 }

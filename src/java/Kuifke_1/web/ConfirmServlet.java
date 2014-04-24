@@ -26,7 +26,6 @@ import javax.servlet.http.HttpServletResponse;
 public class ConfirmServlet extends HttpServlet implements Constants {
 
     private String confirmPage;
-    private WebsiteDao dao;
 
     @Override
     public void init() throws ServletException {

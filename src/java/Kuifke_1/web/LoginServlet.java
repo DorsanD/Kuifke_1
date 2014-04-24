@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet implements Constants {
             if (pwCheck.check()) {
                 //pw matched
                 System.out.println("passwoord juist");
-                doGet(req,resp);
+                req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
                 try {
                     cust = dao.getUserDetails(req.getParameter("username"));
                 } catch (        ClassNotFoundException | SQLException ex) {
@@ -79,5 +79,5 @@ public class LoginServlet extends HttpServlet implements Constants {
         doGet(req, resp);
 
     }
-
+    
 }

@@ -65,8 +65,8 @@
             <li><a href="#contact">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./">MY ACCOUNT</a></li>
-            <li><a href="./">LOG OUT</a></li>
+            <li><a href="ConfirmServlet">MY ACCOUNT</a></li>
+            <li><a href="LogoutServlet">LOG OUT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
