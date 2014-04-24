@@ -1,6 +1,13 @@
+<%-- 
+    Document   : Contact
+    Created on : 24-apr-2014, 11:10:36
+    Author     : Kevin
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +15,15 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Welcome to Kuifke!</title>
+    <title>Contact</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="./CSS/WelcomePage.css" rel="stylesheet">
-
+    <link href="./CSS/AboutUs.css" rel="stylesheet">
+    
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -25,10 +33,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
-  <body>
-
-   <!-- Fixed navbar -->
+    <body>
+        
+        <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -61,8 +68,8 @@
             </li>
             <li><a href="#contact">RECENT RELEASES</a></li>
             <li><a href="#contact">STORE</a></li>
-            <li><a href="AboutUs.jsp">ABOUT US</a></li>
-            <li><a href="Contact.jsp">CONTACT</a></li>
+            <li><a href="AboutUs">ABOUT US</a></li>
+            <li><a href="Contact">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="ConfirmServlet">MY ACCOUNT</a></li>
@@ -70,15 +77,15 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>       
-
-          
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
-    <script src="./JS/docs.min.js"></script>
-  </body>
+    </div>  
+        
+        <h1>About Us</h1>
+        
+        <h2>Who are we?</h2>
+        <p>We are 3 students of the Thomas More College in Mechelen who collaborated on a webapplication project for the course Project Programming.</p>
+        <h2>What is Kuifke?</h2>
+        <p>Kuifke is our webapplication. It is designed to </p>
+        
+                
+    </body>
 </html>
