@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet implements Constants {
             System.out.println("Fout bij userCheck");
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (cust.getPassword() != "1") {
+        if (cust.getPassword()!= "1") {
             
             PasswordCheck pwCheck = new PasswordCheck(cust, req.getParameter("password"));
             if (pwCheck.check()) {

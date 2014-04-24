@@ -61,8 +61,8 @@
             </li>
             <li><a href="#contact">RECENT RELEASES</a></li>
             <li><a href="#contact">STORE</a></li>
-            <li><a href="AboutUs.jsp">ABOUT US</a></li>
-            <li><a href="Contact.jsp">CONTACT</a></li>
+            <li><a href="AboutUsServlet">ABOUT US</a></li>
+            <li><a href="ContactServlet">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="ConfirmServlet">MY ACCOUNT</a></li>
