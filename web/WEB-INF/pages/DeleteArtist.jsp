@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Error
-    Created on : 13-Mar-2014, 10:48:12
+    Document   : DeleteArtist
+    Created on : 24-Apr-2014, 12:01:47
     Author     : Dorsan
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Some Error has occured,Please try again later...</h1>
+        <h1>Hello World!</h1>
     </body>
 </html>

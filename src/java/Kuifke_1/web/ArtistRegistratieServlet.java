@@ -42,7 +42,7 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {       
         ArtistBean Abean = new ArtistBean();
-        req.getSession().setAttribute(WEBSITE_BEAN, Abean);
+        req.getSession().setAttribute(ARTIST_BEAN, Abean);
         req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
     }
 
@@ -50,7 +50,7 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        ArtistBean Abean = (ArtistBean) req.getSession().getAttribute(WEBSITE_BEAN);
+        ArtistBean Abean = (ArtistBean) req.getSession().getAttribute(ARTIST_BEAN);
         Abean.setArtist_Name(req.getParameter("Artist_Name"));
         Abean.setFirst_Name(req.getParameter("firstname"));
         Abean.setLast_Name(req.getParameter("lastname"));

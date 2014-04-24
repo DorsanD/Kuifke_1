@@ -1,6 +1,6 @@
 <%-- 
-    Document   : logout
-    Created on : 13-Mar-2014, 10:47:42
+    Document   : AlterArtist
+    Created on : 24-Apr-2014, 11:53:51
     Author     : Dorsan
 --%>
 
@@ -12,13 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-               <%
- 
-        session.removeAttribute("username");
-        session.removeAttribute("password");
-        session.invalidate();
-        %>
-        <h1>Logout was done successfully.</h1>
-         
+       <form action="AlterArtistServlet" method="post">
+            <input type="text" name="First_Name" value="${ARTISTBEAN.getFirst_Name()}"/>
+            <input type="submit"/>
+        </form>
     </body>
 </html>

@@ -32,6 +32,8 @@
             <div class="tekst"><p>Start listening right now !</p></div>
             <div class="knop"><a class="btn btn-default btn-danger" data-target="#RegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up </a></div>
             <div class="login"><p>Already have an account? <a href="#" data-target="#LoginModal" data-toggle="modal">Log in </a> here. </p></div>
+            <div class="knop"><p>Or are you an artist?<a href="#" data-target="#RegisterModal" data-toggle="modal">Log in </a> here. </p></div>
+
         </div>
 
         <!-- Modal Sign up-->
