@@ -22,7 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./CSS/WelcomePage.css" rel="stylesheet">
-    <link href="./CSS/Contact.css" rel="stylesheet">
+    <link href="./CSS/Account.css" rel="stylesheet">
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -78,50 +78,41 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>  
-        
-                <div class="container" id="contact">
-                <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <div class="well well-sm">
-                  <form class="form-horizontal" action="" method="post">
-                  <fieldset>
-                    <legend class="text-center">Contact us</legend>
-                    <p>We're happy to answer any questions you have or provide you with an estimate. Just send us a message in the form below with any questions you may have.</p>
-                    <!-- Name input-->
-                    <div class="form-group">
-                      <label class="col-md-3 control-label" for="name">Name</label>
-                      <div class="col-md-9">
-                        <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-                      </div>
-                    </div>
-
-                    <!-- Email input-->
-                    <div class="form-group">
-                      <label class="col-md-3 control-label" for="email">Your E-mail</label>
-                      <div class="col-md-9">
-                        <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-                      </div>
-                    </div>
-
-                    <!-- Message body -->
-                    <div class="form-group">
-                      <label class="col-md-3 control-label" for="message">Your message</label>
-                      <div class="col-md-9">
-                        <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-                      </div>
-                    </div>
-
-                    <!-- Form actions -->
-                    <div class="form-group">
-                      <div class="col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                      </div>
-                    </div>
-                  </fieldset>
-                  </form>
-                </div>
-              </div>
-                </div>
+    
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>My account</h1>
+        <div class="table-responsive">
+            <table class="table">
+            <tbody>
+            <tr>
+            <td>Username:</td>
+            <td>Bla <a class="btn btn-primary btn-lg" role="button">Change Username &raquo;</a></td>
+            </tr>
+            <tr>
+            <td>Name:</td>
+            <td>Bla</td>
+            </tr>
+            <tr>
+            <td>Firstname:</td>
+            <td>Bla</td>
+            </tr>
+            <tr>
+            <td>Gender:</td>
+            <td>Bla</td>
+            </tr>
+            <tr>
+            <td>E-mail:</td>
+            <td>Bla <a class="btn btn-primary btn-lg" role="button">Change E-mail &raquo;</a></td></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
         </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script> 
     </body>
 </html>

@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="./Images/Favicon.ico">
 
     <title>Contact</title>
 
@@ -45,11 +45,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-welcome" href="WelcomePage">Welcome ${CUSTOMERBEAN.getUsername()} to Kuifke</a>
+          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getUsername()} to Kuifke</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="WelcomePage.jsp">HOME</a></li>
+            <li><a href="WelcomePageServlet">HOME</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">GENRES <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -72,7 +72,7 @@
             <li><a href="ContactServlet">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="ConfirmServlet">MY ACCOUNT</a></li>
+            <li><a href="AccountServlet">MY ACCOUNT</a></li>
             <li><a href="LogoutServlet">LOG OUT</a></li>
           </ul>
         </div><!--/.nav-collapse -->
