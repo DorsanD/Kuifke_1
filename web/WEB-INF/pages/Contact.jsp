@@ -68,8 +68,8 @@
             </li>
             <li><a href="#contact">RECENT RELEASES</a></li>
             <li><a href="#contact">STORE</a></li>
-            <li><a href="AboutUs.jsp">ABOUT US</a></li>
-            <li><a href="Contact.jsp">CONTACT</a></li>
+            <li><a href="AboutUsServlet">ABOUT US</a></li>
+            <li><a href="ContactServlet">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="ConfirmServlet">MY ACCOUNT</a></li>
@@ -86,7 +86,7 @@
                   <form class="form-horizontal" action="" method="post">
                   <fieldset>
                     <legend class="text-center">Contact us</legend>
-
+                    <p>We're happy to answer any questions you have or provide you with an estimate. Just send us a message in the form below with any questions you may have.</p>
                     <!-- Name input-->
                     <div class="form-group">
                       <label class="col-md-3 control-label" for="name">Name</label>

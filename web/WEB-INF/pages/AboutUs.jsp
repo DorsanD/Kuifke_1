@@ -68,8 +68,8 @@
             </li>
             <li><a href="#contact">RECENT RELEASES</a></li>
             <li><a href="#contact">STORE</a></li>
-            <li><a href="AboutUs">ABOUT US</a></li>
-            <li><a href="Contact">CONTACT</a></li>
+            <li><a href="AboutUsServlet">ABOUT US</a></li>
+            <li><a href="ContactServlet">CONTACT</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="ConfirmServlet">MY ACCOUNT</a></li>
@@ -79,13 +79,26 @@
       </div>
     </div>  
         
-        <h1>About Us</h1>
+        <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <img src="./Images/dorsan.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h2>Dorsan Demaeght</h2>
+          <p>Dorsan is our back-end programmer. blabla...</p>
+      </div>
+        <div class="col-md-4">
+          <img src="./Images/kevin.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h2>Kevin Reyns</h2>
+          <p>Kevin makes some front-end pages blabla</p>
+      </div>
+        <div class="col-md-4">
+          <img src="./Images/wouter.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+          <h2>Wouter Baeckelmans</h2>
+          <p>Wouter argues about colors and shit.</p>
+      </div>
+      </div>
         
-        <h2>Who are we?</h2>
-        <p>We are 3 students of the Thomas More College in Mechelen who collaborated on a webapplication project for the course Project Programming.</p>
-        <h2>What is Kuifke?</h2>
-        <p>Kuifke is our webapplication. It is designed to </p>
-        
-                
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>            
     </body>
 </html>

@@ -1,0 +1,24 @@
+.row{
+    margin: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+h2{
+    color: #8E0606;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    margin: auto;
+}
+
+p, h2{
+    text-align: center;
+}
+
+p{
+    font-size: 14px;
+}
