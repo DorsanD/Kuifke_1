@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getUsername()} to Kuifke</a>
+          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getUsername()}, to Kuifke</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -70,7 +70,37 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>       
+    </div>   
+  
+<div class="footer">
+  <div class="row-footer">    
+    <div class="col-xs-6 col-sm-6 col-md-3 column">          
+      	<h4>Follow Us</h4>
+        <ul class="nav">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul> 
+      </div>
+    <div class="col-xs-6 col-md-3 column">          
+      	<h4>Contact Us</h4>
+        <ul class="nav">         
+          <li><a href="#">contact.kuifke@gmail.com</a></li>
+         </ul> 
+      </div>
+    <div class="col-xs-6 col-md-3 column">          
+      	<h4>Created by</h4>
+        <ul class="nav">
+          <li>Wouter Baeckelmans</li>
+          <li>Kevin Reyns</li>
+          <li>Dorsan Demaeght</li>
+        </ul> 
+      </div>
+    <div class="col-xs-6 col-md-3 column">   
+      	<h4>(c) 2014. All rights reserved.</h4>
+      </div>  
+  </div>
+</div>
+</div>
 
           
 

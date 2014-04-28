@@ -38,3 +38,38 @@
     color: #000000;
 }
 
+.footer {
+ position:fixed;
+ bottom:0;
+ left:0;
+ right:0;
+ background-color: #e7e7e7;
+}
+
+.column {
+   padding-left:100px;
+   padding-bottom: 20px;
+
+}
+
+.column > h4 {
+    color: #8E0606;
+}
+
+.column .nav {
+    border-top: 2px solid white;
+}
+
+.column .nav > li {
+position: relative;
+display: block;
+padding: 10px 15px;
+}
+
+.column .nav > li > a {
+padding: 0px 0px;
+color: #333;
+}
+
+
+
