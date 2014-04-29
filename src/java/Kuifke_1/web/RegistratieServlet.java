@@ -67,7 +67,7 @@ public class RegistratieServlet extends HttpServlet implements Constants {
         WebsiteDao dao = new WebsiteDao();
         try {
             dao.addCustomerItem(bean);
-            req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
+            req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(RegistratieServlet.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Customer niet toegevoegd aan Dao");

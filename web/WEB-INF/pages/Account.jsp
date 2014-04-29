@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getUsername()} to Kuifke</a>
+          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getFirst_Name()} to Kuifke</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -84,30 +84,32 @@
       <div class="container">
         <h1>My account</h1>
         <div class="table-responsive">
+            <form action="AccountServlet" method="post">
             <table class="table">
             <tbody>
             <tr>
             <td>Username:</td>
-            <td>Bla <a class="btn btn-primary btn-lg" role="button">Change Username &raquo;</a></td>
+            <td>${CUSTOMERBEAN.getUsername()} <a class="btn btn-primary btn-lg" type="submit">Change Username &raquo;</a></td>
             </tr>
             <tr>
             <td>Name:</td>
-            <td>Bla</td>
+            <td>${CUSTOMERBEAN.getLast_Name()}</td>
             </tr>
             <tr>
             <td>Firstname:</td>
-            <td>Bla</td>
+            <td>${CUSTOMERBEAN.getFirst_Name()}</td>
             </tr>
             <tr>
             <td>Gender:</td>
-            <td>Bla</td>
+            <td>${CUSTOMERBEAN.getGender()}</td>
             </tr>
             <tr>
             <td>E-mail:</td>
-            <td>Bla <a class="btn btn-primary btn-lg" role="button">Change E-mail &raquo;</a></td></td>
+            <td>${CUSTOMERBEAN.getEmail_Address()} <a class="btn btn-primary btn-lg" role="button">Change E-mail &raquo;</a></td></td>
             </tr>
             </tbody>
             </table>
+            </form>
             </div>
         </div>
     </div>

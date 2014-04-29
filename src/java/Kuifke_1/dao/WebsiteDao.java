@@ -19,7 +19,6 @@ import java.util.List;
 public class WebsiteDao {
 
     private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language from Customer order by CustomerId";
-    private static final String GET_ARTIST_QUERY = "select ArtistId, Artist_Name, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language from artiest order by ArtistId";
     private static final String INSERT_QUERY = "insert into Customer (Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (sysdate(),?,?,?,?,?,?,?,?)";
     private static final String INSERT_ARTIST_QUERY = "insert into Artist (Artist_Name, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (?,?,?,?,?,?,?,?,?)";
     private static final String GET_USER_CREDENTIALS = "select Password, salt from customer where Username = ?;";
