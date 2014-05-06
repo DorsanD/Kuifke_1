@@ -45,11 +45,11 @@ public class BIServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         aanvulling = "<a class=\"list-group-item\" href=\"GenerateArtKeyServlet\">Genereer Key</a>"
-                + "<a class=\"list-group-item\" href=\"MyAccountDeleteServlet\">Verwijder gebruiker</a>"
-                + "<a class=\"list-group-item active\" href=\"BiSysteem\">BI Systeem</a>";
+                + "<a class=\"list-group-item\" href=\"DeleteUserServlet\">Verwijder gebruiker</a>"
+                + "<a class=\"list-group-item active\" href=\"BIServlet\">BI Systeem</a>";
         aanvullinghorizon = "<li><a class=\"list-group-item\" href=\"GenerateArtKeyServlet\">Genereer Key</a></li>"
-                + "<li><a class=\"list-group-item\" href=\"MyAccountDeleteServlet\">Verwijder gebruiker</a></li>"
-                + "<li><a class=\"list-group-item active\" href=\"BiSysteem\">BI Systeem</a></li>";
+                + "<li><a class=\"list-group-item\" href=\"DeleteUserServlet\">Verwijder gebruiker</a></li>"
+                + "<li><a class=\"list-group-item active\" href=\"BIServlet\">BI Systeem</a></li>";
         request.getSession().setAttribute("AANVULLING", aanvulling);
         request.getSession().setAttribute("AANVULLINGHORIZON", aanvullinghorizon);
 
@@ -169,7 +169,7 @@ public class BIServlet extends HttpServlet {
         request.getSession().setAttribute("PDF", outputPDF);
 
         //nu sturen we door naar de resultatenpagina waar de gebruiker 4 kolommen kan kiezen
-        request.getRequestDispatcher("WEB-INF/pages/BiResults.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/pages/BIResults.jsp").forward(request, response);
 
     }
     }

@@ -92,6 +92,6 @@ public class BIBean implements Serializable{
 
     @Override
     public String toString() {
-        return "BiBean{" + "id=" + id + ", table=" + table + ", column=" + column + ", type=" + type + ", data=" + data + '}';
+        return "BIBean{" + "id=" + id + ", table=" + table + ", column=" + column + ", type=" + type + ", data=" + data + '}';
     }
 }

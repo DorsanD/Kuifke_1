@@ -31,7 +31,7 @@ public class WebsiteDao {
     private static final String DELETE_USER = "delete from customer where CustomerId=?;";
     private static final String DELETE_ARTIST = "delete from artiest where ArtistId=?;";
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
-    private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema ='jportael_myvibe' and COLUMN_NAME not like ('%id')";
+    private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'mydb' and COLUMN_NAME not like ('%id')";
 
     private String url;
     private String user;

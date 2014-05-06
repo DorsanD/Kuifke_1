@@ -12,14 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="BIServlet" method="post">
-             <select name="sometext" multiple="multiple">
-    <option>text1</option>
-    <option>text2</option>
-    <option>text3</option>
-    <option>text4</option>
-    <option>text5</option>
- </select>
+<form action="BIServlet" method="post">
+            <select multiple class="form-control" id="SelectColumns" name="selectedColumns">
+                <c:forEach items="${COLUMNS}" var="BIBean">
+                    <option value=${BIBean.getId()} multiple>${BIBean.getTable()}.${BIBean.getColumn()}</option>
+                </c:forEach>
+            </select>
+            <div class="form-group">
+                <button type="submit" name="Next" class="btn btn-default">Voltooien</button>
+            </div>
         </form>
     </body>
 </html>
