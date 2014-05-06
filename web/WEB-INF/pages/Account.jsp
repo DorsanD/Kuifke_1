@@ -32,9 +32,10 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
     <body>
-        
+    
         <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
@@ -70,6 +71,7 @@
             <li><a href="#contact">STORE</a></li>
             <li><a href="AboutUsServlet">ABOUT US</a></li>
             <li><a href="ContactServlet">CONTACT</a></li>
+            <li><a href="BIServlet">Business Intelligence </a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="AccountServlet">MY ACCOUNT</a></li>

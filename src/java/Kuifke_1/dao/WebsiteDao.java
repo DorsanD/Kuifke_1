@@ -3,6 +3,7 @@ package Kuifke_1.dao;
 import Kuifke_1.domain.ArtistBean;
 import Kuifke_1.domain.CustomerBean;
 import Kuifke_1.domain.TrackBean;
+import Kuifke_1.domain.BIBean;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -30,6 +31,7 @@ public class WebsiteDao {
     private static final String DELETE_USER = "delete from customer where CustomerId=?;";
     private static final String DELETE_ARTIST = "delete from artiest where ArtistId=?;";
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
+    private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema ='jportael_myvibe' and COLUMN_NAME not like ('%id')";
 
     private String url;
     private String user;
@@ -290,6 +292,117 @@ public class WebsiteDao {
             stmt1.execute();
             stmt.executeUpdate();
         }
+    }
+
+    public List<BIBean> getColumns() throws SQLException, ClassNotFoundException {
+        //deze functie haalt de namen van alle columns in de DB op
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+
+        System.out.println("");
+        System.out.println("--- systeemtabellen worden opgehaald ---");
+
+        List<BIBean> biBeans = new ArrayList<>();
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt1 = con.prepareStatement(INIT);
+                PreparedStatement stmt = con.prepareStatement(BI_Query)) {
+            stmt1.execute();
+            ResultSet rs = stmt.executeQuery();
+
+            for (int i = 1; rs.next(); i++) {
+                BIBean bi = new BIBean();
+                bi.setTable(rs.getString(1));
+                bi.setColumn(rs.getString(2));
+                bi.setType(rs.getString(3));
+                bi.setId(i);
+                biBeans.add(bi);
+            }
+        }
+        System.out.println("alle tabellen opgehaald");
+        return biBeans;
+
+    }
+    
+     public List<BIBean> getColumnsData(List<BIBean> BIBean) throws SQLException, ClassNotFoundException {
+        //deze functie haalt de data van de gevraagde colummen uit de database
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        
+        System.out.println("");
+        System.out.println("--- DATA wordt uit de GEKOZEN systeemtabellen gehaald ---");
+
+        //eindproduct
+        List<BIBean> dataBean = new ArrayList<>();
+
+        //stel de geselecteerde kollomen in in een query
+        System.out.println("de gekozen tabellen zijn:");
+        int j = 1;
+        String query = "select ";
+        for (int i = 0; i < BIBean.size(); i++, j++) {
+            
+            query += BIBean.get(i).getTabelCol();
+            if (i != BIBean.size()-1) {
+                query += ",";
+            }
+            System.out.println("kolom "+BIBean.get(i).getTabelCol()+" toegevoegd aan de query");
+        }
+        query += " from customer c, artiest a, track t ";
+        System.out.println(query);
+        
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt1 = con.prepareStatement(INIT);
+                PreparedStatement stmt = con.prepareStatement(query)) {
+            
+            stmt1.execute();
+            ResultSet rs = stmt.executeQuery();
+            
+            System.out.println("");
+            System.out.println("** resultaten worden uitgelezen en weggeschreven **");
+
+            //steek de data in de kollomen
+            while (rs.next()) {
+                for (int i = 0; i < BIBean.size(); i++) {
+                    String type = BIBean.get(i).getConverType();
+                    
+                    BIBean data = new BIBean();
+
+                    //voor we de bean de data geven stellen we ook de column en de table in
+                    data.setTable(BIBean.get(i).getTable());
+                    data.setColumn(BIBean.get(i).getColumn());
+                    data.setType(BIBean.get(i).getType());
+                    data.setId(BIBean.get(i).getId());
+                    
+                    switch (type) {
+                        case "String":
+                            data.setData(rs.getString(i + 1));
+                            
+                            break;
+                        case "Date":
+                            data.setData(rs.getDate(i + 1)+"");
+                            break;
+                        case "Boolean":
+                            //bij true => 1 anders => 0
+                            System.out.println(rs.getBoolean(i + 1));
+                            if (rs.getBoolean(i + 1)) {
+                                data.setData("1");
+                            } else {
+                                data.setData("0");
+                            }
+                            ;
+                            break;
+                        case "int":
+
+                            data.setData(rs.getInt(i + 1) + " ");
+                            break;
+                    }
+                    dataBean.add(data);
+                    
+                }
+            }
+            System.out.println("done!");
+        }
+        return dataBean;
+        
     }
 
 }
