@@ -39,7 +39,7 @@
 }
 
 .SignUp-container {
-    height: 250px;
+    height: 300px;
     width: 380px; 
     background-color: #ADAAAA;
     opacity: 0.8;
@@ -57,8 +57,23 @@
 }
 
 .knop {
-    margin-left:120px;
+    margin-left:100px;
     margin-top: 20px;
+}
+
+.knop2{
+    margin-left:85px;
+    margin-top: 20px;
+}
+
+.knop3{
+    margin-left:100px;
+    margin-top: 20px;
+}
+
+.knop3 a{
+    color: #000;
+    font-weight: bold;
 }
 .btn-danger {
     color: #FFF;
@@ -126,8 +141,28 @@ h2{
     padding: 15px;
 }
 
+.form-signin-heading{
+    display: none;
+}
+
 .form-control:active, .form-control:focus, .dropd:focus, .dropd:active, .dropd:hover{
     border-color:#8E0606;
 }
 
+.form-signin{
+    padding: 0px;
+}
+
+.modal-footer{
+    padding: 8px;
+}
+
+.login p{
+    margin: auto;
+}
+
+.knop p{
+    
+    margin: auto;
+}
 
