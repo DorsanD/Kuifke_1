@@ -50,26 +50,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="WelcomePageServlet">HOME</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">GENRES <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Dance</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Electro</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Hip Hop</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Pop</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Rock</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Other</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">RECENT RELEASES</a></li>
-            <li><a href="#contact">STORE</a></li>
             <li><a href="AboutUsServlet">ABOUT US</a></li>
             <li><a href="ContactServlet">CONTACT</a></li>
+            <li><a href="BIServlet" class="BI">BUSINESS INTELLIGENCE</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="AccountServlet">MY ACCOUNT</a></li>

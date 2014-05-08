@@ -13,6 +13,10 @@
     color: #FFFFFF;
 }
 
+.navbar-default .navbar-nav .BI {
+    border-left: 2px dotted #8E0606;
+}
+
 .container {
     width:100%;
     margin:0px
@@ -32,10 +36,6 @@
 
 .navbar-header > a:hover {
     //Welcome to ... nog het onderlijnen uitzetten, maar hoe ???
-}
-
-.dropdown {
-    color: #000000;
 }
 
 .footer {
