@@ -138,7 +138,7 @@
                     </div>
                     <div class="modal-body">
                         <form class="form-signin" method="post" action="Login">
-                            <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
+                            <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
                             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
 
                             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />

@@ -46,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getFirst_Name()} to Kuifke</a>
+          <a class="navbar-welcome" href="WelcomePageServlet">Welcome ${CUSTOMERBEAN.getUsername()} to Kuifke</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

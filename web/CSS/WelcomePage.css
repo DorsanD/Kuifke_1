@@ -8,6 +8,10 @@
     color: #FFFFFF;
 }
 
+.navbar-welcome:hover{
+    text-decoration: none;
+}
+
 .navbar-default .navbar-right > li > a:hover {
     background-color: #8E0606;
     color: #FFFFFF;
