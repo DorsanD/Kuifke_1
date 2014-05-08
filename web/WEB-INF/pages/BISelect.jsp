@@ -18,7 +18,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./CSS/WelcomePage.css" rel="stylesheet">
-    <link href="./CSS/BI.css" rel="stylesheet">
+    <link href="./CSS/BISelect.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -59,7 +59,9 @@
       </div>
     </div>
         
-<form action="BIServlet" method="post">
+         <h1>Selecteer uit onderstaande lijst 1 of meerdere velden.</h1>
+         
+         <form action="BIServlet" method="post">
             <select multiple class="form-control" id="SelectColumns" name="selectedColumns">
                 <c:forEach items="${COLUMNS}" var="BIBean">
                     <option value=${BIBean.getId()} multiple>${BIBean.getTable()}.${BIBean.getColumn()}</option>

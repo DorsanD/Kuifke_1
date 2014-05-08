@@ -1,0 +1,19 @@
+body {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #8E0606;
+}
+
+.form-group {
+    padding-top: 20px;
+}
+
+.form-group .btn:hover {
+    background-color: #8E0606;
+    color: #FFF;
+}
