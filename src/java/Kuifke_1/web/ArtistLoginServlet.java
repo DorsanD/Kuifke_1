@@ -41,7 +41,7 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
             throws ServletException, IOException {
         ArtistBean artistBean = new ArtistBean();
         req.getSession().setAttribute(ARTIST_BEAN, artistBean);
-        req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
     }
 
 

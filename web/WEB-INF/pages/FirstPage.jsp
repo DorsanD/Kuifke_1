@@ -79,9 +79,9 @@
                         <h2 class="modal-title" id="myModalLabel">Sign up</h2>
                     </div>
                     <div class="modal-body">
-                        <form class="form-signin" role="form" method="post" >
-                            <input type="text" class="form-control" placeholder="Artist Name" name="artistname" required="true" />
-                            <input type="text" class="form-control" placeholder="Name" name="name" required="true" />
+                        <form class="form-signin" role="form" method="post" action="ArtistLoginServlet">
+                            <input type="text" class="form-control" placeholder="Artist Name" name="Artist_Name" required="true" />
+                            <input type="text" class="form-control" placeholder="Name" name="lastname" required="true" />
                             <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
                             <select class="dropd" name="gender" required="true">
                                 <option value="M">M</option>
@@ -137,8 +137,13 @@
                         <h2 class="modal-title" id="myModalLabel">Log in</h2>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
                         <form class="form-signin" method="post" action="Login">
                             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
+=======
+                        <form class="form-signin" method="post" action="ArtistLoginServlet">
+                            <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
+>>>>>>> 7aabe4bb43e894ed767a43726f1ad60b2afe6ac9
                             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
 
                             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />

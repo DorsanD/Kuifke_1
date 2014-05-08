@@ -71,7 +71,7 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
         WebsiteDao dao = new WebsiteDao();
         try {
             dao.addArtistItem(Abean);
-            req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
+            req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(RegistratieServlet.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Artist niet toegevoegd aan Dao");
