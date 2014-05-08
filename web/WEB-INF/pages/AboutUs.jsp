@@ -62,22 +62,24 @@
       </div>
     </div>  
         
-        <!-- Example row of columns -->
+        <!-- About us - Columns -->
       <div class="row">
         <div class="col-md-4">
           <img src="./Images/dorsan.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
           <h2>Dorsan Demaeght</h2>
-          <p>Dorsan is our back-end programmer. blabla...</p>
+          <p>Dorsan is our back-end programmer. With his extended knowledge in Java he made the back-end.
+              Besides this, he also was the 'leader' of the team and checked that everyone fullfilled their tasks in time.<p>
       </div>
         <div class="col-md-4">
           <img src="./Images/kevin.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
           <h2>Kevin Reyns</h2>
-          <p>Kevin makes some front-end pages blabla</p>
+          <p>Kevin mainly focussed on the front-end. With the use of Bootstrap he made the layout of our website.
+             He also decided the color patterns we were going to use and made the Mock-Ups.</p>
       </div>
         <div class="col-md-4">
           <img src="./Images/wouter.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
           <h2>Wouter Baeckelmans</h2>
-          <p>Wouter argues about colors and shit.</p>
+          <p>Wouter mainly helped Kevin with the front-end. Besides this, he also made the database and was our project leader. He made the scrum reports and used the tool 'Trello' to help him do so.</p>
       </div>
       </div>
         
