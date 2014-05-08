@@ -59,7 +59,7 @@
       </div>
     </div>
         
-         <h1>Selecteer uit onderstaande lijst 1 of meerdere velden.</h1>
+         <h1>Select 1 or more fields from the list below.</h1>
          
          <form action="BIServlet" method="post">
             <select multiple class="form-control" id="SelectColumns" name="selectedColumns">
@@ -68,7 +68,7 @@
                 </c:forEach>
             </select>
             <div class="form-group">
-                <button type="submit" name="Next" class="btn btn-default">Voltooien</button>
+                <button type="submit" name="Next" class="btn btn-default">Submit</button>
             </div>
         </form>
     </body>
