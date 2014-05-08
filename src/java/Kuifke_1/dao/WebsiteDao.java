@@ -319,6 +319,7 @@ public class WebsiteDao {
             }
         }
         System.out.println("alle tabellen opgehaald");
+        System.out.println(biBeans);
         return biBeans;
 
     }
