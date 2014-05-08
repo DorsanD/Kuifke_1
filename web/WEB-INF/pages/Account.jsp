@@ -73,11 +73,11 @@
             <tbody>
             <tr>
             <td>Username:</td>
-            <td>${CUSTOMERBEAN.getUsername()} <a class="btn btn-primary btn-lg" type="submit">Change Username &raquo;</a></td>
+            <td>${CUSTOMERBEAN.getUsername()}</td>
             </tr>
             <tr>
             <td>Name:</td>
-            <td>${CUSTOMERBEAN.getLast_Name()}</td>
+            <td>${CUSTOMERBEAN.getLast_Name()} <a class="btn btn-primary btn-lg" type="submit">Change Name</a></td>
             </tr>
             <tr>
             <td>Firstname:</td>
@@ -89,7 +89,7 @@
             </tr>
             <tr>
             <td>E-mail:</td>
-            <td>${CUSTOMERBEAN.getEmail_Address()} <a class="btn btn-primary btn-lg" role="button">Change E-mail &raquo;</a></td></td>
+            <td>${CUSTOMERBEAN.getEmail_Address()}</td></td>
             </tr>
             </tbody>
             </table>
