@@ -76,13 +76,25 @@ color: #333;
 }
 
 .musicdiv audio{
-    margin-top: 100px;
     width: 100%;
     position: absolute;
     bottom: 0;
     /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #FFF;
+
+    background-color: #121212;
+}
+
+.musicdiv p{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    background-color: #121212;
+    padding-top: 5px;
 }
 
 

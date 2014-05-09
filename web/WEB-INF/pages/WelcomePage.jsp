@@ -45,6 +45,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="WelcomePageServlet">HOME</a></li>
+            <li><a href="MusicPageServlet">MUSIC</a></li>
             <li><a href="AboutUsServlet">ABOUT US</a></li>
             <li><a href="ContactServlet">CONTACT</a></li>
             <li><a href="BIServlet" class="BI">BUSINESS INTELLIGENCE</a></li>
@@ -56,12 +57,12 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>   
-            
+          
         <div class="musicdiv">
+            <p>Dammit - Blink 182</p>
                 <audio controls>
-                        <source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
-                        <source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
-                        <a href="http://www.w3schools.com/html/horse.mp3">horse</a>
+                        <source src="./Music/Dammit.mp3" type="audio/mpeg" />
+                        <a href="./Music/Dammit.mp3">Dammit</a>
                 </audio>
         </div>
         

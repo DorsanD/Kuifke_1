@@ -47,6 +47,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="WelcomePageServlet">HOME</a></li>
+            <li><a href="MusicPageServlet">MUSIC</a></li>
             <li><a href="AboutUsServlet">ABOUT US</a></li>
             <li><a href="ContactServlet">CONTACT</a></li>
             <li><a href="BIServlet" class="BI">BUSINESS INTELLIGENCE</a></li>
