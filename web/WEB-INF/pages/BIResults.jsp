@@ -66,15 +66,14 @@
         
         <div class="MijnProfiel">
                 <h1>Hieronder kan u uw opgevraagde resultaten terugvinden:</h1>
-                <div>
-                    <h2>Download uw resultaten hier</h2>
-                    <a class="BiKnop1" href="${EXCEL}"><button type="submit" class="btn btn-primary btn-block">Download als xls</button></a>
-                    <a class="BiKnop1" href="${PDF}"><button type="submit" class="btn btn-primary btn-block" >Dowload als pdf</button></a>
+                <div id="knoppen">
+                    <a class="BiKnop1" href="${EXCEL}"><button type="submit" class="btn btn-default">Download als xls</button></a>
+                    <a class="BiKnop1" href="${PDF}"><button type="submit" class="btn btn-default" >Download als pdf</button></a>
                 </div>
             <div class="table-responsive">
             <table class="table table-striped" id="mytab1">
                 <tr>
-                    <th colspan="4">Resultaten:</th>
+                    <th colspan="4"></th>
                 <tr/>
 
                 <c:set var="teller" value="0" property="teller" />

@@ -7,3 +7,20 @@ h1 {
     font-size: 20px;
     color: #8E0606;
 }
+
+#knoppen {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.btn {
+    background-color: #e7e7e7;
+    border-color: #8E0606;
+    color: black;
+    width: 150px;
+}
+
+.btn:hover {
+    background-color: #8E0606;
+    color: white;
+}
