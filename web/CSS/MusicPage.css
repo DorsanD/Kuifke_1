@@ -1,12 +1,27 @@
-/* 
-    Document   : MusicPage
-    Created on : 9-mei-2014, 13:52:30
-    Author     : Kevin
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
-root { 
-    display: block;
+.jumbotron h1{
+    color: #8E0606;
+    font-size: 30px;
+    text-align: center;
 }
 
+.jumbotron{
+    background-color: #FFF;
+}
+
+thead{
+    background-color: #121212;
+    color: #FFF;
+}
+
+table{
+    border: #121212;
+    border-style: solid;
+}
+
+.white{
+    background-color: #FFF;
+}
+
+.gray{
+    background-color: #E3E3E3;
+}

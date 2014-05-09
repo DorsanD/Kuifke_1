@@ -57,7 +57,64 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>   
+    </div> 
+        
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Music</h1>
+        <div class="table-responsive">
+            <form action="AccountServlet" method="post">
+            <table class="table">
+            <tbody>
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Time</th>
+                <th>Genre</th>
+            </thead>
+            <tr class="white">
+            <td>1</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            </tr>
+            <tr class="gray">
+            <td>2</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            </tr>
+            <tr class="white">
+            <td>3</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            </tr>
+            <tr class="gray">
+            <td>4</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            </tr>
+            <tr class="white">
+            <td>5</td>
+            <td>bla</td></td>
+            <td>bla</td>
+            <td>bla</td>
+            <td>bla</td>
+            </tr>
+            </tbody>
+            </table>
+            </form>
+            </div>
+        </div>
+    </div>  
           
         <div class="musicdiv">
             <p>Dammit - Blink 182</p>
