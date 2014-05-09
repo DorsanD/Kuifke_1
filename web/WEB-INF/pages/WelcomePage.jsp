@@ -56,7 +56,33 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>   
+    </div>  
+        
+        <h1>Discover</h1>
+        
+        
+        <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/DudeRanch.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Blink 182</h4>
+              <h5>Dammit</h5>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/AppealToReason.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Rise Against</h4>
+              <h5>Hero Of War</h5>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/PageAvenue.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Story Of The Year</h4>
+              <h5>In The Shadows</h5>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/DoesThisLookInfected.png" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Sum 41</h4>
+              <h5>Still Waiting</h5>
+            </div>
+          </div>
           
         <div class="musicdiv">
             <p>Dammit - Blink 182</p>
