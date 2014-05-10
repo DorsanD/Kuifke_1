@@ -78,11 +78,11 @@
             </tr>
             <tr>
             <td>Name:</td>
-            <td>${CUSTOMERBEAN.getLast_Name()} <a class="btn btn-primary btn-lg" type="submit">Change Name</a></td>
+            <td>${CUSTOMERBEAN.getLast_Name()} </td>
             </tr>
             <tr>
             <td>Firstname:</td>
-            <td>${CUSTOMERBEAN.getFirst_Name()}</td>
+            <td>${CUSTOMERBEAN.getFirst_Name()} <a href="AlterUserServlet">Change Name</a></td>
             </tr>
             <tr>
             <td>Gender:</td>

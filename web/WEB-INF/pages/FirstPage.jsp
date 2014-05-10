@@ -69,7 +69,8 @@
                 </div>
             </div>
         </div>
-        
+                <a href="ArtistRegistratieServlet"> effe teste </a>
+
         <!-- Artist Sign up-->
         <div class="modal fade" id="ArtistRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">

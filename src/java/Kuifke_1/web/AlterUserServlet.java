@@ -57,6 +57,8 @@ public class AlterUserServlet extends HttpServlet {
         custom.setFirst_Name(First_Name);
         processRequest(request, response);
         request.getSession().setAttribute("CUSTOMERBEAN", custom);
+        request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
+
     }
     
 }

@@ -41,7 +41,7 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
             throws ServletException, IOException {
         ArtistBean artistBean = new ArtistBean();
         req.getSession().setAttribute(ARTIST_BEAN, artistBean);
-        req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/pages/ArtistFirstPage.jsp").forward(req, resp);
     }
 
 
@@ -64,7 +64,7 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
             if (pwCheck.check()) {
                 //pw matched
                 System.out.println("passwoord juist");
-                req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
+                req.getRequestDispatcher("WEB-INF/pages/ArtistAccountPage.jsp").forward(req, resp);
                 try {
                     art = dao.getArtistUserDetails(req.getParameter("username"));
                 } catch (        ClassNotFoundException | SQLException ex) {
