@@ -31,9 +31,8 @@
         <div class="SignUp-container">
             <div class="tekst"><p>Start listening right now !</p></div>
             <div class="knop"><a class="btn btn-default btn-danger" data-target="#RegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up for free</a></div>
-            <div class="knop2"><a class="btn btn-default btn-danger" data-target="#ArtistRegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up as an artist</a></div>
             <div class="login"><p>Already have an account? <a href="#" data-target="#LoginModal" data-toggle="modal">Log in </a> here. </p></div>
-            <div class="knop3"><p>Or are you an artist? <a href="#" data-target="#ArtistModal" data-toggle="modal">Log in </a> here. </p></div>
+            <div class="knop3"><p>Or are you an artist? <a href="ArtistRegistratieServlet">Sign up and log in </a> here. </p></div>
 
         </div>
 
@@ -69,42 +68,6 @@
                 </div>
             </div>
         </div>
-                <a href="ArtistRegistratieServlet"> effe teste </a>
-
-        <!-- Artist Sign up-->
-        <div class="modal fade" id="ArtistRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="myModalLabel">Sign up</h2>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-signin" role="form" method="post" action="ArtistLoginServlet">
-                            <input type="text" class="form-control" placeholder="Artist Name" name="Artist_Name" required="true" />
-                            <input type="text" class="form-control" placeholder="Name" name="lastname" required="true" />
-                            <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
-                            <select class="dropd" name="gender" required="true">
-                                <option value="M">M</option>
-                                <option value="F">F</option>
-                            </select>
-                            <input type="email" class="form-control" placeholder="Email-Address" name="email" required="true" /> 
-                            <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
-                            <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
-                            
-                            <select class="dropd" name="language">
-                                <option value="nederlands">Nederlands</option>
-                                <option value="engels">English</option>
-                            </select></br></br>
-                            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up" />
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- User Log in-->
         <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -127,36 +90,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Artist Log in-->
-        <div class="modal fade" id="ArtistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="myModalLabel">Log in</h2>
-                    </div>
-                    <div class="modal-body">
-<<<<<<< HEAD
-                        <form class="form-signin" method="post" action="Login">
-                            <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
-=======
-                        <form class="form-signin" method="post" action="ArtistLoginServlet">
-                            <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
->>>>>>> 7aabe4bb43e894ed767a43726f1ad60b2afe6ac9
-                            <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
-
-                            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        </div>        
+                
         <!-- Modal Log in after sign up-->
         <div class="modal fade" id="ThanksModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">

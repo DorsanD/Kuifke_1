@@ -43,7 +43,7 @@
 }
 
 .SignUp-container {
-    height: 300px;
+    height: 250px;
     width: 380px; 
     background-color: #ADAAAA;
     opacity: 0.8;
@@ -71,8 +71,9 @@
 }
 
 .knop3{
-    margin-left:100px;
+    margin-left:50px;
     margin-top: 20px;
+    font-size: 15px;
 }
 
 .knop3 a{
@@ -93,7 +94,7 @@
 .login {
     font-size: 15px;
     padding-top: 25px;
-    padding-left: 80px;
+    padding-left: 70px;
 }
 
 .login a {
@@ -171,4 +172,5 @@ h2{
     
     margin: auto;
 }
+
 
