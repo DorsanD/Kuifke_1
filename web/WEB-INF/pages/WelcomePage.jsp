@@ -63,22 +63,22 @@
         
         <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="./Images/DudeRanch.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="./Images/DudeRanch.jpg" onmouseover="this.src='./Images/DudeRanchP.jpg';" onmouseout="this.src='./Images/DudeRanch.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Blink 182</h4>
               <h5>Dammit</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="./Images/AppealToReason.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+                <img src="./Images/AppealToReason.jpg" onmouseover="this.src='./Images/AppealToReasonP.jpg';" onmouseout="this.src='./Images/AppealToReason.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Rise Against</h4>
               <h5>Hero Of War</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="./Images/PageAvenue.jpg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="./Images/PageAvenue.jpg" onmouseover="this.src='./Images/PageAvenueP.jpg';" onmouseout="this.src='./Images/PageAvenue.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Story Of The Year</h4>
               <h5>In The Shadows</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="./Images/DoesThisLookInfected.png" class="img-responsive" alt="Generic placeholder thumbnail">
+              <img src="./Images/DoesThisLookInfected.png" onmouseover="this.src='./Images/DoesThisLookInfectedP.jpg';" onmouseout="this.src='./Images/DoesThisLookInfected.png';"class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Sum 41</h4>
               <h5>Still Waiting</h5>
             </div>

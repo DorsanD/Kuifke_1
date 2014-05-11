@@ -31,15 +31,11 @@
 }
 
 .navbar-header .navbar-welcome {
-    padding-left: 55px;
-    padding-right: 150px;
+    margin-left: 55px;
+    margin-right: 150px;
     color: #8E0606;
     font-size: 20px;
     font-weight:bold;
-}
-
-.navbar-header > a:hover {
-    //Welcome to ... nog het onderlijnen uitzetten, maar hoe ???
 }
 
 .footer {
@@ -112,7 +108,9 @@ h4, h5{
 
 img{
     margin: auto;
+    cursor: pointer;
 }
+
 
 .col-sm-3{
     margin-top: 30px;
