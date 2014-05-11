@@ -32,7 +32,11 @@
             <div class="tekst"><p>Start listening right now !</p></div>
             <div class="knop"><a class="btn btn-default btn-danger" data-target="#RegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up for free</a></div>
             <div class="login"><p>Already have an account? <a href="#" data-target="#LoginModal" data-toggle="modal">Log in </a> here. </p></div>
+<<<<<<< HEAD
             <div class="knop3"><p>If are you an artist, <a href="ArtistRegistratieServlet">go </a> here. </p></div>
+=======
+            <div class="knop3"><p>Or are you an artist? <a href="ArtistRegistratieServlet">Sign up and log in </a> here. </p></div>
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
 
         </div>
 
@@ -68,7 +72,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
                
+=======
+
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
         <!-- User Log in-->
         <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -90,8 +98,13 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
                
+=======
+        </div>        
+                
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
         <!-- Modal Log in after sign up-->
         <div class="modal fade" id="ThanksModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">

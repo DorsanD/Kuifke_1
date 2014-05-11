@@ -30,6 +30,7 @@
         <title>Kuifke | Welcome artist !</title>
     </head>
     <body>
+<<<<<<< HEAD
         <div class="Welcome-container">
             <div class="titel">Kuifke</div>
             <div class="tekst"><p>Artist administration pages</p></div>
@@ -39,6 +40,18 @@
             <div class="knop2"><a class="btn btn-default btn-danger" data-target="#ArtistRegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up for free</a></div>
             <div class="login"><p>Already have an account? <a href="#" data-target="#ArtistModal" data-toggle="modal">Log in </a> here. </p></div>
         </div>
+=======
+        
+        <div class="Welcome-container">
+            <div class="titel">Kuifke</div>
+            <div class="tekst"><p>Enjoy your music here !</p></div>
+        </div>
+        <div class="SignUp-container">
+            <div class="tekst"><p>Start uploading music now !</p></div>
+            <div class="knop"><a class="btn btn-default btn-danger" data-target="#ArtistRegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up as an artist!</a></div>
+            <div class="login"><p>Already have an account? <a href="#" data-target="#ArtistModal" data-toggle="modal">Log in </a> here. </p></div>
+       </div>
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
         
         <!-- Artist Sign up-->
         <div class="modal fade" id="ArtistRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -49,7 +62,11 @@
                         <h2 class="modal-title" id="myModalLabel">Sign up</h2>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
                         <form class="form-signin" role="form" method="post">
+=======
+                        <form class="form-signin" role="form" method="post" action="ArtistLoginServlet">
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
                             <input type="text" class="form-control" placeholder="Artist Name" name="Artist_Name" required="true" />
                             <input type="text" class="form-control" placeholder="Name" name="lastname" required="true" />
                             <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
@@ -67,18 +84,29 @@
                             </select></br></br>
                             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up" />
                         </form>
+<<<<<<< HEAD
                  </div>
+=======
+                    </div>
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
         
         
          <!-- Artist Log in-->
          <div class="modal fade" id="ArtistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+=======
+        
+        
+        <!-- Artist Log in-->
+        <div class="modal fade" id="ArtistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -86,25 +114,50 @@
                         <h2 class="modal-title" id="myModalLabel">Log in</h2>
                     </div>
                     <div class="modal-body">
+<<<<<<< HEAD
                         <form class="form-signin" method="post" action="ArtistLoginServlet">
                             <input type="text" class="form-control" placeholder="Username" name="username" required="true" />                        
+=======
+                        <form class="form-signin" method="post" action="Login">
+                            <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
+                        <form class="form-signin" method="post" action="ArtistLoginServlet">
+                            <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
                             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
                             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
                         </form>
+<<<<<<< HEAD
                      </div>
                    </div>
                 </div>
          </div>
          
          <div class="footer">
+=======
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+           
+       <div class="footer">
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
             <div class="row">
                 <div class="col-md-4" id="footer-left">Project Programmeren</div>
                 <div class="col-md-4" id="footer-center">Kevin Reyns | Wouter Baeckelmans | Dorsan Demaeght</div>
                 <div class="col-md-4" id="footer-right">&#169; 2014</div>
             </div>
         </div>
+<<<<<<< HEAD
         
          <!-- Bootstrap core JavaScript
+=======
+
+
+        <!-- Bootstrap core JavaScript
+>>>>>>> 772c97439c7178bcafac3c54b2475968673679bc
 ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="./JS/modal.js"></script>
