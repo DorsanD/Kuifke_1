@@ -3,11 +3,10 @@
 }
 
 .jumbotron h1{
-    font-size: 40px;
     color: #8E0606;
-    font-weight: bold;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus{

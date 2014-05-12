@@ -1,0 +1,21 @@
+.Alter{
+    margin: auto; 
+    margin-top: 80px;
+    text-align: center;
+}
+
+.Alter form{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+p{
+    color: #8E0606;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input{
+    font-size: 14px;
+    color: #000;
+}
