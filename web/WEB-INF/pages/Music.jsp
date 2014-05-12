@@ -76,8 +76,8 @@
             </thead>
             <tr class="white">
             <td>1</td>
-            <td>bla</td>
-            <td>bla</td>
+            <td>Dammit</td>
+            <td>Blink 182</td>
             <td>bla</td>
             <td>bla</td>
             </tr>

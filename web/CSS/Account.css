@@ -23,6 +23,15 @@
     padding: 5px;
     margin-left: 50px;
 }
+.Delete {
+    font-weight: bold;
+    color: #8B8B8F;
+}
+
+.Delete:hover {
+    text-decoration: none;
+    color: #8E0606;
+}
 
 .table>tbody>tr>td{
     vertical-align: middle;
