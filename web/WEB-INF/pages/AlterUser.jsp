@@ -72,7 +72,7 @@
         <p>Current name: ${CUSTOMERBEAN.getFirst_Name()}</p>
         <form action="AlterUserServlet" method="post">
             New name: <input type="text" name="First_Name"/>
-            <input type="submit" value="Send"/>
+            <input class="btn btn-primary btn-lg" type="submit" value="Send"/>
         </form>
         </div>
             
