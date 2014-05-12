@@ -103,18 +103,22 @@ img{
     margin: 0px;
 }
 
+html, body{
+    height: 100%;
+}
+
+
 .musicdiv audio{
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     /* Set the fixed height of the footer here */
-
     background-color: #121212;
 }
 
 .musicdiv p{
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     /* Set the fixed height of the footer here */
     height: 50px;
@@ -123,4 +127,8 @@ img{
     text-align: center;
     background-color: #121212;
     padding-top: 5px;
+}
+
+#hits{
+    margin-bottom: 80px;
 }
