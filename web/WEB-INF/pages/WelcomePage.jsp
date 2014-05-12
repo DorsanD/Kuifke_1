@@ -84,6 +84,31 @@
             </div>
           </div>
           
+         <h1 id="top">Top rated hits</h1>   
+        
+         <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/Shotgun.jpg" onmouseover="this.src='./Images/ShotgunP.jpg';" onmouseout="this.src='./Images/Shotgun.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Yellow Claw</h4>
+              <h5>Shotgun</h5>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="./Images/LetItGo.jpg" onmouseover="this.src='./Images/LetItGoP.jpg';" onmouseout="this.src='./Images/LetItGo.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Demi Lovato</h4>
+              <h5>Let It Go</h5>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/DarkHorse.jpg" onmouseover="this.src='./Images/DarkHorseP.jpg';" onmouseout="this.src='./Images/DarkHorse.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Katy Perry</h4>
+              <h5>Dark Horse</h5>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="./Images/CleanBandit.jpg" onmouseover="this.src='./Images/CleanBanditP.jpg';" onmouseout="this.src='./Images/CleanBandit.jpg';"class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Clean Bandit</h4>
+              <h5>Rather Be</h5>
+            </div>
+          </div>
+          
         <div class="musicdiv">
             <p>Dammit - Blink 182</p>
                 <audio controls>
