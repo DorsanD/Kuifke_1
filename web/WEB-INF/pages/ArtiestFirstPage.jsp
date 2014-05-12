@@ -49,7 +49,7 @@
                         <h2 class="modal-title" id="myModalLabel">Sign up</h2>
                     </div>
                     <div class="modal-body">
-                        <form class="form-signin" role="form" method="post" action="ArtistLoginServlet">
+                        <form class="form-signin" role="form" method="post" action="ArtistRegistratieServlet">
                             <input type="text" class="form-control" placeholder="Artist Name" name="Artist_Name" required="true" />
                             <input type="text" class="form-control" placeholder="Name" name="lastname" required="true" />
                             <input type="text" class="form-control" placeholder="First Name" name="firstname" required="true" />
@@ -85,7 +85,7 @@
                         <h2 class="modal-title" id="myModalLabel">Log in</h2>
                     </div>
                     <div class="modal-body">
-                        <form class="form-signin" method="post" action="Login">
+                        <form class="form-signin" method="post" action="ArtistLoginServlet">
                             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
                         <form class="form-signin" method="post" action="ArtistLoginServlet">
                             <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
