@@ -110,10 +110,10 @@
           </div>
           
         <div class="musicdiv">
-            <p>Dammit - Blink 182</p>
+            <p>Shotgun - Yellow Claw</p>
                 <audio controls>
-                        <source src="./Music/Dammit.mp3" type="audio/mpeg" />
-                        <a href="./Music/Dammit.mp3">Dammit</a>
+                        <source src="./Music/Shotgun.m4a" type="audio/mpeg" />
+                        <a href="./Music/Shotgun.m4a">Shotgun</a>
                 </audio>
         </div>
         
