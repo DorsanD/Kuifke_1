@@ -1,17 +1,16 @@
 .Alter{
     margin: auto; 
-    margin-top: 80px;
+    margin-top: 50px;
     text-align: center;
 }
 
 .Alter form{
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 15px;
 }
 
 p{
-    color: #8E0606;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -19,4 +18,9 @@ input{
     font-size: 14px;
     color: #000;
     margin: auto;
+}
+
+.btn:hover {
+    background-color: #8E0606;
+    color: #FFF;
 }

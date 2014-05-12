@@ -68,8 +68,8 @@
         
         <h1>Log out</h1>
         <form class="Alter" action="LogoutServlet" method="post">
-            <p>Weet u zeker dat u wilt uitloggen?</p>
-            <input type="submit" value="Send"/>
+            <p>Are you sure you want to log out?</p>
+            <input type="submit" class="btn btn-default" value="Confirm"/>
         </form>
         
     <!-- Bootstrap core JavaScript
