@@ -86,7 +86,7 @@
           
          <h1 id="top">Top rated hits</h1>   
         
-         <div class="row placeholders">
+         <div class="row placeholders" id="hits">
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="./Images/Shotgun.jpg" onmouseover="this.src='./Images/ShotgunP.jpg';" onmouseout="this.src='./Images/Shotgun.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Yellow Claw</h4>
