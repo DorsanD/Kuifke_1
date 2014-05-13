@@ -14,7 +14,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="./Images/Favicon.ico">
 
-    <title>Upload Your Track!</title>
+    <title>Artist | Track Upload</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
@@ -61,8 +61,8 @@
         <h1>Upload a song!</h1>
         <div class="Alter">
         <form class="form-signin" action="FileUploadServlet" method="post" enctype="multipart/form-data" multiple>
-            Select your music file: <input type="file" name="file" value="Choose a file"/>
-            Select your album image: <input type="file" name="image" value="Choose a file"/>
+            Select your music file: <input type="file" name="file" value="Choose a file" required="true"/>
+            Select your album image: <input type="file" name="image" value="Choose a file" required="true"/>
             <input  class="btn btn-primary btn-lg" type="submit"value="Send"/>
         </form>
         </div>

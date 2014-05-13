@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="./Images/Favicon.ico">
-        <title>Delete Artist Account</title>
+        <title>Artist | Delete Account</title>
         
          <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@
                     <div class="form-group">
                       <label class="col-md-3 control-label" for="name">Username</label>
                       <div class="col-md-9">
-                        <input id="name" name="name" type="text" placeholder="Your username" class="form-control">
+                        <input id="name" name="name" type="text" placeholder="Your username" class="form-control" required="true">
                       </div>
                     </div>
 
@@ -70,7 +70,7 @@
                     <div class="form-group">
                       <label class="col-md-3 control-label" for="email">Your E-mail</label>
                       <div class="col-md-9">
-                        <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                        <input id="email" name="email" type="text" placeholder="Your email" class="form-control" required="true">
                       </div>
                     </div>
 
@@ -78,7 +78,7 @@
                     <div class="form-group">
                       <label class="col-md-3 control-label" for="message">Reason</label>
                       <div class="col-md-9">
-                        <textarea class="form-control" id="message" name="message" placeholder="Please enter your reason here..." rows="5"></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="Please enter your reason here..." rows="5" required="true"></textarea>
                       </div>
                     </div>
 

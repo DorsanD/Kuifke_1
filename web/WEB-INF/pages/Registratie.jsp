@@ -11,7 +11,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="shortcut icon" href="./Images/Favicon.ico">
+        <title>Kuifke | Register to our website</title>
         
             <!-- Bootstrap core CSS -->
     <link href="CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">

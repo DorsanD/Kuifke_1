@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="./Images/Favicon.ico">
 
-    <title>Artist Log Out</title>
+    <title>Artist | Log Out</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">

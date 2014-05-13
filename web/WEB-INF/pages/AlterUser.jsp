@@ -16,7 +16,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="./Images/Favicon.ico">
 
-    <title>Alter User Name</title>
+    <title>User | Alter account details</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +67,7 @@
       </div>
     </div>
         
-        <h1>Alter your First Name!</h1>
+        <h1>Change your first name!</h1>
         <div class="Alter">
         <p>Current name: ${CUSTOMERBEAN.getFirst_Name()}</p>
         <form action="AlterUserServlet" method="post">
