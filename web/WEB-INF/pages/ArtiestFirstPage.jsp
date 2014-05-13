@@ -27,7 +27,7 @@
         <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
         <link href="CSS/Registratie.css" rel="stylesheet">
         <link href="./CSS/FirstPage.css" rel="stylesheet">
-        <title>Kuifke | Welcome artist !</title>
+        <title>Kuifke | Welcome artist </title>
     </head>
     <body>
         <div class="Welcome-container">

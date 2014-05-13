@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="./Images/Favicon.ico">
 
-    <title>Track Details</title>
+    <title>Artist | Track Details</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
@@ -62,9 +62,9 @@
         <h1>Fill in your tracks details!</h1>
         <div class="Alter">
         <form class="form-signin" action="FileDetailsPage" method="post">
-            Fill in your tracks name: <input type="text" name="Track_Name"/></br>
-            Fill in your tracks genre: <input type="text" name="Genre"/></br>
-            Fill in your tracks length: <input type="text" name="Length"/></br>
+            Fill in your tracks name: <input type="text" name="Track_Name" required="true"/></br>
+            Fill in your tracks genre: <input type="text" name="Genre" required="true"/></br>
+            Fill in your tracks length: <input type="text" name="Length" required="true"/></br>
             <input class="btn btn-primary btn-lg" type="submit" value="Send"/>
         </form>
         </div>

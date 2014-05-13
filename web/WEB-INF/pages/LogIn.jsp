@@ -18,7 +18,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Kuifke | Sign In</title>
 
         <!-- Bootstrap core CSS -->
         <link href="CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">

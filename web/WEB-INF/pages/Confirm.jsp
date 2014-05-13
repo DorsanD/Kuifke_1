@@ -4,18 +4,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="./Images/Favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/survey.css">
-        <title>Sign Up Confirmation</title>
+        <title>User | Registration confirmation</title>
     </head>
     <body>
-        <h1>Bevestiging</h1>
-        Beste ${websiteBean.name}, <br/>
-        Wij hebben hetvolgende genoteerd: <br />
+        <h1>Confirmation</h1>
+        Dear ${websiteBean.name}, <br/>
+        We noted the following details of your registration : <br />
 
         
-        Naam: ${websiteBean.name}
+        Last Name: ${websiteBean.name}
         <br />
-        Voornaam: ${websiteBean.firstname}
+        First Name: ${websiteBean.firstname}
         </br>
         Gender:         ${websiteBean.gender}
         <br/>
@@ -28,6 +29,6 @@
         <br/>
 
         <p>
-            Wij danken u voor de registratie! </p>
+            We thank you for your registration! </p>
     </body>
 </html>

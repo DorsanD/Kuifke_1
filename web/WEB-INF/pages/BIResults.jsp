@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="./Images/Favicon.ico">
-        <title>Kuifke - Business Intelligence</title>
+        <title>Kuifke | BI Results</title>
         
         <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
@@ -65,10 +65,10 @@
     </div>
         
         <div class="MijnProfiel">
-                <h1>Hieronder kan u uw opgevraagde resultaten terugvinden:</h1>
+                <h1>Here you can find your requested results:</h1>
                 <div id="knoppen">
-                    <a class="BiKnop1" href="${EXCEL}"><button type="submit" class="btn btn-default">Download als xls</button></a>
-                    <a class="BiKnop1" href="${PDF}"><button type="submit" class="btn btn-default" >Download als pdf</button></a>
+                    <a class="BiKnop1" href="${EXCEL}"><button type="submit" class="btn btn-default">Download as xls</button></a>
+                    <a class="BiKnop1" href="${PDF}"><button type="submit" class="btn btn-default" >Download as pdf</button></a>
                 </div>
             <div class="table-responsive">
             <table class="table table-striped" id="mytab1">
