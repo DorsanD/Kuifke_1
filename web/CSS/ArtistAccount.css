@@ -1,57 +1,25 @@
-.jumbotron{
-    background-color: #FFF;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
+/*Extra styling voor de ArtistAccountPage*/
 
-.jumbotron h1{
-    color: #8E0606;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
-    background-color: #8E0606;
-    border-color: #8E0606;
-}
-
-.btn{
-    background-color: #FFF;
-    border-color: #FFF;
-    color: #8B8B8F;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 5px;
-    margin-left: 50px;
-}
-
-.table>tbody>tr>td{
-    vertical-align: middle;
-    height: 45px;
-}
-
-table{
-    max-width: 600px;
-}
-
+/*Positionering van de titel 'Welcome ... to Kuifke'*/
 .navbar-welcome{
     padding-left: 100px;
 }
 
+/*Positionering van de 'Upload a song' en 'Delete your account' buttons*/
 .upload{
     margin: auto;
     margin-bottom: 30px;
     text-align: center;
 }
 
+/*Styling van de subtitels*/
 h2{
     color: #8E0606;
     font-size: 16px;
     text-align: center;
 }
 
+/*Positionering van de knoppen*/
 .btn{
     margin-left: 0px;
 }

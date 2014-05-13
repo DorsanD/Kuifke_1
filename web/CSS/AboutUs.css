@@ -1,11 +1,16 @@
+/*Styling voor de About Us pagina*/
+
+/*Marge om te beginnen*/
 .row{
     margin: 100px;
 }
 
+/*Kleur voor de titels*/
 h2{
     color: #8E0606;
 }
 
+/*De hoogte en breedte van de images specifiëren, alsook de positionering en toevoegen van een ronde border*/
 img{
     width: 200px;
     height: 200px;
@@ -13,10 +18,12 @@ img{
     margin: auto;
 }
 
+/*Tekst in het midden aligneren*/
 p, h2{
     text-align: center;
 }
 
+/*Lettergrootte, breedte van de tekst en positionering*/
 p{
     font-size: 14px;
     width: 300px;

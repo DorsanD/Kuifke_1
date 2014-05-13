@@ -92,10 +92,13 @@
             <td>E-mail:</td>
             <td>${CUSTOMERBEAN.getEmail_Address()}</td></td>
             </tr>
+            <tr>
+            <td><a href="DeleteUserServlet" class="Delete" type="submit">Delete this account</a></td>
+            <td></td>
+            </tr>
             </tbody>
             </table>
             </form>
-            <a href="DeleteUserServlet" class="btn btn-primary btn-lg" type="submit">Delete this account</a>
             </div>
         </div>
     </div>

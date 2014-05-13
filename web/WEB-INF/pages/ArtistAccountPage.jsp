@@ -22,6 +22,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./CSS/WelcomePage.css" rel="stylesheet">
+    <link href="./CSS/Account.css" rel="stylesheet">
     <link href="./CSS/ArtistAccount.css" rel="stylesheet">
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->

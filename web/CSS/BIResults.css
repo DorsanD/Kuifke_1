@@ -1,18 +1,25 @@
+/*Styling voor de BIResults page*/
+
+/*Instellen van de body, zodat de tabel niet tot tegen de rand van de pagina gaat*/
 body {
     padding-top: 50px;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
+/*Grootte en kleur van de titel*/
 h1 {
     font-size: 20px;
     color: #8E0606;
 }
 
+/*Positionering van de download knoppen*/
 #knoppen {
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
+/*Styling van de download knoppen*/
 .btn {
     background-color: #e7e7e7;
     border-color: #8E0606;
@@ -20,7 +27,9 @@ h1 {
     width: 150px;
 }
 
+/*Styling van de download knoppen tijdens het hoveren*/
 .btn:hover {
     background-color: #8E0606;
+    border-color: #8E0606;
     color: white;
 }

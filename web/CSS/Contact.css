@@ -1,40 +1,52 @@
+/*Styling voor de Contact, DeleteArtist en DeleteUser pages*/
+
+/*Instellen achtergrondkleur van de body*/
 body {
     background-color: #FFF;
 }
 
+/*Positioneren van het contact-blok (het grijze)*/
 #contact{
     margin: auto;
     margin-top: 100px;
     width: 1200px;
 }
 
+/*KLeur van het contact-blok*/
 .well{
         background-color: #E3E3E3;
 }
 
+/*Styling van de titeltekst*/
 .text-center{
     color:#8E0606;
+    font-size: 30px;
 }
 
+/*Styling van de Submit knop*/
 .btn{
     background-color: #FFF;
     border-color: #FFF;
     color: #8B8B8F;
 }
 
+/*Styling van de Submit knop tijdens het hoveren*/
 .btn:hover{
     background-color: #8E0606;
     border-color: #8E0606;
 }
 
+/*Kleur van de labels*/
 .col-md-3{
     color:#8E0606;
 }
 
+/*Kleur van de rand van de invulvelden tijdens het klikken*/
 .form-group input:active, .form-group input:focus, .form-group textarea:active, .form-group textarea:focus{
     border-color: #8E0606;
 }
 
+/*Positionering en styling van de tekst*/
 p{
     text-align: center;
     font-size: 12px;
@@ -43,7 +55,4 @@ p{
     margin-top: 10px;
 }
 
-legend{
-    font-size: 30px;
-}
 

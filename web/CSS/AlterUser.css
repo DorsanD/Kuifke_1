@@ -1,32 +1,40 @@
+/*Styling die werd gebruikt voor de volgende pagina's: AlterArtist, AlterUser, Logout, LogoutArtist, TrackUpload*/
+
+/*Positioneren van het aanpasgedeelte (current name, ...) + tekst in het midden aligneren*/
 .Alter{
     margin: auto; 
     margin-top: 50px;
     text-align: center;
 }
 
+/*Positioneren van het tekstveld om aan te passen + tekstgrootte*/
 .Alter form{
     margin-top: 10px;
     font-size: 15px;
 }
 
+/*Grootte van de tekst (Current name) + tekst aligneren in het midden*/
 p{
     font-size: 16px;
     font-weight: bold;
     text-align: center;
 }
 
+/*Grootte en kleur van de tekst in het tekstveld*/
 input{
     font-size: 14px;
     color: #000;
     margin: auto;
 }
 
+/*Achtergrondkleur + tekstkleur van de button tijdens het hoveren + klikken*/
 .btn:hover, .btn:active {
     background-color: #8E0606;
     border-color: #8E0606;
     color: #FFF;
 }
 
+/*Achtergrondkleur + tekstkleur + grootte van de button*/
 .btn-primary{
     background-color: #FFF;
     border-color: #FFF;
