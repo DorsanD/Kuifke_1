@@ -44,15 +44,7 @@ public class BIServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        aanvulling = "<a class=\"list-group-item\" href=\"GenerateArtKeyServlet\">Genereer Key</a>"
-                + "<a class=\"list-group-item\" href=\"DeleteUserServlet\">Verwijder gebruiker</a>"
-                + "<a class=\"list-group-item active\" href=\"BIServlet\">BI Systeem</a>";
-        aanvullinghorizon = "<li><a class=\"list-group-item\" href=\"GenerateArtKeyServlet\">Genereer Key</a></li>"
-                + "<li><a class=\"list-group-item\" href=\"DeleteUserServlet\">Verwijder gebruiker</a></li>"
-                + "<li><a class=\"list-group-item active\" href=\"BIServlet\">BI Systeem</a></li>";
-        request.getSession().setAttribute("AANVULLING", aanvulling);
-        request.getSession().setAttribute("AANVULLINGHORIZON", aanvullinghorizon);
-
+        
         WebsiteDao dao = new WebsiteDao();
         List<BIBean> BiBeans = null;
         try {
@@ -156,9 +148,9 @@ public class BIServlet extends HttpServlet {
         ftp =new MyVibeFTP(fPDF, outputPDF); */
         
         //urls
-        output = "C:\\Kuifke\\temp\\excel\\"+"//report//"+fexcel.getName();
+        output = "C:\\Kuifke\\temp\\excel\\"+fexcel.getName();
         System.out.println("link naar excel: "+output);
-        outputPDF = "C:\\Kuifke\\temp\\excel\\"+"//report//"+fPDF.getName();
+        outputPDF = "C:\\Kuifke\\temp\\excel\\"+fPDF.getName();
         System.out.println("link naar PDF: "+outputPDF);
         
 

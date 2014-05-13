@@ -17,11 +17,21 @@ public class TrackBean implements Serializable {
     private String Track_Name;
     private String Genre;
     private int Length;
-
+    private String Artist_Name;
     private int Artiest_ArtiestId;
     private String File_Location;
     private String Image_Location;
 
+    public String getArtist_Name() {
+        return Artist_Name;
+    }
+
+    public void setArtist_Name(String Artist_Name) {
+        this.Artist_Name = Artist_Name;
+    }
+
+    
+    
     public String getFile_Location() {
         return File_Location;
     }

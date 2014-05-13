@@ -32,7 +32,8 @@ public class WebsiteDao {
     private static final String DELETE_ARTIST = "delete from artiest where ArtistId=?;";
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
     private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'mydb' and COLUMN_NAME not like ('%id')";
-
+    private static final String TRACKS_QUERY = "SELECT t.Track_Name, a.Artist_Name, t.Length, t.Genre, t.File_Location from mydb.track t, mydb.artiest a where t.Artiest_ArtistId = a.ArtistId;";
+    
     private String url;
     private String user;
     private String password;
@@ -404,6 +405,30 @@ public class WebsiteDao {
         }
         return dataBean;
         
+    }
+     
+         public List<TrackBean> getAllTracks() throws SQLException, ClassNotFoundException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Get All Tracks Itemss Geinitieerd");
+
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(TRACKS_QUERY);
+                PreparedStatement stmt1 = con.prepareStatement(INIT)) {
+            List<TrackBean> tracks = new ArrayList<>();
+            stmt1.execute();
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                TrackBean track = new TrackBean();
+                track.setTrack_Name(rs.getString(1));
+                track.setArtist_Name(rs.getString(2));
+                track.setLength(rs.getInt(3));
+                track.setGenre(rs.getString(4));
+                track.setFile_Location(rs.getString(5));
+                tracks.add(track);
+            }
+            return tracks;
+        }
     }
 
 }

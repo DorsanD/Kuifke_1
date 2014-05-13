@@ -37,7 +37,9 @@ public class FileUploadServlet extends HttpServlet {
     private String subPath;
     private String base = "c:\\Kuifke\\";
     private String loc;
+    private String loc1;
     private String artLoc;
+    private String artLoc1;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -102,8 +104,8 @@ public class FileUploadServlet extends HttpServlet {
                         //als de file een mp3 is
                         System.out.println("muziekbestand upgeload");
                         subPath = base + "music\\";
-                        loc = subPath + fileName;
-                        
+                        loc = subPath;
+                        loc1 = fileName;
                     if (fileName.lastIndexOf("\\") >= 0) {
                         System.out.println("optie 1");
                         file = new File(loc+fileName.substring(fileName.lastIndexOf("\\")));
@@ -116,7 +118,8 @@ public class FileUploadServlet extends HttpServlet {
                         //als de file een andere formaat heeft
                         System.out.println("andere type file upgeload");
                         subPath = base + "art\\";
-                        artLoc = subPath + fileName;
+                        artLoc = subPath;
+                        artLoc1 = subPath + fileName;
                         
                     if (fileName.lastIndexOf("\\") >= 0) {
                         System.out.println("optie 1");
@@ -134,7 +137,7 @@ public class FileUploadServlet extends HttpServlet {
                 }
             }
         } catch (Exception ex) {
-            System.out.println("FTP error " + ex);
+            System.out.println(" " + ex);
         }
         // eind van de upload \\
 
@@ -142,10 +145,10 @@ public class FileUploadServlet extends HttpServlet {
         TrackBean track = new TrackBean();
         
 
-        track.setFile_Location(loc);
-        System.out.println("De artlocatie: " + artLoc);
-        System.out.println("Muzieklocatie is: " + loc);
-        track.setImage_Location(artLoc);
+        track.setFile_Location(loc1);
+        System.out.println("De artlocatie: " + artLoc1);
+        System.out.println("Muzieklocatie is: " + loc1);
+        track.setImage_Location(artLoc1);
         request.getSession().setAttribute("NEWTRACK", track);
         
 
