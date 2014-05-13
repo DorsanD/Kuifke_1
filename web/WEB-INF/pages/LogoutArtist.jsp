@@ -1,13 +1,13 @@
 <%-- 
-    Document   : ArtistAccountPage
-    Created on : 10-May-2014, 13:55:07
+    Document   : Logout
+    Created on : 24-Apr-2014, 10:08:34
     Author     : Dorsan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,15 +15,15 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="./Images/Favicon.ico">
 
-    <title>Artist Account Page</title>
+    <title>Artist Log Out</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="./CSS/WelcomePage.css" rel="stylesheet">
-    <link href="./CSS/ArtistAccount.css" rel="stylesheet">
-    
+    <link href="./CSS/AlterUser.css" rel="stylesheet">
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -32,11 +32,13 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+       
+    
   </head>
-    <body>
-        
-        <!-- Fixed navbar -->
+
+  <body>
+
+   <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -57,51 +59,13 @@
       </div>
     </div>
         
-        <div class="jumbotron">
-      <div class="container">
-        <h1>My account</h1>
-        <div class="table-responsive">
-            <form action="AccountServlet" method="post">
-            <table class="table">
-            <tbody>
-            <tr>
-            <td>Username:</td>
-            <td>${ARTISTBEAN.getUsername()}</td>
-            </tr>
-            <tr>
-            <td>Name:</td>
-            <td>${ARTISTBEAN.getLast_Name()} </td>
-            </tr>
-            <tr>
-            <td>Firstname:</td>
-            <td>${ARTISTBEAN.getFirst_Name()} <a href="AlterArtistServlet" class="btn btn-primary btn-lg" type="submit">Change Name</a></td>
-            </tr>
-            <tr>
-            <td>Gender:</td>
-            <td>${ARTISTBEAN.getGender()}</td>
-            </tr>
-            <tr>
-            <td>E-mail:</td>
-            <td>${ARTISTBEAN.getEmail_Address()}</td></td>
-            </tr>
-            </tbody>
-            </table>
-            </form>
-            </div>
-        </div>
-    </div>
-            
-            <div class="upload">
-            <h2>Click here to upload a song:</h2>
-            <a href="FileUploadServlet" class="btn btn-primary btn-lg" type="submit">Upload a song!</a>
-            </div>
-            
-            <div class="upload">
-            <h2>Click here to delete your account:</h2>
-            <a href="ArtistDeleteServlet" class="btn btn-primary btn-lg" type="submit">Delete your account!</a>
-            </div>
-            
-     <!-- Bootstrap core JavaScript
+        <h1>Log out</h1>
+        <form class="Alter" action="ArtistLogoutServlet" method="post">
+            <p>Are you sure you want to log out?</p>
+            <input type="submit" class="btn btn-default" value="Confirm"/>
+        </form>
+        
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -109,4 +73,3 @@
     <script src="./JS/docs.min.js"></script>
   </body>
 </html>
-

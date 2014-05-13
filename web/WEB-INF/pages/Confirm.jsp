@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/survey.css">
-        <title>Bevestiging</title>
+        <title>Sign Up Confirmation</title>
     </head>
     <body>
         <h1>Bevestiging</h1>

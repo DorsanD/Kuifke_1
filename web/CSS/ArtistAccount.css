@@ -1,6 +1,7 @@
 .jumbotron{
     background-color: #FFF;
     margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .jumbotron h1{
@@ -41,6 +42,7 @@ table{
 
 .upload{
     margin: auto;
+    margin-bottom: 30px;
     text-align: center;
 }
 
