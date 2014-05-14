@@ -56,6 +56,8 @@ public class FileDetailsPage extends HttpServlet {
             System.out.println("File gegevens niet in database gestoken");
         }
         System.out.println("File gegevens in database gestoken");
+        request.getRequestDispatcher("/WEB-INF/pages/ArtistAccountPage.jsp").forward(request, response);
+
     }
 
 
