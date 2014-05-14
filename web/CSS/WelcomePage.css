@@ -1,35 +1,44 @@
+/*Styling voor de WelcomePage, deze CSS file werd voor alle pagina's gebruikt waar de navigatiebalk opstaat om deze telkens van dezelfde styling te voorzien*/
 
+/*Achtergrondkleur van de navbar*/
 .navbar-default  {
     background-color: #e7e7e7;
 }
 
+/*Styling van de links tijdens het hoveren*/
 .navbar-default .navbar-nav > li> a:hover {
     background-color: #8E0606;
     color: #FFFFFF;
 }
 
+/*Tijdens het hoveren over de tekst 'Welcome ... to Kuifke' werd deze onderlijnd, op deze manier hebben we dit uitgezet*/
 .navbar-welcome:hover{
     text-decoration: none;
 }
 
+/*Styling van de links aan de rechtse kant tijdens het hoveren*/
 .navbar-default .navbar-right > li > a:hover {
     background-color: #8E0606;
     color: #FFFFFF;
 }
 
+/*Border naast de 'Business Intelligence' link, omdat dit eigenlijk iets 'apart' is op onze website*/
 .navbar-default .navbar-nav .BI {
     border-left: 2px dotted #8E0606;
 }
 
+/*Breedte van de navbar over heel de pagina*/
 .container {
     width:100%;
     margin:0px
 }
 
+/*Padding van de 'Welcome to Kuifke' tekst, zodat deze niet tot tegen de rand staat*/
 .navbar-header {
     padding-top: 12px;
 }
 
+/*Styling en positie van de Welkomsttekst 'Welcome ... to Kuifke'*/
 .navbar-header .navbar-welcome {
     margin-left: 55px;
     margin-right: 150px;
@@ -38,39 +47,7 @@
     font-weight:bold;
 }
 
-.footer {
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- background-color: #e7e7e7;
-}
-
-.column {
-   padding-left:100px;
-   padding-bottom: 20px;
-
-}
-
-.column > h4 {
-    color: #8E0606;
-}
-
-.column .nav {
-    border-top: 2px solid white;
-}
-
-.column .nav > li {
-position: relative;
-display: block;
-padding: 10px 15px;
-}
-
-.column .nav > li > a {
-padding: 0px 0px;
-color: #333;
-}
-
+/*Styling en positie van de titels 'Discover' en 'Top rated hits'*/
 h1{
     margin-top: 70px;
     color: #8E0606;
@@ -79,56 +56,30 @@ h1{
     text-align: center;
 }
 
+/*'Top rated hits' een andere marge geven*/
 #top {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
-
+/*Informatie over de liedjes (titels + artist) centreren*/
 h4, h5{
     text-align: center;
 }
 
+/*Positie van de album images + tijdens het hoveren wordt de muis een handje om te klikken*/
 img{
     margin: auto;
     cursor: pointer;
 }
 
-
+/*Marge onder de titels 'Disover' en 'Top rated hits'*/
 .col-sm-3{
-    margin-top: 15px;
+    margin-top: 25px;
     padding:0px;
 }
 
+/*Zorgt ervoor dat de pagina mooi gevuld is in de breedte, hierdoor is er geen scrollbalk*/
 .row{
     margin: 0px;
 }
 
-html, body{
-    height: 100%;
-}
-
-
-.musicdiv audio{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    /* Set the fixed height of the footer here */
-    background-color: #121212;
-}
-
-.musicdiv p{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    /* Set the fixed height of the footer here */
-    height: 50px;
-    color: #FFF;
-    font-weight: bold;
-    text-align: center;
-    background-color: #121212;
-    padding-top: 5px;
-}
-
-#hits{
-    margin-bottom: 80px;
-}

@@ -1,4 +1,7 @@
-input{
+/*Extra styling voor de TrackUpload page*/
+
+/*Styling en positie van de input fields: 'Select Music File' en 'Select Album Image'*/
+input {
     font-size: 14px;
     color: #000;
     margin: auto;

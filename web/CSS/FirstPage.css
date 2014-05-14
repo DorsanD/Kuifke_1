@@ -1,4 +1,7 @@
- body {
+/*Styling voor de FirstPage*/
+
+/*Instellen achtergrond image*/
+body {
     background:url('../Images/Background-Welcome.jpg')center center fixed;
     background-repeat:no-repeat;
     background-size:cover;
@@ -6,12 +9,14 @@
     height: 100%;
 } 
 
+/*Definiëren van andere fonts, hier gebruikt voor de Glyphicon icoontjes van Bootstrap*/
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../Fonts/glyphicons-halflings-regular.eot');
   src: url('../Fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../Fonts/glyphicons-halflings-regular.woff') format('woff'), url('../Fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../Fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
+/*Positionering en styling van de Welcome-container*/
 .Welcome-container {
     height: 100px;
     width: 380px; 
@@ -22,10 +27,12 @@
     z-index:0;
 }
 
+/*Positie van de header in de modal boxes*/
 .modal-header{
     padding: 10px;
 }
 
+/*Styling en positie van de titel 'Kuifke'*/
 .titel {
     color: white;
     font-weight:bold;
@@ -35,6 +42,7 @@
     border-bottom:2px solid white;   
 }
 
+/*Styling en positie van de tekst 'Enjoy your music here'*/
 .Welcome-container .tekst {
     padding-top: 10px;
     font-size: 18px;
@@ -42,6 +50,7 @@
     padding-left: 95px; 
 }
 
+/*Positionering en styling van de SignUP-container*/
 .SignUp-container {
     height: 250px;
     width: 380px; 
@@ -52,6 +61,7 @@
     
 }
 
+/*Styling en positie van de tekst 'Start listening right now!'*/
 .SignUp-container .tekst {
     color: black;
     font-weight:bold;
@@ -60,26 +70,26 @@
     padding-left: 75px;
 }
 
+/*Positionering van de Sign-Up knop*/
 .knop{
     margin-left:100px;
     margin-top: 20px;
 }
 
-.knop2{
-    margin-left:85px;
-    margin-top: 20px;
-}
-
+/*Positionering van de artist 'Sign up and Login'*/
 .knop3{
     margin-left:50px;
     margin-top: 20px;
     font-size: 15px;
 }
 
+/*Styling van de artist 'Sign up and Login'*/
 .knop3 a{
     color: #000;
     font-weight: bold;
 }
+
+/*Styling van de Sign-Up knop + positie van de tekst in de knop*/
 .btn-danger {
     color: #FFF;
     background-color: #8E0606;
@@ -91,17 +101,20 @@
     font-size: 16px;  
 }
 
+/*Positie en grootte van de 'Already have an account' tekst*/
 .login {
     font-size: 15px;
     padding-top: 25px;
     padding-left: 70px;
 }
 
+/*Styling van de link 'Log in'*/
 .login a {
     color:black;
     font-weight:bold;
 }
 
+/*Styling en positie van de footer*/
 .footer {
     color: #d9534f;
     font-weight: bold;
@@ -113,6 +126,7 @@
     width: 100%;
 }
 
+/*Positionering van de footer*/
 .row{
     margin-right: 0px;
     line-height: 45px;
@@ -120,18 +134,22 @@
     margin-left: 0px;
 }
 
+/*Tekst links in de footer*/
 #footer-left{
     text-align: left;
 }
 
+/*Tekst rechts in de footer*/
 #footer-right{
     text-align: right;   
 }
 
+/*Tekstkleur van de knoppen in de modal boxes tijdens het hoveren*/
 .btn:hover, .btn:focus, .btn:active{
     color:#FFF;
 }
 
+/*Styling van de titels in de modal boxes*/
 h2{
     text-align: center;
     color:#8E0606;
@@ -139,38 +157,30 @@ h2{
     font-size: 25px;
 }
 
+/*Breedte van de modal boxes*/
 .modal-dialog{
     width: 400px;
 }
 
+/*Inspringen van de invulvelden bepalen*/
 .modal-body{
     padding: 15px;
 }
 
-.form-signin-heading{
-    display: none;
-}
-
+/*Border-color van de invulvelden in de modal boxes aanpassen*/
 .form-control:active, .form-control:focus, .dropd:focus, .dropd:active, .dropd:hover{
     border-color:#8E0606;
 }
 
+/*Verwijderen van padding*/
 .form-signin{
     padding: 0px;
 }
 
+/*Positionering van de footer van de modal boxes*/
 .modal-footer{
     padding: 8px;
     margin-top: 0px;
-}
-
-.login p{
-    margin: auto;
-}
-
-.knop p{
-    
-    margin: auto;
 }
 
 

@@ -107,16 +107,7 @@
               <h4>Clean Bandit</h4>
               <h5>Rather Be</h5>
             </div>
-          </div>
-          
-        <div class="musicdiv">
-            <p>Shotgun - Yellow Claw</p>
-                <audio controls>
-                        <source src="./Music/Shotgun.m4a" type="audio/mpeg" />
-                        <a href="./Music/Shotgun.m4a">Shotgun</a>
-                </audio>
-        </div>
-        
+          </div>      
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
