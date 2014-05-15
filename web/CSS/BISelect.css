@@ -19,7 +19,9 @@ h1 {
 }
 
 /*Styling van de Submit knop tijdens het hoveren*/
-.form-group .btn:hover {
+.form-group .btn:hover, btn:active, btn:focus, btn:target, btn:enabled {
     background-color: #8E0606;
+    border-color: #8E0606;
     color: #FFF;
 }
+
