@@ -463,7 +463,7 @@ public class WebsiteDao {
     public boolean RetractCustomerCredits(int CustomerId) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
-        System.out.println("Add Credits Geinitieerd");
+        System.out.println("Retract Credits Geinitieerd");
         int credieten = 0;
         
         
@@ -476,6 +476,7 @@ public class WebsiteDao {
             ResultSet rs = stmt1.executeQuery();
 
             credieten = rs.getInt(1);
+            if (rs.next()){
             if (credieten > 50){            
 
             stmt.setInt(1, credieten - 50);
@@ -487,7 +488,7 @@ public class WebsiteDao {
             } else {
             return false;
             }
-        }
+        }}
 
     }
 }

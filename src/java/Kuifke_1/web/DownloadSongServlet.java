@@ -34,15 +34,18 @@ public class DownloadSongServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         boolean check;
-        
+
         WebsiteDao dao = new WebsiteDao();
         CustomerBean Cbean = (CustomerBean) request.getSession().getAttribute("CUSTOMERBEAN");
         try {
             check = dao.RetractCustomerCredits(Cbean.getCustomerId());
             if (check) {
-             request.getRequestDispatcher("/WEB-INF/pages/DownloadPage.jsp").forward(request, response);
+                System.out.println("If check true");
+                request.getRequestDispatcher("/WEB-INF/pages/DownloadPage.jsp").forward(request, response);
             } else {
-             request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
+                System.out.println("If check false");
+
+                request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(DownloadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
