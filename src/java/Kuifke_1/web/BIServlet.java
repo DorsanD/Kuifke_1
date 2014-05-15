@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.web;
 
 import Kuifke_1.dao.Connectie;
@@ -38,13 +37,11 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 public class BIServlet extends HttpServlet {
 
     String aanvulling, aanvullinghorizon;
-    
-    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         WebsiteDao dao = new WebsiteDao();
         List<BIBean> BiBeans = null;
         try {
@@ -58,7 +55,6 @@ public class BIServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/pages/BISelect.jsp").forward(request, response);
 
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -112,7 +108,7 @@ public class BIServlet extends HttpServlet {
 
         //stel een tijdscode op
         String tijd = "" + year + (month + 1) + day + "-" + hour + "." + minute;
-        
+
         //initieer de bestandslocaties
         String template = "C:\\Kuifke\\temp\\excel\\template1.xls";
         String output = "C:\\Kuifke\\temp\\excel\\output" + tijd + ".xls";
@@ -143,16 +139,16 @@ public class BIServlet extends HttpServlet {
 
         //upload files naar ftp
         File fexcel = new File(output);
-        File fPDF = new File (outputPDF);
+        File fPDF = new File(outputPDF);
         /* Connectie con = new Connectie(fexcel, output);
-        ftp =new MyVibeFTP(fPDF, outputPDF); */
-        
+         ftp =new MyVibeFTP(fPDF, outputPDF); */
+
         //urls
-        output = "C:\\Kuifke\\temp\\excel\\"+fexcel.getName();
-        System.out.println("link naar excel: "+output);
-        outputPDF = "C:\\Kuifke\\temp\\excel\\"+fPDF.getName();
-        System.out.println("link naar PDF: "+outputPDF);
-        
+        output = "C:\\Kuifke\\temp\\excel\\" + fexcel.getName();
+        System.out.println("link naar excel: " + output);
+        outputPDF = "C:\\Kuifke\\temp\\excel\\" + fPDF.getName();
+        System.out.println("link naar PDF: " + outputPDF);
+
 
         System.out.println("aantal kollomen: " + selection.length);
         request.setAttribute("AANTALCOL", selection.length);
@@ -164,8 +160,4 @@ public class BIServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/pages/BIResults.jsp").forward(request, response);
 
     }
-    }
-
-
-
-
+}

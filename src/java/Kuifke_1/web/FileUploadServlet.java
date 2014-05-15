@@ -43,7 +43,6 @@ public class FileUploadServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     @Override
@@ -106,29 +105,29 @@ public class FileUploadServlet extends HttpServlet {
                         subPath = base + "music\\";
                         loc = subPath;
                         loc1 = fileName;
-                    if (fileName.lastIndexOf("\\") >= 0) {
-                        System.out.println("optie 1");
-                        file = new File(loc+fileName.substring(fileName.lastIndexOf("\\")));
-                    } else {
-                        System.out.println("optie 2");
-                        file = new File(loc+fileName.substring(fileName.lastIndexOf("\\") + 1));
+                        if (fileName.lastIndexOf("\\") >= 0) {
+                            System.out.println("optie 1");
+                            file = new File(loc + fileName.substring(fileName.lastIndexOf("\\")));
+                        } else {
+                            System.out.println("optie 2");
+                            file = new File(loc + fileName.substring(fileName.lastIndexOf("\\") + 1));
 
-                    }
+                        }
                     } else {
                         //als de file een andere formaat heeft
                         System.out.println("andere type file upgeload");
                         subPath = base + "art\\";
                         artLoc = subPath;
                         artLoc1 = subPath + fileName;
-                        
-                    if (fileName.lastIndexOf("\\") >= 0) {
-                        System.out.println("optie 1");
-                        file = new File(artLoc+fileName.substring(fileName.lastIndexOf("\\")));
-                    } else {
-                        System.out.println("optie 2");
-                        file = new File(artLoc+fileName.substring(fileName.lastIndexOf("\\") + 1));
 
-                    }
+                        if (fileName.lastIndexOf("\\") >= 0) {
+                            System.out.println("optie 1");
+                            file = new File(artLoc + fileName.substring(fileName.lastIndexOf("\\")));
+                        } else {
+                            System.out.println("optie 2");
+                            file = new File(artLoc + fileName.substring(fileName.lastIndexOf("\\") + 1));
+
+                        }
                     };
 
                     fi.write(file);
@@ -143,14 +142,14 @@ public class FileUploadServlet extends HttpServlet {
 
         //steek de bestandslocatie in de trackbean
         TrackBean track = new TrackBean();
-        
+
 
         track.setFile_Location(loc1);
         System.out.println("De artlocatie: " + artLoc1);
         System.out.println("Muzieklocatie is: " + loc1);
         track.setImage_Location(artLoc1);
         request.getSession().setAttribute("NEWTRACK", track);
-        
+
 
         request.getRequestDispatcher("WEB-INF/pages/FileDetails.jsp").forward(request, response);
     }
@@ -159,5 +158,4 @@ public class FileUploadServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

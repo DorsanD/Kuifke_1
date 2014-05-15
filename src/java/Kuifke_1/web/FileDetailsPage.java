@@ -5,7 +5,6 @@ package Kuifke_1.web;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import Kuifke_1.dao.WebsiteDao;
 import Kuifke_1.domain.TrackBean;
 import java.io.IOException;
@@ -26,7 +25,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/FileDetailsPage"})
 public class FileDetailsPage extends HttpServlet {
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
@@ -37,17 +35,16 @@ public class FileDetailsPage extends HttpServlet {
         processRequest(request, response);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         TrackBean track = (TrackBean) request.getSession().getAttribute("NEWTRACK");
-        
+
         track.setTrack_Name(request.getParameter("Track_Name"));
         track.setGenre(request.getParameter("Genre"));
         track.setLength(Integer.parseInt(request.getParameter("Length")));
-        
+
         WebsiteDao dao = new WebsiteDao();
         try {
             dao.addTrackItem(track);
@@ -60,10 +57,8 @@ public class FileDetailsPage extends HttpServlet {
 
     }
 
-
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

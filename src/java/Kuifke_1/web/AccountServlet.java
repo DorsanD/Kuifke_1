@@ -27,7 +27,6 @@ public class AccountServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     @Override
@@ -53,17 +52,14 @@ public class AccountServlet extends HttpServlet {
             System.out.println("Update van First Name is mislukt");
         }
         System.out.println("Updaten van First Name is gelukt");
-        
+
         custom.setFirst_Name(First_Name);
         processRequest(request, response);
         request.getSession().setAttribute("CUSTOMERBEAN", custom);
     }
-    
-    
 
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

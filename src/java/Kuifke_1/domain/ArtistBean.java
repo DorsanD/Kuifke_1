@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.domain;
 
 import java.io.Serializable;
@@ -12,7 +11,8 @@ import java.io.Serializable;
  *
  * @author Dorsan
  */
-public class ArtistBean implements Serializable{
+public class ArtistBean implements Serializable {
+
     private int ArtistId;
     private String Artist_Name;
     private String Last_Name;
@@ -108,7 +108,4 @@ public class ArtistBean implements Serializable{
     public String toString() {
         return "ArtistBean{" + "ArtistId=" + ArtistId + ", Artist_Name=" + Artist_Name + ", Last_Name=" + Last_Name + ", First_Name=" + First_Name + ", Gender=" + Gender + ", Email_Address=" + Email_Address + ", Username=" + Username + ", Password=" + Password + ", Language=" + Language + ", salt=" + salt + '}';
     }
-    
-    
-    
 }

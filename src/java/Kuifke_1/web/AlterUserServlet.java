@@ -27,7 +27,6 @@ public class AlterUserServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     @Override
@@ -53,12 +52,11 @@ public class AlterUserServlet extends HttpServlet {
             System.out.println("Update van First Name is mislukt");
         }
         System.out.println("Updaten van First Name is gelukt");
-        
+
         custom.setFirst_Name(First_Name);
         processRequest(request, response);
         request.getSession().setAttribute("CUSTOMERBEAN", custom);
         request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
 
     }
-    
 }

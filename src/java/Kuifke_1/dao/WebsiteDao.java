@@ -33,7 +33,6 @@ public class WebsiteDao {
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
     private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'mydb' and COLUMN_NAME not like ('%id')";
     private static final String TRACKS_QUERY = "SELECT t.Track_Name, a.Artist_Name, t.Length, t.Genre, t.File_Location from mydb.track t, mydb.artiest a where t.Artiest_ArtistId = a.ArtistId;";
-    
     private String url;
     private String user;
     private String password;
@@ -324,12 +323,12 @@ public class WebsiteDao {
         return biBeans;
 
     }
-    
-     public List<BIBean> getColumnsData(List<BIBean> BIBean) throws SQLException, ClassNotFoundException {
+
+    public List<BIBean> getColumnsData(List<BIBean> BIBean) throws SQLException, ClassNotFoundException {
         //deze functie haalt de data van de gevraagde colummen uit de database
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
-        
+
         System.out.println("");
         System.out.println("--- DATA wordt uit de GEKOZEN systeemtabellen gehaald ---");
 
@@ -341,23 +340,23 @@ public class WebsiteDao {
         int j = 1;
         String query = "select ";
         for (int i = 0; i < BIBean.size(); i++, j++) {
-            
+
             query += BIBean.get(i).getTabelCol();
-            if (i != BIBean.size()-1) {
+            if (i != BIBean.size() - 1) {
                 query += ",";
             }
-            System.out.println("kolom "+BIBean.get(i).getTabelCol()+" toegevoegd aan de query");
+            System.out.println("kolom " + BIBean.get(i).getTabelCol() + " toegevoegd aan de query");
         }
         query += " from customer c, artiest a, track t ";
         System.out.println(query);
-        
+
         try (Connection con = connect.initCon();
                 PreparedStatement stmt1 = con.prepareStatement(INIT);
                 PreparedStatement stmt = con.prepareStatement(query)) {
-            
+
             stmt1.execute();
             ResultSet rs = stmt.executeQuery();
-            
+
             System.out.println("");
             System.out.println("** resultaten worden uitgelezen en weggeschreven **");
 
@@ -365,7 +364,7 @@ public class WebsiteDao {
             while (rs.next()) {
                 for (int i = 0; i < BIBean.size(); i++) {
                     String type = BIBean.get(i).getConverType();
-                    
+
                     BIBean data = new BIBean();
 
                     //voor we de bean de data geven stellen we ook de column en de table in
@@ -373,14 +372,14 @@ public class WebsiteDao {
                     data.setColumn(BIBean.get(i).getColumn());
                     data.setType(BIBean.get(i).getType());
                     data.setId(BIBean.get(i).getId());
-                    
+
                     switch (type) {
                         case "String":
                             data.setData(rs.getString(i + 1));
-                            
+
                             break;
                         case "Date":
-                            data.setData(rs.getDate(i + 1)+"");
+                            data.setData(rs.getDate(i + 1) + "");
                             break;
                         case "Boolean":
                             //bij true => 1 anders => 0
@@ -398,16 +397,16 @@ public class WebsiteDao {
                             break;
                     }
                     dataBean.add(data);
-                    
+
                 }
             }
             System.out.println("done!");
         }
         return dataBean;
-        
+
     }
-     
-         public List<TrackBean> getAllTracks() throws SQLException, ClassNotFoundException {
+
+    public List<TrackBean> getAllTracks() throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Get All Tracks Itemss Geinitieerd");
@@ -430,5 +429,4 @@ public class WebsiteDao {
             return tracks;
         }
     }
-
 }

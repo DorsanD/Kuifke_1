@@ -26,18 +26,17 @@ public class Password {
     public Password(String pw) throws GeneralSecurityException {
         System.out.println("paswoord wordt geencrypted");
         char[] password = pw.toCharArray();
-        
+
         //maak een nieuwe salt aan
         salt = PasswordSalts.nextSalt();
-        
+
         //hash het pw
         hash = hashPassword(password, salt);
-        System.out.println("niewe hash aangemaakt: "+(new String(hash)));
+        System.out.println("niewe hash aangemaakt: " + (new String(hash)));
 
     }
 
     public Password() throws GeneralSecurityException {
-
     }
 
     public static byte[] hashPassword(char[] password, byte[] salt)
@@ -47,7 +46,7 @@ public class Password {
 
     public static byte[] hashPassword(char[] password, byte[] salt,
             int iterationCount, int keySize) throws GeneralSecurityException {
-        
+
         PBEKeySpec spec = new PBEKeySpec(password, salt, iterationCount, keySize);
         SecretKeyFactory factory = SecretKeyFactory.getInstance(ALGORITHM);
         return factory.generateSecret(spec).getEncoded();
@@ -61,9 +60,9 @@ public class Password {
     public static boolean matches(char[] password, byte[] passwordHash,
             byte[] salt, int iterationCount, int keySize)
             throws GeneralSecurityException, UnsupportedEncodingException {
-        
+
         /* ingegeven passwoord wordt geencrypted*/
-        byte[] newHash= hashPassword(password, salt, ITERATION_COUNT, KEY_SIZE);
+        byte[] newHash = hashPassword(password, salt, ITERATION_COUNT, KEY_SIZE);
         String omgezet = new String(newHash);
         System.out.println("omgezette hash: " + omgezet);
 
@@ -79,5 +78,4 @@ public class Password {
         String sHash = new String(hash);
         return sHash;
     }
-
 }

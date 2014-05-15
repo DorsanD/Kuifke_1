@@ -27,9 +27,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Dorsan
  */
-
 public class LoginServlet extends HttpServlet implements Constants {
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,8 +48,8 @@ public class LoginServlet extends HttpServlet implements Constants {
             System.out.println("Fout bij userCheck");
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if (cust.getPassword()!= "1") {
-            
+        if (cust.getPassword() != "1") {
+
             PasswordCheck pwCheck = new PasswordCheck(cust, req.getParameter("password"));
             if (pwCheck.check()) {
                 //pw matched
@@ -59,10 +57,10 @@ public class LoginServlet extends HttpServlet implements Constants {
                 req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
                 try {
                     cust = dao.getUserDetails(req.getParameter("username"));
-                } catch (        ClassNotFoundException | SQLException ex) {
+                } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
             } else {
                 System.out.println("password fout");
                 fout = "Password doesn't match.";
@@ -71,7 +69,7 @@ public class LoginServlet extends HttpServlet implements Constants {
             }
 
         }
-        
+
         fout = "username niet gevonden";
         req.setAttribute("FOUT", fout);
         HttpSession session = req.getSession();
@@ -79,5 +77,4 @@ public class LoginServlet extends HttpServlet implements Constants {
         doGet(req, resp);
 
     }
-    
 }

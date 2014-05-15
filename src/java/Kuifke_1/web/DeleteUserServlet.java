@@ -25,7 +25,6 @@ public class DeleteUserServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     @Override
@@ -50,12 +49,8 @@ public class DeleteUserServlet extends HttpServlet {
         processRequest(request, response);
     }
 
-
-
-
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.web;
 
 import Kuifke_1.domain.CustomerBean;
@@ -24,20 +23,18 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
 
-    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean websiteBean = new CustomerBean();
         req.getSession().setAttribute(WEBSITE_BEAN, websiteBean);
         req.getRequestDispatcher("WEB-INF/pages/Logout.jsp").forward(req, resp);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     HttpSession session1 = request.getSession();
-     session1.invalidate();
-     request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
+        HttpSession session1 = request.getSession();
+        session1.invalidate();
+        request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
     }
-    
 }

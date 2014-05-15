@@ -29,7 +29,6 @@ public class MusicPageServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
 
     @Override
@@ -38,7 +37,7 @@ public class MusicPageServlet extends HttpServlet {
         WebsiteDao dao = new WebsiteDao();
         List<TrackBean> tracks = null;
         try {
-        tracks = dao.getAllTracks();
+            tracks = dao.getAllTracks();
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(MusicPageServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -58,5 +57,4 @@ public class MusicPageServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

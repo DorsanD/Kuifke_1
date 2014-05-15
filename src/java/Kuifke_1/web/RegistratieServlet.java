@@ -2,15 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.web;
-
 
 /**
  *
  * @author Dorsan
  */
-
 import Kuifke_1.dao.WebsiteDao;
 import Kuifke_1.domain.CustomerBean;
 import Kuifke_1.web.Constants;
@@ -30,13 +27,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
-
 @WebServlet(name = "RegistratieServlet", urlPatterns = {"/RegistratieServlet"})
 public class RegistratieServlet extends HttpServlet implements Constants {
+
     private String salt;
     private String pw;
-   
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -72,9 +67,6 @@ public class RegistratieServlet extends HttpServlet implements Constants {
             Logger.getLogger(RegistratieServlet.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Customer niet toegevoegd aan Dao");
         }
-        
+
     }
-    
-     
-    
 }

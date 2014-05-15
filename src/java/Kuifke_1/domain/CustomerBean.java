@@ -8,6 +8,7 @@ import java.util.Date;
  * @author Noel Vaes
  */
 public class CustomerBean implements Serializable {
+
     private int CustomerId;
     private Date Date;
     private String Last_Name;
@@ -68,7 +69,6 @@ public class CustomerBean implements Serializable {
         this.salt = salt;
     }
 
-
     public int getId() {
         return CustomerId;
     }
@@ -81,7 +81,6 @@ public class CustomerBean implements Serializable {
         this.Last_Name = name;
     }
 
-
     public String getEmail() {
         return Email_Address;
     }
@@ -89,8 +88,6 @@ public class CustomerBean implements Serializable {
     public void setEmail(String email) {
         this.Email_Address = email;
     }
-
-
 
     public void setId(int customerId) {
         this.CustomerId = customerId;
@@ -123,7 +120,6 @@ public class CustomerBean implements Serializable {
     public String getLanguage() {
         return Language;
     }
-    
 
     public void setLanguage(String language) {
         this.Language = language;
@@ -145,10 +141,8 @@ public class CustomerBean implements Serializable {
         this.Username = Username;
     }
 
-    
     @Override
     public String toString() {
-        return "WebsiteBean{" + "id=" + CustomerId + ", date=" + Date + ", name="  + Last_Name + ", firstname=" +  First_Name + ", email=" + Email_Address  + ", gender=" + Gender + ", username=" + Username + ", password=" + Password + ", language=" + Language + '}';
+        return "WebsiteBean{" + "id=" + CustomerId + ", date=" + Date + ", name=" + Last_Name + ", firstname=" + First_Name + ", email=" + Email_Address + ", gender=" + Gender + ", username=" + Username + ", password=" + Password + ", language=" + Language + '}';
     }
-
 }

@@ -21,7 +21,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        
+
         <link rel="shortcut icon" href="./Images/Favicon.ico">
         <link href="./CSS/Bootstrap CSS/bootstrap.css" rel="stylesheet">
         <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <div class="knop"><a class="btn btn-default btn-danger" data-target="#ArtistRegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up as an artist</a></div>
             <div class="login"><p>Already have an account? <a href="#" data-target="#ArtistModal" data-toggle="modal">Log in </a> here. </p></div>
         </div>
-        
+
         <!-- Artist Sign up-->
         <div class="modal fade" id="ArtistRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -60,14 +60,14 @@
                             <input type="email" class="form-control" placeholder="Email-Address" name="email" required="true" /> 
                             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
                             <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
-                            
+
                             <select class="dropd" name="language">
                                 <option value="nederlands">Nederlands</option>
                                 <option value="engels">English</option>
                             </select></br></br>
                             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up" />
                         </form>
-                 </div>
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -75,9 +75,9 @@
                 </div>
             </div>
         </div>   
-        
-         <!-- Artist Log in-->
-         <div class="modal fade" id="ArtistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <!-- Artist Log in-->
+        <div class="modal fade" id="ArtistModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -87,11 +87,11 @@
                     <div class="modal-body">
                         <form class="form-signin" method="post" action="ArtistLoginServlet">
                             <input type="text" class="form-control" placeholder="Username" name="username" required="true" /> 
-                        <form class="form-signin" method="post" action="ArtistLoginServlet">
-                            <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
-                            <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
-                            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
-                        </form>
+                            <form class="form-signin" method="post" action="ArtistLoginServlet">
+                                <input type="text" class="form-control" placeholder="Artist Name" name="username" required="true" /> 
+                                <input type="password" class="form-control" placeholder="Password" name="password" required="true" /> 
+                                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
+                            </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -99,15 +99,15 @@
                 </div>
             </div>
         </div>
-           
-       <div class="footer">
+
+        <div class="footer">
             <div class="row">
                 <div class="col-md-4" id="footer-left">Project Programmeren</div>
                 <div class="col-md-4" id="footer-center">Kevin Reyns | Wouter Baeckelmans | Dorsan Demaeght</div>
                 <div class="col-md-4" id="footer-right">&#169; 2014</div>
             </div>
         </div>
-        
+
         <!-- Bootstrap core JavaScript
 ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  * @author Kevin
  */
 @WebServlet(name = "ArtistLogoutServlet", urlPatterns = {"/ArtistLogoutServlet"})
-public class ArtistLogoutServlet extends HttpServlet implements Constants{
+public class ArtistLogoutServlet extends HttpServlet implements Constants {
 
     /**
      * Processes requests for both HTTP
@@ -35,29 +35,26 @@ public class ArtistLogoutServlet extends HttpServlet implements Constants{
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     HttpSession session1 = request.getSession();
-     session1.invalidate();
-     request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
+        HttpSession session1 = request.getSession();
+        session1.invalidate();
+        request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       ArtistBean artistBean = new ArtistBean();
+        ArtistBean artistBean = new ArtistBean();
         request.getSession().setAttribute(ARTIST_BEAN, artistBean);
         request.getRequestDispatcher("WEB-INF/pages/LogoutArtist.jsp").forward(request, response);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             HttpSession session1 = request.getSession();
-     session1.invalidate();
-     request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
+        HttpSession session1 = request.getSession();
+        session1.invalidate();
+        request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
     }
-
 
     @Override
     public String getServletInfo() {

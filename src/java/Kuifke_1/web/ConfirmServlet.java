@@ -29,23 +29,23 @@ public class ConfirmServlet extends HttpServlet implements Constants {
 
     @Override
     public void init() throws ServletException {
-        
-            confirmPage = getInitParameter("confirmPage");
-            String driver = getInitParameter("driver");
-            String url = getInitParameter("url");
-            String user = getInitParameter("user");
-            String password = getInitParameter("password");
-            if (confirmPage == null || driver == null || url == null || user == null || password == null) {
-                throw new ServletException("Missing parameter");
-            }
+
+        confirmPage = getInitParameter("confirmPage");
+        String driver = getInitParameter("driver");
+        String url = getInitParameter("url");
+        String user = getInitParameter("user");
+        String password = getInitParameter("password");
+        if (confirmPage == null || driver == null || url == null || user == null || password == null) {
+            throw new ServletException("Missing parameter");
+        }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
-            bean.setDate(new Date());
-            req.getRequestDispatcher("/WEB-INF/pages/Confirm.jsp").forward(req, resp);
-            req.getSession().invalidate();
+        CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
+        bean.setDate(new Date());
+        req.getRequestDispatcher("/WEB-INF/pages/Confirm.jsp").forward(req, resp);
+        req.getSession().invalidate();
     }
 }

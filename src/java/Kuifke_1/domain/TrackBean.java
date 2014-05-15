@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.domain;
-import java.io.Serializable;
 
+import java.io.Serializable;
 
 /**
  *
  * @author Dorsan
  */
 public class TrackBean implements Serializable {
+
     private int TrackId;
     private String Track_Name;
     private String Genre;
@@ -30,8 +30,6 @@ public class TrackBean implements Serializable {
         this.Artist_Name = Artist_Name;
     }
 
-    
-    
     public String getFile_Location() {
         return File_Location;
     }
@@ -48,8 +46,6 @@ public class TrackBean implements Serializable {
         this.Image_Location = Image_Location;
     }
 
-    
-    
     public int getTrackId() {
         return TrackId;
     }
@@ -94,8 +90,4 @@ public class TrackBean implements Serializable {
     public String toString() {
         return "TrackBean{" + "TrackId=" + TrackId + ", Track_Name=" + Track_Name + ", Genre=" + Genre + ", Length=" + Length + ", Artiest_ArtiestId=" + Artiest_ArtiestId + ", File_Location=" + File_Location + ", Image_Location=" + Image_Location + '}';
     }
-
-
-    
-
 }

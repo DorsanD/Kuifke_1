@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.web;
 
 import Kuifke_1.dao.WebsiteDao;
@@ -29,23 +28,21 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ArtistRegistratieServlet", urlPatterns = {"/ArtistRegistratieServlet"})
 public class ArtistRegistratieServlet extends HttpServlet implements Constants {
+
     private String salt;
     private String pw;
 
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-            
     }
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {       
+            throws ServletException, IOException {
         ArtistBean Abean = new ArtistBean();
         req.getSession().setAttribute(ARTIST_BEAN, Abean);
         req.getRequestDispatcher("WEB-INF/pages/ArtiestFirstPage.jsp").forward(req, resp);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -76,13 +73,11 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
             Logger.getLogger(RegistratieServlet.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Artist niet toegevoegd aan Dao");
         }
-        
-    }
 
+    }
 
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

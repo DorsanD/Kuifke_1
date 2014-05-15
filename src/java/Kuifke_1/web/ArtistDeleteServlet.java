@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Kuifke_1.web;
 
 import Kuifke_1.dao.WebsiteDao;
@@ -27,9 +26,7 @@ public class ArtistDeleteServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,7 +34,6 @@ public class ArtistDeleteServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/pages/DeleteArtist.jsp").forward(request, response);
         processRequest(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,10 +50,8 @@ public class ArtistDeleteServlet extends HttpServlet {
         processRequest(request, response);
     }
 
-
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

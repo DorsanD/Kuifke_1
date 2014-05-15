@@ -5,7 +5,6 @@
  */
 package Kuifke_1.domain;
 
-
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.logging.Level;
@@ -28,10 +27,10 @@ public class PasswordCheck {
 
     public boolean check() {
         System.out.println("");
-        if (customerBean.getPassword()!=null) {
+        if (customerBean.getPassword() != null) {
 
             // checked of de user ingelogged is
-            
+
             //initialiseer de variabelen voor de check
             byte[] salt = customerBean.getSalt().getBytes();
             byte[] hash = customerBean.getPassword().getBytes();
@@ -40,7 +39,7 @@ public class PasswordCheck {
             System.out.println("ingegeven paswoord: " + pass + " wordt vergeleken met hash uit de database: " + shash);
             try {
                 // match de paswoorden
-            
+
                 if (Password.matches(password, hash, salt)) {
                     //als de hashes matchen
                     System.out.println("paswoord matched");
@@ -52,12 +51,12 @@ public class PasswordCheck {
                     //als de hashes niet matchen
                     System.out.println("geen passwoord match");
                     return false;
-                    
-                    
-                    
-                    
+
+
+
+
                 }
-            } catch (    GeneralSecurityException | UnsupportedEncodingException ex) {
+            } catch (GeneralSecurityException | UnsupportedEncodingException ex) {
                 Logger.getLogger(PasswordCheck.class.getName()).log(Level.SEVERE, null, ex);
             }
 
