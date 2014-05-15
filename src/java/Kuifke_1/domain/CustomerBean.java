@@ -20,7 +20,17 @@ public class CustomerBean implements Serializable {
     private String Language;
     private String salt;
     private String newUsername;
+    private int Credits;
 
+    public int getCredits() {
+        return Credits;
+    }
+
+    public void setCredits(int Credits) {
+        this.Credits = Credits;
+    }
+
+    
     public String getNewUsername() {
         return newUsername;
     }

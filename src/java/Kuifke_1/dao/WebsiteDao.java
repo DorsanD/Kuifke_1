@@ -33,6 +33,8 @@ public class WebsiteDao {
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
     private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'mydb' and COLUMN_NAME not like ('%id')";
     private static final String TRACKS_QUERY = "SELECT t.Track_Name, a.Artist_Name, t.Length, t.Genre, t.File_Location from mydb.track t, mydb.artiest a where t.Artiest_ArtistId = a.ArtistId;";
+    private static final String ALTER_CUSTCREDITS = "update mydb.customer set Credits = '?' where CustomerId = '?';";
+    private static final String SELECT_CREDITS = "SELECT Credits FROM mydb.customer where CustomerId = '?';";
     private String url;
     private String user;
     private String password;
@@ -428,5 +430,28 @@ public class WebsiteDao {
             }
             return tracks;
         }
+    }
+
+    public void AlterCustomerCredits(int Credits, int CustomerId) throws SQLException, ClassNotFoundException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Add Credits Geinitieerd");
+        int credieten = 0;
+
+        
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(ALTER_CUSTCREDITS);
+                PreparedStatement stmt1 = con.prepareStatement(SELECT_CREDITS);
+                PreparedStatement stmt2 = con.prepareStatement(INIT)) {
+            stmt1.setInt(1, CustomerId);
+            stmt2.execute();
+            stmt1.execute();
+            
+            System.out.println("" + stmt.toString());
+            stmt.setInt(1, credieten);
+            stmt.setInt(2, CustomerId);
+            stmt.execute();
+        }
+
     }
 }
