@@ -101,7 +101,8 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="BuyCreditsServlet" type="submit">Buy some credits</a></td>
+                                    <td><a href="BuyCreditsServlet" class="Delete" type="submit">Buy some credits</a></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
