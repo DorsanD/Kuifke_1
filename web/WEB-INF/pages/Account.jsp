@@ -93,6 +93,10 @@
                                     <td>${CUSTOMERBEAN.getEmail_Address()}</td></td>
                                 </tr>
                                 <tr>
+                                    <td>Credits:</td>
+                                    <td>${CUSTOMERBEAN.getCredits()}</td></td>
+                                </tr>
+                                <tr>
                                     <td><a href="DeleteUserServlet" class="Delete" type="submit">Delete this account</a></td>
                                     <td></td>
                                 </tr>

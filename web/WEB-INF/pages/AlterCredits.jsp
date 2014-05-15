@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+       <h1>Change your first name!</h1>
+        <div class="Alter">
+            <p>Current name: ${CUSTOMERBEAN.getFirst_Name()}</p>
+            <form action="AlterArtistServlet" method="post">
+                New name: <input type="text" name="First_Name"/>
+                <input type="submit" class="btn btn-primary btn-lg" value="Send"/>
+            </form>
+        </div>
     </body>
 </html>

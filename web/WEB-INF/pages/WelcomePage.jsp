@@ -63,22 +63,22 @@
 
         <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/DudeRanch.jpg" onmouseover="this.src = './Images/DudeRanchP.jpg';" onmouseout="this.src = './Images/DudeRanch.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/DudeRanch.jpg" onmouseover="this.src = './Images/DudeRanchP.jpg';" onmouseout="this.src = './Images/DudeRanch.jpg';" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Blink 182</h4>
                 <h5>Dammit</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/AppealToReason.jpg" onmouseover="this.src = './Images/AppealToReasonP.jpg';" onmouseout="this.src = './Images/AppealToReason.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/AppealToReason.jpg" onmouseover="this.src = './Images/AppealToReasonP.jpg';" onmouseout="this.src = './Images/AppealToReason.jpg';" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Rise Against</h4>
                 <h5>Hero Of War</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/PageAvenue.jpg" onmouseover="this.src = './Images/PageAvenueP.jpg';" onmouseout="this.src = './Images/PageAvenue.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/PageAvenue.jpg" onmouseover="this.src = './Images/PageAvenueP.jpg';" onmouseout="this.src = './Images/PageAvenue.jpg';" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Story Of The Year</h4>
                 <h5>In The Shadows</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/DoesThisLookInfected.png" onmouseover="this.src = './Images/DoesThisLookInfectedP.jpg';" onmouseout="this.src = './Images/DoesThisLookInfected.png';"class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/DoesThisLookInfected.png" onmouseover="this.src = './Images/DoesThisLookInfectedP.jpg';" onmouseout="this.src = './Images/DoesThisLookInfected.png';"class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Sum 41</h4>
                 <h5>Still Waiting</h5>
             </div>
@@ -88,22 +88,22 @@
 
         <div class="row placeholders" id="hits">
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/Shotgun.jpg" onmouseover="this.src = './Images/ShotgunP.jpg';" onmouseout="this.src = './Images/Shotgun.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/Shotgun.jpg" onmouseover="this.src = './Images/ShotgunP.jpg';" onmouseout="this.src = './Images/Shotgun.jpg';" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Yellow Claw</h4>
                 <h5>Shotgun</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/LetItGo.jpg" onmouseover="this.src = './Images/LetItGoP.jpg';" onmouseout="this.src = './Images/LetItGo.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/LetItGo.jpg" onmouseover="this.src = './Images/LetItGoP.jpg';" onmouseout="this.src = './Images/LetItGo.jpg';" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Demi Lovato</h4>
                 <h5>Let It Go</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/DarkHorse.jpg" onmouseover="this.src = './Images/DarkHorseP.jpg';" onmouseout="this.src = './Images/DarkHorse.jpg';" class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/DarkHorse.jpg" onmouseover="this.src = './Images/DarkHorseP.jpg';" onmouseout="this.src = './Images/DarkHorse.jpg';" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Katy Perry</h4>
                 <h5>Dark Horse</h5>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <img src="./Images/CleanBandit.jpg" onmouseover="this.src = './Images/CleanBanditP.jpg';" onmouseout="this.src = './Images/CleanBandit.jpg';"class="img-responsive" alt="Generic placeholder thumbnail">
+                <a href="MusicPageServlet"><img src="./Images/CleanBandit.jpg" onmouseover="this.src = './Images/CleanBanditP.jpg';" onmouseout="this.src = './Images/CleanBandit.jpg';"class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>Clean Bandit</h4>
                 <h5>Rather Be</h5>
             </div>

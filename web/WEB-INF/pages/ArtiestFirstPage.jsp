@@ -25,7 +25,7 @@
         <link rel="shortcut icon" href="./Images/Favicon.ico">
         <link href="./CSS/Bootstrap CSS/bootstrap.css" rel="stylesheet">
         <link href="./CSS/Bootstrap CSS/bootstrap.min.css" rel="stylesheet">
-        <link href="CSS/Registratie.css" rel="stylesheet">
+        <link href="./CSS/Registratie.css" rel="stylesheet">
         <link href="./CSS/FirstPage.css" rel="stylesheet">
         <title>Kuifke | Welcome artist </title>
     </head>

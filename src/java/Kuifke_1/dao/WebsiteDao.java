@@ -19,12 +19,12 @@ import java.util.List;
  */
 public class WebsiteDao {
 
-    private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language from Customer order by CustomerId";
+    private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Credits from Customer order by CustomerId";
     private static final String INSERT_QUERY = "insert into Customer (Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (sysdate(),?,?,?,?,?,?,?,?)";
     private static final String INSERT_ARTIST_QUERY = "insert into Artiest (Artist_Name, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (?,?,?,?,?,?,?,?,?)";
     private static final String GET_USER_CREDENTIALS = "select Password, salt from customer where Username = ?;";
     private static final String GET_ARTISTUSER_CREDENTIALS = "select Password, salt from artiest where Username = ?;";
-    private static final String GET_USER_INFO = "select Last_Name, First_Name, Gender, Email_Address, Username, Language, CustomerId from customer where Username = ?";
+    private static final String GET_USER_INFO = "select Last_Name, First_Name, Gender, Email_Address, Username, Language, CustomerId, Credits from customer where Username = ?";
     private static final String GET_ARTISTUSER_INFO = "select Artist_Name, Last_Name, First_Name, Gender, Email_Address, Username, Language, ArtistId from artiest where Username = ?";
     private static final String ALTER_USERNAME = "update customer set First_Name= ? where CustomerId= ?";
     private static final String ALTER_ARTISTUSERNAME = "update artiest set First_Name= ? where ArtistId= ?";
@@ -105,6 +105,7 @@ public class WebsiteDao {
                 item.setUsername(rs.getString(7));
                 item.setPassword(rs.getString(8));
                 item.setLanguage(rs.getString(9));
+                item.setCredits(rs.getInt(10));
                 items.add(item);
             }
             return items;
@@ -178,6 +179,7 @@ public class WebsiteDao {
                 cust.setUsername(rs.getString(5));
                 cust.setLanguage(rs.getString(6));
                 cust.setCustomerId(rs.getInt(7));
+                cust.setCredits(rs.getInt(8));
 
             }
             return cust;
@@ -448,6 +450,39 @@ public class WebsiteDao {
             stmt1.execute();
             
             System.out.println("" + stmt.toString());
+<<<<<<< HEAD
+<<<<<<< HEAD
+            //credieten = Integer.parseInt(stmt1.execute());
+=======
+=======
+>>>>>>> f530c496715ba319c5a4670870668ec521926ebc
+            //credieten = Integer.parseInt(stmt1.execute()); + new credits;
+            
+            stmt.setInt(1, credieten);
+            stmt.setInt(2, CustomerId);
+            stmt.execute();
+        }
+
+    }
+    
+        public void RetractCustomerCredits(int Credits, int CustomerId) throws SQLException, ClassNotFoundException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Add Credits Geinitieerd");
+        int credieten = 0;
+
+        
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(ALTER_CUSTCREDITS);
+                PreparedStatement stmt1 = con.prepareStatement(SELECT_CREDITS);
+                PreparedStatement stmt2 = con.prepareStatement(INIT)) {
+            stmt1.setInt(1, CustomerId);
+            stmt2.execute();
+            stmt1.execute();
+            
+            System.out.println("" + stmt.toString());
+            //credieten = Integer.parseInt(stmt1.execute()); - 50;
+            
             stmt.setInt(1, credieten);
             stmt.setInt(2, CustomerId);
             stmt.execute();
