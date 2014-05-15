@@ -451,8 +451,11 @@ public class WebsiteDao {
             
             System.out.println("" + stmt.toString());
 <<<<<<< HEAD
+<<<<<<< HEAD
             //credieten = Integer.parseInt(stmt1.execute());
 =======
+=======
+>>>>>>> f530c496715ba319c5a4670870668ec521926ebc
             //credieten = Integer.parseInt(stmt1.execute()); + new credits;
             
             stmt.setInt(1, credieten);
