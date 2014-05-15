@@ -100,9 +100,13 @@
                                     <td><a href="DeleteUserServlet" class="Delete" type="submit">Delete this account</a></td>
                                     <td></td>
                                 </tr>
+                                <tr>
+                                    <td><a href="BuyCreditsServlet" type="submit">Buy some credits</a></td>
+                                </tr>
                             </tbody>
                         </table>
                     </form>
+                                
                 </div>
             </div>
         </div>

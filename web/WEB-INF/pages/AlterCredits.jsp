@@ -15,8 +15,8 @@
        <h1>Change your first name!</h1>
         <div class="Alter">
             <p>Current name: ${CUSTOMERBEAN.getCredits()}</p>
-            <form action="BuySongServlet" method="post">
-                Amount of credits to add: <input type="text" name="Credits"/>
+            <form action="BuyCreditsServlet" method="post">
+                Amount of credits to add: <input type="number" name="Credits"/>
                 <input type="submit" class="btn btn-primary btn-lg" value="Send"/>
             </form>
         </div>

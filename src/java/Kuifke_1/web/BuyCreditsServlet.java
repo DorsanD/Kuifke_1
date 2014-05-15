@@ -9,6 +9,9 @@ import Kuifke_1.dao.WebsiteDao;
 import Kuifke_1.domain.CustomerBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Dorsan
  */
-@WebServlet(name = "BuySongServlet", urlPatterns = {"/BuySongServlet"})
-public class BuySongServlet extends HttpServlet implements Constants {
+@WebServlet(name = "BuyCreditsServlet", urlPatterns = {"/BuyCreditsServlet"})
+public class BuyCreditsServlet extends HttpServlet implements Constants {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,11 +41,16 @@ public class BuySongServlet extends HttpServlet implements Constants {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         WebsiteDao dao = new WebsiteDao();
-        request.getSession().getAttribute("CUSTOMERBEAN");
         CustomerBean Cbean = (CustomerBean) request.getSession().getAttribute("CUSTOMERBEAN");
-
-        //dao.AlterCustomerCredits(Credits, CustomerId);
-        processRequest(request, response);
+        System.out.println("Ingegeven Credits: " + request.getParameter("Credits"));
+        try {
+            dao.AlterCustomerCredits(Integer.parseInt(request.getParameter("Credits")), Cbean.getCustomerId());
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(BuyCreditsServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Cbean.setCredits(Cbean.getCredits()+Integer.parseInt(request.getParameter("Credits")));
+        request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
+        
     }
 
     @Override
