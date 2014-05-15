@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="well well-sm">
-                        <form class="form-horizontal" action="" method="post">
+                        <form class="form-horizontal" action="mailto:dorsan.demaeght@student.thomasmore.be" method="post">
                             <fieldset>
                                 <legend class="text-center">Contact us</legend>
                                 <p>We're happy to answer any questions you have or provide you with an estimate. Just send us a message in the form below with any questions you may have.</p>

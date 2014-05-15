@@ -50,7 +50,7 @@ body {
     color: #8B8B8F;
 }
 
-.btn:hover{
+.btn:hover, .btn:focus, .btn:active, .btn:visited, .btn:enabled{
     background-color: #8E0606;
     border-color: #8E0606;
 }
