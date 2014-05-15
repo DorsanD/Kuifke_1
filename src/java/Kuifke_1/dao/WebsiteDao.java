@@ -450,7 +450,36 @@ public class WebsiteDao {
             stmt1.execute();
             
             System.out.println("" + stmt.toString());
-            credieten = Integer.parseInt(stmt1.execute());
+<<<<<<< HEAD
+            //credieten = Integer.parseInt(stmt1.execute());
+=======
+            //credieten = Integer.parseInt(stmt1.execute()); + new credits;
+            
+            stmt.setInt(1, credieten);
+            stmt.setInt(2, CustomerId);
+            stmt.execute();
+        }
+
+    }
+    
+        public void RetractCustomerCredits(int Credits, int CustomerId) throws SQLException, ClassNotFoundException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Add Credits Geinitieerd");
+        int credieten = 0;
+
+        
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(ALTER_CUSTCREDITS);
+                PreparedStatement stmt1 = con.prepareStatement(SELECT_CREDITS);
+                PreparedStatement stmt2 = con.prepareStatement(INIT)) {
+            stmt1.setInt(1, CustomerId);
+            stmt2.execute();
+            stmt1.execute();
+            
+            System.out.println("" + stmt.toString());
+            //credieten = Integer.parseInt(stmt1.execute()); - 50;
+            
             stmt.setInt(1, credieten);
             stmt.setInt(2, CustomerId);
             stmt.execute();
