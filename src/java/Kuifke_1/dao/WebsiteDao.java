@@ -179,6 +179,7 @@ public class WebsiteDao {
                 cust.setUsername(rs.getString(5));
                 cust.setLanguage(rs.getString(6));
                 cust.setCustomerId(rs.getInt(7));
+                cust.setCredits(rs.getInt(8));
 
             }
             return cust;
@@ -449,6 +450,7 @@ public class WebsiteDao {
             stmt1.execute();
             
             System.out.println("" + stmt.toString());
+            credieten = Integer.parseInt(stmt1.execute());
             stmt.setInt(1, credieten);
             stmt.setInt(2, CustomerId);
             stmt.execute();
