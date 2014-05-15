@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <a href="./Music/${trackBean.getFile_Location()}">${trackBean.getFile_Location()}</a>
+        <p> Here is the link in order to download the song you bought! </p> 
+        <a href="./Music/${trackBean.getFile_Location()}">${trackBean.getFile_Location()}</a>
+
     </body>
+    
 </html>

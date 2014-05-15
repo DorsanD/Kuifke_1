@@ -474,9 +474,9 @@ public class WebsiteDao {
             stmt1.setInt(1, CustomerId);
             stmt2.execute();
             ResultSet rs = stmt1.executeQuery();
+            if (rs.next()){
 
             credieten = rs.getInt(1);
-            if (rs.next()){
             if (credieten > 50){            
 
             stmt.setInt(1, credieten - 50);
@@ -486,9 +486,12 @@ public class WebsiteDao {
             stmt.execute();
             return true;
             } else {
+                return false;
+            }
+            } else {
             return false;
             }
-        }}
+        
 
-    }
+    }}
 }

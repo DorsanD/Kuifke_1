@@ -85,10 +85,9 @@
 
                                         </audio>
                                     </td> 
-                                    <td><a href="./Music/${trackBean.getFile_Location()}">${trackBean.getFile_Location()}</a>
-                                    </td>
-                                    <td>/* credits */</td>
                                     <td><a href="DownloadSongServlet">Download Song</a></td>
+                                    <td>${CUSTOMERBEAN.getCredits()}</td>
+                                    
                                 </tr>    
                             </c:forEach>
                         </table>   

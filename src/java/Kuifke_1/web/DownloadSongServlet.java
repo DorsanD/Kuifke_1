@@ -50,7 +50,7 @@ public class DownloadSongServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(DownloadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        processRequest(request, response);
+        Cbean.setCredits(Cbean.getCredits()- 50);
     }
 
     @Override
