@@ -12,18 +12,20 @@ import java.sql.SQLException;
 public class Connectie {
 
         
-    
+    //variabelen initialiseren voor connectie
     String user = "root";
     String password = "root";
     String url = "jdbc:mysql://localhost";
     String driver = "com.mysql.jdbc.Driver";
     
+    //connectie opzetten
     public Connection initCon() throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
         return getConnection();
         
     }
 
+    //connecteren met de juist gegevens
     private java.sql.Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, user, password);
     }

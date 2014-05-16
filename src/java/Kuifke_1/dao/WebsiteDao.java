@@ -18,7 +18,8 @@ import java.util.List;
  * @author Dorsan Demaeght
  */
 public class WebsiteDao {
-
+    
+    //variabelen en queries die gebruikt zullen worden in de functies
     private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Credits from Customer order by CustomerId";
     private static final String INSERT_QUERY = "insert into Customer (Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (sysdate(),?,?,?,?,?,?,?,?)";
     private static final String INSERT_ARTIST_QUERY = "insert into Artiest (Artist_Name, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (?,?,?,?,?,?,?,?,?)";
@@ -33,21 +34,20 @@ public class WebsiteDao {
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
     private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'mydb' and COLUMN_NAME not like ('%id')";
     //haal ook de id van de track op en schrijf deze ook weg in de bean
-    private static final String TRACKS_QUERY = "SELECT t.Track_Name, a.Artist_Name, t.Length, t.Genre, t.File_Location from mydb.track t, mydb.artiest a where t.Artiest_ArtistId = a.ArtistId;";
+    private static final String TRACKS_QUERY = "SELECT t.TrackId, t.Track_Name, a.Artist_Name, t.Length, t.Genre, t.File_Location from mydb.track t, mydb.artiest a where t.Artiest_ArtistId = a.ArtistId;";
     private static final String ALTER_CUSTCREDITS = "update customer set Credits = ? where CustomerId = ?;";
     private static final String SELECT_CREDITS = "SELECT Credits FROM customer where CustomerId = ?;";
     private static final String SELECT_TRACK = "SELECT File_Location from track where TrackId = ?";
-    
-    private String url;
-    private String user;
-    private String password;
     private static final String INIT = "use mydb";
 
+    //Een gebruiker toevoegen in onze databank
     public void addCustomerItem(CustomerBean item) throws SQLException, ClassNotFoundException {
+        //connectie maken
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Customer Item Geinitieerd");
-
+        
+        //Query laten runnen en dan de nodige variabelen invullen
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(INSERT_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -64,11 +64,13 @@ public class WebsiteDao {
         }
     }
 
+        //Een Artist toevoegen in onze databank
     public void addArtistItem(ArtistBean item) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Artist Item Geinitieerd");
-
+       
+       //Query laten runnen en dan de nodige variabelen invullen       
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(INSERT_ARTIST_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -86,11 +88,14 @@ public class WebsiteDao {
         }
     }
 
+    //Een functie om een lijst te maken van alle gebruikers
+    //deze functie wordt niet gebruikt, maar kan van pas komen in toekomstige uitbreidingen.
     public List<CustomerBean> getAllCustomerItems() throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Get All Customer Itemss Geinitieerd");
 
+        //laat de query lopen en zet alle gebruikers in een list van gebruikerbeans
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(GET_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -115,18 +120,23 @@ public class WebsiteDao {
         }
     }
 
+    //Een functie om gegevens van de gebruiker in te vullen en doorgeven ter verificatie
     public CustomerBean UserCheck(String username) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("User Check Geinitieerd");
+        
+        //een nieuwe bean van de klasse CustomerBean aanroepen
         CustomerBean cust = new CustomerBean();
 
+        //vult het veld met variabele username in
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(GET_USER_CREDENTIALS);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
             stmt.setString(1, username);
             stmt1.execute();
             ResultSet rs = stmt.executeQuery();
+            //if statement zet paswoord en salt in cust, om deze in de functie te vergelijken. 
             if (rs.next()) {
                 cust.setPassword(rs.getString(1));
                 cust.setSalt(rs.getString(2));
@@ -138,10 +148,11 @@ public class WebsiteDao {
         return cust;
     }
 
+    //Een functie om gegevens van de artist in te vullen en doorgeven ter verificatie
     public ArtistBean ArtistCheck(String username) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
-        System.out.println("User Check Geinitieerd");
+        System.out.println("Artist Check Geinitieerd");
         ArtistBean art = new ArtistBean();
 
         try (Connection con = connect.initCon();
@@ -150,6 +161,7 @@ public class WebsiteDao {
             stmt.setString(1, username);
             stmt1.execute();
             ResultSet rs = stmt.executeQuery();
+            //if statement zet paswoord en salt in cust, om deze in de functie te vergelijken. 
             if (rs.next()) {
                 art.setPassword(rs.getString(1));
                 art.setSalt(rs.getString(2));
@@ -161,12 +173,14 @@ public class WebsiteDao {
         return art;
     }
 
+    //Een functie die alle informatie van een customer haalt en in een tijdelijke bean opslaagt.
     public CustomerBean getUserDetails(String username) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
-        System.out.println("User Check Geinitieerd");
+        System.out.println("Get user details Geinitieerd");
         CustomerBean cust = new CustomerBean();
 
+        //zet alle opgehaalde informatie op de juiste plaats in de bean
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(GET_USER_INFO);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -189,12 +203,14 @@ public class WebsiteDao {
         }
     }
 
+    //Een functie die alle informatie van een artist haalt en in een tijdelijke bean opslaagt. 
     public ArtistBean getArtistUserDetails(String username) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Artist Check Geinitieerd");
         ArtistBean art = new ArtistBean();
 
+         //zet alle opgehaalde informatie op de juiste plaats in de bean       
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(GET_ARTISTUSER_INFO);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -217,17 +233,18 @@ public class WebsiteDao {
         }
     }
 
+    //Functie die de query uitvoert om een Username om te zetten naar een nieuwe.
     public void AlterName(int CustomerId, String First_Name) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
-        System.out.println("User Check Geinitieerd");
+        System.out.println("Alter Name Geinitieerd");
 
+        //Zet de gegeven variabelen in de query en laat dan de query lopen.
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(ALTER_USERNAME);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
             stmt.setString(1, First_Name);
             stmt.setInt(2, CustomerId);
-            System.out.println("" + stmt.toString());
             stmt1.execute();
             stmt.execute();
 
@@ -235,67 +252,72 @@ public class WebsiteDao {
 
     }
 
+    //Functie die de query uitvoert om een Username om te zetten naar een nieuwe.    
     public void AlterArtistName(int ArtistId, String First_Name) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("User Check Geinitieerd");
 
+        //Zet de gegeven variabelen in de query en laat dan de query lopen.        
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(ALTER_ARTISTUSERNAME);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
             stmt.setString(1, First_Name);
             stmt.setInt(2, ArtistId);
-            System.out.println("" + stmt.toString());
             stmt1.execute();
             stmt.execute();
 
         }
 
     }
-
+   
+    //Functie die de query uitvoert om een gebruiker met een gegeven ID te verwijderen uit de databank    
     public void DeleteUser(int CustomerId) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Delete User");
 
+        //Zet de gegeven variabelen in de query en laat dan de query lopen.                
         try (Connection con = connect.initCon();
                 PreparedStatement stmt1 = con.prepareStatement(DELETE_USER);
                 PreparedStatement stmt2 = con.prepareStatement(INIT)) {
             stmt1.setInt(1, CustomerId);
-            System.out.println("" + stmt1.toString());
             stmt2.execute();
             stmt1.execute();
         }
     }
 
+    //Functie die de query uitvoert om een artiest met een gegeven ID te verwijderen uit de databank    
     public void DeleteArtist(int ArtistId) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Delete Artist");
 
+        //Zet de gegeven variabelen in de query en laat dan de query lopen.                
         try (Connection con = connect.initCon();
                 PreparedStatement stmt1 = con.prepareStatement(DELETE_ARTIST);
                 PreparedStatement stmt2 = con.prepareStatement(INIT)) {
             stmt1.setInt(1, ArtistId);
-            System.out.println("" + stmt1.toString());
             stmt2.execute();
             stmt1.execute();
         }
     }
 
+    //een Track toevoegen aan onze databank
     public void addTrackItem(TrackBean item) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Track Item Geinitieerd");
 
+       //Query laten runnen en dan de nodige variabelen invullen               
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(INSERT_FILE_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
-            stmt.setString(1, item.getTrack_Name());
-            stmt.setString(2, item.getGenre());
-            stmt.setInt(3, item.getLength());
-            stmt.setString(4, item.getFile_Location());
-            stmt.setString(5, item.getImage_Location());
+            stmt.setString(2, item.getTrack_Name());
+            stmt.setString(3, item.getGenre());
+            stmt.setInt(4, item.getLength());
+            stmt.setString(5, item.getFile_Location());
+            stmt.setString(6, item.getImage_Location());
             stmt1.execute();
             stmt.executeUpdate();
         }
@@ -426,11 +448,12 @@ public class WebsiteDao {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 TrackBean track = new TrackBean();
-                track.setTrack_Name(rs.getString(1));
-                track.setArtist_Name(rs.getString(2));
-                track.setLength(rs.getInt(3));
-                track.setGenre(rs.getString(4));
-                track.setFile_Location(rs.getString(5));
+                track.setTrackId(rs.getInt(1));
+                track.setTrack_Name(rs.getString(2));
+                track.setArtist_Name(rs.getString(3));
+                track.setLength(rs.getInt(4));
+                track.setGenre(rs.getString(5));
+                track.setFile_Location(rs.getString(6));
                 tracks.add(track);
             }
             return tracks;
