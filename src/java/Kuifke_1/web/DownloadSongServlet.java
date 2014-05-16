@@ -34,7 +34,8 @@ public class DownloadSongServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         boolean check;
-
+        int trackid;
+        String fileLocation="";
         WebsiteDao dao = new WebsiteDao();
         CustomerBean Cbean = (CustomerBean) request.getSession().getAttribute("CUSTOMERBEAN");
         try {
@@ -51,6 +52,14 @@ public class DownloadSongServlet extends HttpServlet {
             Logger.getLogger(DownloadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         Cbean.setCredits(Cbean.getCredits()- 50);
+        trackid = Integer.parseInt(request.getParameter("downloadlink"));
+        try {
+            fileLocation = dao.getTrackLocation(trackid);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DownloadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        request.getSession().setAttribute("downloadid", fileLocation);
     }
 
     @Override

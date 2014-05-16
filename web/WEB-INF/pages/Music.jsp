@@ -86,10 +86,14 @@
                                         </audio>
                                     </td> 
                                     <td><a href="DownloadSongServlet">Download Song</a></td>
-                                    <td>${CUSTOMERBEAN.getCredits()}</td>
-                                    
+                                            <td><form action="DownloadSongServlet" method="get">
+                                        <input type="hidden" value="${trackBean.getTrackId()}" name="downloadlink" />
+                                        <input type="submit" value="Download"/>            
+                                        </form></td>
+
                                 </tr>    
                             </c:forEach>
+
                         </table>   
                     </div>
                 </div>  

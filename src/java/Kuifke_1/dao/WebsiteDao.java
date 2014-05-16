@@ -32,9 +32,12 @@ public class WebsiteDao {
     private static final String DELETE_ARTIST = "delete from artiest where ArtistId=?;";
     private static final String INSERT_FILE_QUERY = "insert into track (Track_Name, Genre, Length, File_Location, Image_Location) values (?,?,?,?,?)";
     private static final String BI_Query = "SELECT TABLE_NAME,COLUMN_NAME,DATA_TYPE  FROM INFORMATION_SCHEMA.COLUMNS where table_schema = 'mydb' and COLUMN_NAME not like ('%id')";
+    //haal ook de id van de track op en schrijf deze ook weg in de bean
     private static final String TRACKS_QUERY = "SELECT t.Track_Name, a.Artist_Name, t.Length, t.Genre, t.File_Location from mydb.track t, mydb.artiest a where t.Artiest_ArtistId = a.ArtistId;";
     private static final String ALTER_CUSTCREDITS = "update customer set Credits = ? where CustomerId = ?;";
     private static final String SELECT_CREDITS = "SELECT Credits FROM customer where CustomerId = ?;";
+    private static final String SELECT_TRACK = "SELECT File_Location from track where TrackId = ?";
+    
     private String url;
     private String user;
     private String password;
@@ -494,4 +497,24 @@ public class WebsiteDao {
         
 
     }}
+    
+        public String getTrackLocation(int TrackId) throws ClassNotFoundException, SQLException {
+        Connectie connect = new Connectie();
+        Class.forName("com.mysql.jdbc.Driver");
+        System.out.println("Track Dwnl link Check Geinitieerd");
+
+        try (Connection con = connect.initCon();
+                PreparedStatement stmt = con.prepareStatement(SELECT_TRACK);
+                PreparedStatement stmt1 = con.prepareStatement(INIT)) {
+            stmt.setInt(1, TrackId);
+            stmt1.execute();
+            System.out.println(stmt.toString());
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+              return rs.getString(1);
+
+            }
+            return null;
+        }
+    }
 }
