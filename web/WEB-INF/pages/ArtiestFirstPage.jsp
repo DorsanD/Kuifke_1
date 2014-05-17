@@ -36,8 +36,9 @@
         </div>
         <div class="SignUp-container">
             <div class="tekst"><p>Start uploading music now !</p></div>
-            <div class="knop"><a class="btn btn-default btn-danger" data-target="#ArtistRegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up as an artist</a></div>
+            <div class="knopb"><a class="btn btn-default btn-danger" data-target="#ArtistRegisterModal" data-toggle="modal"><span class="glyphicon glyphicon-music"></span> Sign up as an artist</a></div>
             <div class="login"><p>Already have an account? <a href="#" data-target="#ArtistModal" data-toggle="modal">Log in </a> here. </p></div>
+            <div class="knop2"><p>Not an artist? <a href="RegistratieServlet">Sign up and log in </a> here. </p></div>
         </div>
 
         <!-- Artist Sign up-->

@@ -76,11 +76,27 @@ body {
     margin-top: 20px;
 }
 
+.knopb{
+    margin-left:85px;
+    margin-top: 20px;
+}
+
 /*Positionering van de artist 'Sign up and Login'*/
 .knop3{
     margin-left:50px;
     margin-top: 20px;
     font-size: 15px;
+}
+
+.knop2{
+    margin-top: 20px;
+    margin-left: 68px;
+    font-size: 15px;
+}
+
+.knop2 a{
+    color: #000;
+    font-weight: bold;
 }
 
 /*Styling van de artist 'Sign up and Login'*/
