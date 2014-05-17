@@ -64,6 +64,7 @@
                 <div class="jumbotron">
                     <div class="container">
                         <h1> Music </h1>
+                        <h4>You have ${CUSTOMERBEAN.getCredits()} credits left to buy music!</h4>
                         <table>
                             <thead>
                                 <tr>
@@ -85,11 +86,12 @@
 
                                         </audio>
                                     </td> 
-                                    <td><a href="DownloadSongServlet">Download Song</a></td>
-                                            <td><form action="DownloadSongServlet" method="get">
+                                     <td><form action="DownloadSongServlet" method="get">
                                         <input type="hidden" value="${trackBean.getTrackId()}" name="downloadlink" />
                                         <input type="submit" value="Download"/>            
                                         </form></td>
+                                        
+                                        <td style="text-align: center">50</td>
 
                                 </tr>    
                             </c:forEach>
