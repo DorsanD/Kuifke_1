@@ -29,23 +29,27 @@ public class AlterUserServlet extends HttpServlet {
             throws ServletException, IOException {
     }
 
+    //redirection naar de correcte pagina.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/pages/AlterUser.jsp").forward(request, response);
-        processRequest(request, response);
     }
 
     @Override
+    //functie om de First_Name van de customer te veranderen naar een gewenste First_Name
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //haalt de sessie binnen
         request.getSession().getAttribute("CUSTOMERBEAN");
         CustomerBean custom = (CustomerBean) request.getSession().getAttribute("CUSTOMERBEAN");
         custom.getCustomerId();
-        String First_Name = request.getParameter("First_Name");
+         //Haalt de nieuwe first name binnen
+       String First_Name = request.getParameter("First_Name");
         System.out.println("Nieuwe First Name " + First_Name);
         WebsiteDao dao = new WebsiteDao();
         try {
+        //probeert de first name om te zetten naar nieuwe first name
             dao.AlterName(custom.getCustomerId(), First_Name);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(AlterUserServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,6 +59,7 @@ public class AlterUserServlet extends HttpServlet {
 
         custom.setFirst_Name(First_Name);
         processRequest(request, response);
+        //slaag het op in de bean.
         request.getSession().setAttribute("CUSTOMERBEAN", custom);
         request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
 

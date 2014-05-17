@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ArtistRegistratieServlet", urlPatterns = {"/ArtistRegistratieServlet"})
 public class ArtistRegistratieServlet extends HttpServlet implements Constants {
-
+    //variabelen initialiseren
     private String salt;
     private String pw;
 
@@ -36,6 +36,8 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
             throws ServletException, IOException {
     }
 
+    //redirection naar de correcte pagina.
+    //Bean binnenhalen
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -45,6 +47,7 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
     }
 
     @Override
+    //alle binnenkomende gegevens in de artistbean steken.
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         ArtistBean Abean = (ArtistBean) req.getSession().getAttribute(ARTIST_BEAN);
@@ -56,6 +59,7 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
         Abean.setUsername(req.getParameter("username"));
         Abean.setLanguage(req.getParameter("language"));
         try {
+        //proberen paswoord om te zetten in een salt. (Encryptie)
             Password password = new Password(req.getParameter("password"));
             salt = password.getSalt();
             pw = password.getHash();
@@ -67,6 +71,7 @@ public class ArtistRegistratieServlet extends HttpServlet implements Constants {
         }
         WebsiteDao dao = new WebsiteDao();
         try {
+        //Artist toevoegen aan de databank.
             dao.addArtistItem(Abean);
             req.getRequestDispatcher("WEB-INF/pages/ArtiestFirstPage.jsp").forward(req, resp);
         } catch (SQLException | ClassNotFoundException ex) {

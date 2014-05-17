@@ -16,7 +16,7 @@ import javax.crypto.spec.PBEKeySpec;
  * @author jx3
  */
 public class Password {
-
+    //initiatie van de variabelen.
     public static final String ALGORITHM = "PBKDF2WithHmacSHA1";
     public static final int ITERATION_COUNT = 8192;
     public static final int KEY_SIZE = 160;
@@ -30,7 +30,7 @@ public class Password {
         //maak een nieuwe salt aan
         salt = PasswordSalts.nextSalt();
 
-        //hash het pw
+        //hash het paswoord
         hash = hashPassword(password, salt);
         System.out.println("niewe hash aangemaakt: " + (new String(hash)));
 
@@ -61,7 +61,7 @@ public class Password {
             byte[] salt, int iterationCount, int keySize)
             throws GeneralSecurityException, UnsupportedEncodingException {
 
-        /* ingegeven passwoord wordt geencrypted*/
+        //incrypteren van de passwoord
         byte[] newHash = hashPassword(password, salt, ITERATION_COUNT, KEY_SIZE);
         String omgezet = new String(newHash);
         System.out.println("omgezette hash: " + omgezet);
@@ -69,6 +69,7 @@ public class Password {
         return Arrays.equals(passwordHash, newHash);
     }
 
+    //getters
     public String getSalt() throws UnsupportedEncodingException {
         String sSalt = new String(salt);
         return sSalt;

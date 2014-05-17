@@ -38,6 +38,8 @@ public class BIServlet extends HttpServlet {
 
     String aanvulling, aanvullinghorizon;
 
+    //redirection naar de correcte pagina.
+    //Gaat de kolommen uit de databank halen.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,16 +61,16 @@ public class BIServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //eerst gaan we alle tabellen tonen die de gebruiker kan opvragen
+        //Tabellen tonen waaruit de gebruiker mag kiezen
         WebsiteDao dao = new WebsiteDao();
 
-        //haal de lijst van columns op
+        //Lijst van kolommen opvragen
         List<BIBean> BiBeans = (List<BIBean>) request.getSession().getAttribute("COLUMNS");
 
-        //haal de id's van de geselecteerde columns op
+        //KolomID's ophalen
         String[] selection = request.getParameterValues("selectedColumns");
 
-        //maak een lijst van Bibeans aan met daarin de geselecteerde kolommen
+        //Lijst van BiBeans maken met de geselecteerde kolommen
         List<BIBean> selColumns = new ArrayList<>();
 
         for (int j = 0; j < selection.length; j++) {
@@ -88,28 +90,18 @@ public class BIServlet extends HttpServlet {
             Logger.getLogger(BIServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        /*
-         print alle databeans uit
-        
-         for (int i = 0; i < selColumns.size(); i++) {
-         System.out.println(selColumns.get(i).toString());
-
-         }
-         */
         //haal de datum en tijd op
         Calendar now = Calendar.getInstance();
         int year = now.get(Calendar.YEAR);
-        int month = now.get(Calendar.MONTH); // Note: zero based!
+        int month = now.get(Calendar.MONTH);
         int day = now.get(Calendar.DAY_OF_MONTH);
         int hour = now.get(Calendar.HOUR_OF_DAY);
         int minute = now.get(Calendar.MINUTE);
-        int second = now.get(Calendar.SECOND);
-        int millis = now.get(Calendar.MILLISECOND);
 
         //stel een tijdscode op
         String tijd = "" + year + (month + 1) + day + "-" + hour + "." + minute;
 
-        //initieer de bestandslocaties
+        //initialiseer de bestandslocaties
         String template = "C:\\Kuifke\\temp\\excel\\template1.xls";
         String output = "C:\\Kuifke\\temp\\excel\\output" + tijd + ".xls";
         String outputPDF = "C:\\Kuifke\\temp\\excel\\output" + tijd + ".pdf";
@@ -126,29 +118,25 @@ public class BIServlet extends HttpServlet {
         }
 
         //maak een PDF file
-        //Instantiate a new workbook with excel file path
+        //Open een nieuw workbook voor excel
         Workbook workbook;
         try {
             workbook = new Workbook(output);
-            //Save the document in Pdf format
+            //Slaag het document op in PDF
             workbook.save(outputPDF, FileFormatType.PDF);
             System.out.println("PDF aangemaakt");
         } catch (Exception ex) {
             Logger.getLogger(BIServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        //upload files naar ftp
         File fexcel = new File(output);
         File fPDF = new File(outputPDF);
-        /* Connectie con = new Connectie(fexcel, output);
-         ftp =new MyVibeFTP(fPDF, outputPDF); */
 
-        //urls
+        //urls naar de bestanden
         output = "C:\\Kuifke\\temp\\excel\\" + fexcel.getName();
         System.out.println("link naar excel: " + output);
         outputPDF = "C:\\Kuifke\\temp\\excel\\" + fPDF.getName();
         System.out.println("link naar PDF: " + outputPDF);
-
 
         System.out.println("aantal kollomen: " + selection.length);
         request.setAttribute("AANTALCOL", selection.length);
@@ -156,7 +144,7 @@ public class BIServlet extends HttpServlet {
         request.getSession().setAttribute("EXCEL", output);
         request.getSession().setAttribute("PDF", outputPDF);
 
-        //nu sturen we door naar de resultatenpagina waar de gebruiker 4 kolommen kan kiezen
+        //nu sturen we door naar de resultatenpagina
         request.getRequestDispatcher("WEB-INF/pages/BIResults.jsp").forward(request, response);
 
     }

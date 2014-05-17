@@ -16,20 +16,21 @@ import java.util.logging.Logger;
  */
 public class ArtistPasswordCheck {
 
+    //initiatie van de variabelen.
     ArtistBean artistBean;
     String pass;
 
+    //de 'y' omzetten naar '7' omdat de hash verkeerd wordt omgezet.
     public ArtistPasswordCheck(ArtistBean artistBean, String password) {
         this.artistBean = artistBean;
         this.pass = password;
         pass = pass.replaceAll("y", "7");
     }
 
+    //functie om te controleren of de login gegevens correct zijn.
     public boolean check() {
         System.out.println("");
         if (artistBean.getPassword() != null) {
-
-            // checked of de user ingelogged is
 
             //initialiseer de variabelen voor de check
             byte[] salt = artistBean.getSalt().getBytes();
@@ -38,22 +39,16 @@ public class ArtistPasswordCheck {
             String shash = new String(hash);
             System.out.println("ingegeven paswoord: " + pass + " wordt vergeleken met hash uit de database: " + shash);
             try {
-                // match de paswoorden
-
+                //kijkt of de paswoord hetzelfde is als de hash
                 if (Password.matches(password, hash, salt)) {
-                    //als de hashes matchen
-                    System.out.println("paswoord matched");
+                    System.out.println("paswoord correct");
 
-                    //gehashte paswoord als paswoord instellen
                     pass = shash;
                     return true;
                 } else {
-                    //als de hashes niet matchen
-                    System.out.println("geen passwoord match");
+
+                    System.out.println("passwoord niet correct");
                     return false;
-
-
-
 
                 }
             } catch (GeneralSecurityException | UnsupportedEncodingException ex) {

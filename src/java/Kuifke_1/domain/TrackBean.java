@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Dorsan
  */
 public class TrackBean implements Serializable {
-
+    //initiatie van de variabelen.
     private int TrackId;
     private String Track_Name;
     private String Genre;
@@ -22,6 +22,7 @@ public class TrackBean implements Serializable {
     private String File_Location;
     private String Image_Location;
 
+    //getters en setters
     public String getArtist_Name() {
         return Artist_Name;
     }

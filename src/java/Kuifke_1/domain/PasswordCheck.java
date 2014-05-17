@@ -15,21 +15,22 @@ import java.util.logging.Logger;
  * @author jx3
  */
 public class PasswordCheck {
-
+    //initiatie van de variabelen.
     CustomerBean customerBean;
     String pass;
 
+    //constructor
+    //de 'y' omzetten naar '7' omdat de hash verkeerd wordt omgezet.
     public PasswordCheck(CustomerBean customerBean, String password) {
         this.customerBean = customerBean;
         this.pass = password;
         pass = pass.replaceAll("y", "7");
     }
 
+    //functie om te controleren of de login gegevens correct zijn.
     public boolean check() {
         System.out.println("");
         if (customerBean.getPassword() != null) {
-
-            // checked of de user ingelogged is
 
             //initialiseer de variabelen voor de check
             byte[] salt = customerBean.getSalt().getBytes();
@@ -38,18 +39,14 @@ public class PasswordCheck {
             String shash = new String(hash);
             System.out.println("ingegeven paswoord: " + pass + " wordt vergeleken met hash uit de database: " + shash);
             try {
-                // match de paswoorden
 
+                //kijkt of de paswoord hetzelfde is als de hash
                 if (Password.matches(password, hash, salt)) {
-                    //als de hashes matchen
-                    System.out.println("paswoord matched");
-
-                    //gehashte paswoord als paswoord instellen
+                    System.out.println("paswoord correct");
                     pass = shash;
                     return true;
                 } else {
-                    //als de hashes niet matchen
-                    System.out.println("geen passwoord match");
+                    System.out.println(" passwoord niet correct");
                     return false;
 
 

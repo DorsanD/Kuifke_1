@@ -8,7 +8,7 @@ import java.util.Date;
  * @author Noel Vaes
  */
 public class CustomerBean implements Serializable {
-
+    //initiatie van de variabelen
     private int CustomerId;
     private Date Date;
     private String Last_Name;
@@ -22,6 +22,7 @@ public class CustomerBean implements Serializable {
     private String newUsername;
     private int Credits;
 
+    //getters en setters
     public int getCredits() {
         return Credits;
     }

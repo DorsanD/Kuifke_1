@@ -18,7 +18,7 @@ import java.util.List;
  * @author Dorsan Demaeght
  */
 public class WebsiteDao {
-    
+
     //variabelen en queries die gebruikt zullen worden in de functies
     private static final String GET_QUERY = "select CustomerId, Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Credits from Customer order by CustomerId";
     private static final String INSERT_QUERY = "insert into Customer (Date, Last_Name, First_Name, Gender, Email_Address, Username, Password, Language, Salt) values (sysdate(),?,?,?,?,?,?,?,?)";
@@ -46,7 +46,7 @@ public class WebsiteDao {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Customer Item Geinitieerd");
-        
+
         //Query laten runnen en dan de nodige variabelen invullen
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(INSERT_QUERY);
@@ -64,13 +64,13 @@ public class WebsiteDao {
         }
     }
 
-        //Een Artist toevoegen in onze databank
+    //Een Artist toevoegen in onze databank
     public void addArtistItem(ArtistBean item) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Artist Item Geinitieerd");
-       
-       //Query laten runnen en dan de nodige variabelen invullen       
+
+        //Query laten runnen en dan de nodige variabelen invullen       
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(INSERT_ARTIST_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -125,7 +125,7 @@ public class WebsiteDao {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("User Check Geinitieerd");
-        
+
         //een nieuwe bean van de klasse CustomerBean aanroepen
         CustomerBean cust = new CustomerBean();
 
@@ -210,7 +210,7 @@ public class WebsiteDao {
         System.out.println("Artist Check Geinitieerd");
         ArtistBean art = new ArtistBean();
 
-         //zet alle opgehaalde informatie op de juiste plaats in de bean       
+        //zet alle opgehaalde informatie op de juiste plaats in de bean       
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(GET_ARTISTUSER_INFO);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -270,7 +270,7 @@ public class WebsiteDao {
         }
 
     }
-   
+
     //Functie die de query uitvoert om een gebruiker met een gegeven ID te verwijderen uit de databank    
     public void DeleteUser(int CustomerId) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
@@ -309,7 +309,7 @@ public class WebsiteDao {
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Track Item Geinitieerd");
 
-       //Query laten runnen en dan de nodige variabelen invullen               
+        //Query laten runnen en dan de nodige variabelen invullen               
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(INSERT_FILE_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -323,13 +323,10 @@ public class WebsiteDao {
         }
     }
 
+    //Haalt de namen van alle kolommen uit de tabel
     public List<BIBean> getColumns() throws SQLException, ClassNotFoundException {
-        //deze functie haalt de namen van alle columns in de DB op
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
-
-        System.out.println("");
-        System.out.println("--- systeemtabellen worden opgehaald ---");
 
         List<BIBean> biBeans = new ArrayList<>();
         try (Connection con = connect.initCon();
@@ -347,25 +344,22 @@ public class WebsiteDao {
                 biBeans.add(bi);
             }
         }
-        System.out.println("alle tabellen opgehaald");
-        System.out.println(biBeans);
         return biBeans;
 
     }
 
     public List<BIBean> getColumnsData(List<BIBean> BIBean) throws SQLException, ClassNotFoundException {
-        //deze functie haalt de data van de gevraagde colummen uit de database
+        //Haalt de gravraagde kolommen uit de database
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
 
         System.out.println("");
         System.out.println("--- DATA wordt uit de GEKOZEN systeemtabellen gehaald ---");
 
-        //eindproduct
+        //lijst van bean
         List<BIBean> dataBean = new ArrayList<>();
 
-        //stel de geselecteerde kollomen in in een query
-        System.out.println("de gekozen tabellen zijn:");
+        //Zet de gevraagde kolommen om in de query
         int j = 1;
         String query = "select ";
         for (int i = 0; i < BIBean.size(); i++, j++) {
@@ -374,7 +368,6 @@ public class WebsiteDao {
             if (i != BIBean.size() - 1) {
                 query += ",";
             }
-            System.out.println("kolom " + BIBean.get(i).getTabelCol() + " toegevoegd aan de query");
         }
         query += " from customer c, artiest a, track t ";
         System.out.println(query);
@@ -386,17 +379,14 @@ public class WebsiteDao {
             stmt1.execute();
             ResultSet rs = stmt.executeQuery();
 
-            System.out.println("");
-            System.out.println("** resultaten worden uitgelezen en weggeschreven **");
-
-            //steek de data in de kollomen
+            //Zet data in de kolommen
             while (rs.next()) {
                 for (int i = 0; i < BIBean.size(); i++) {
                     String type = BIBean.get(i).getConverType();
 
                     BIBean data = new BIBean();
 
-                    //voor we de bean de data geven stellen we ook de column en de table in
+                    //Kolommen en tabel juist zetten
                     data.setTable(BIBean.get(i).getTable());
                     data.setColumn(BIBean.get(i).getColumn());
                     data.setType(BIBean.get(i).getType());
@@ -412,7 +402,6 @@ public class WebsiteDao {
                             break;
                         case "Boolean":
                             //bij true => 1 anders => 0
-                            System.out.println(rs.getBoolean(i + 1));
                             if (rs.getBoolean(i + 1)) {
                                 data.setData("1");
                             } else {
@@ -429,17 +418,18 @@ public class WebsiteDao {
 
                 }
             }
-            System.out.println("done!");
         }
         return dataBean;
 
     }
 
+    //een functie om alle tracks op te halen en deze in een lijst te steken
     public List<TrackBean> getAllTracks() throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Get All Tracks Itemss Geinitieerd");
 
+        //zet alle tracks met de nodige informatie in de lijst van trackbeans
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(TRACKS_QUERY);
                 PreparedStatement stmt1 = con.prepareStatement(INIT)) {
@@ -460,12 +450,15 @@ public class WebsiteDao {
         }
     }
 
+    //een functie om de credits van de customer op te halen en deze aan te passen
     public void AlterCustomerCredits(int Credits, int CustomerId) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Add Credits Geinitieerd");
+        //initiatie van de varibele
         int credieten = 0;
 
+        //ophalen van de queries en uitvoeren van de queries    
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(ALTER_CUSTCREDITS);
                 PreparedStatement stmt1 = con.prepareStatement(SELECT_CREDITS);
@@ -474,25 +467,26 @@ public class WebsiteDao {
             stmt2.execute();
             stmt1.execute();
             ResultSet rs = stmt1.executeQuery();
-            
+
             System.out.println("" + stmt.toString());
-            if (rs.next()){
-            credieten = rs.getInt(1);
-            
-            stmt.setInt(1, credieten + Credits);
-            stmt.setInt(2, CustomerId);
-            stmt.execute();
-        }}
+            if (rs.next()) {
+                credieten = rs.getInt(1);
+
+                stmt.setInt(1, credieten + Credits);
+                stmt.setInt(2, CustomerId);
+                stmt.execute();
+            }
+        }
 
     }
 
+    //een functie om credits van een gebruiker te verlagen. Dit gebeurt bij het aankopen van een liedje
     public boolean RetractCustomerCredits(int CustomerId) throws SQLException, ClassNotFoundException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Retract Credits Geinitieerd");
         int credieten = 0;
-        
-        
+
         try (Connection con = connect.initCon();
                 PreparedStatement stmt = con.prepareStatement(ALTER_CUSTCREDITS);
                 PreparedStatement stmt1 = con.prepareStatement(SELECT_CREDITS);
@@ -500,28 +494,30 @@ public class WebsiteDao {
             stmt1.setInt(1, CustomerId);
             stmt2.execute();
             ResultSet rs = stmt1.executeQuery();
-            if (rs.next()){
+            if (rs.next()) {
 
-            credieten = rs.getInt(1);
-            if (credieten > 50){            
+                credieten = rs.getInt(1);
+                //als de gebruiker hier niet genoeg credit voor heeft geen het false terug en wordt de gebruiker geredirect naar zijn account pagina om meer credits te kopen.
+                if (credieten > 50) {
 
-            stmt.setInt(1, credieten - 50);
-            stmt.setInt(2, CustomerId);
-                            System.out.println("" + stmt.toString());
+                    stmt.setInt(1, credieten - 50);
+                    stmt.setInt(2, CustomerId);
+                    System.out.println("" + stmt.toString());
 
-            stmt.execute();
-            return true;
+                    stmt.execute();
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }
-            } else {
-            return false;
-            }
-        
 
-    }}
-    
-        public String getTrackLocation(int TrackId) throws ClassNotFoundException, SQLException {
+        }
+    }
+
+    //een functie om de tracklocation terug te vinden. Deze wordt gebruikt voor o.a. de dynamische downloadlinks.
+    public String getTrackLocation(int TrackId) throws ClassNotFoundException, SQLException {
         Connectie connect = new Connectie();
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Track Dwnl link Check Geinitieerd");
@@ -534,7 +530,7 @@ public class WebsiteDao {
             System.out.println(stmt.toString());
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-              return rs.getString(1);
+                return rs.getString(1);
 
             }
             return null;

@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 public class ArtistBean implements Serializable {
 
+    //initiatie van de variabelen.
     private int ArtistId;
     private String Artist_Name;
     private String Last_Name;
@@ -24,6 +25,7 @@ public class ArtistBean implements Serializable {
     private String Language;
     private String salt;
 
+    //getters en setters
     public int getArtistId() {
         return ArtistId;
     }

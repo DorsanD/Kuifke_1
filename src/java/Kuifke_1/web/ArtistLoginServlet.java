@@ -36,6 +36,8 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
     }
 
 
+    //redirection naar de correcte pagina.
+    //Bean binnenhalen
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -48,10 +50,11 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String fout = "";
+        //initialiseren van de variabalen
         WebsiteDao dao = new WebsiteDao();
         ArtistBean art = null;
         try {
+        //gaat na of de username wel degelijk bestaat
             art = dao.ArtistCheck(req.getParameter("username"));
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -59,10 +62,10 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (art.getPassword() != "1") {
-            
+           //gaat na of de wachtwoord juist is. 
             ArtistPasswordCheck pwCheck = new ArtistPasswordCheck(art, req.getParameter("password"));
             if (pwCheck.check()) {
-                //pw matched
+                //als paswoord juist is, redirect naar de pagina
                 System.out.println("passwoord juist");
                 req.getRequestDispatcher("WEB-INF/pages/ArtistAccountPage.jsp").forward(req, resp);
                 try {
@@ -70,18 +73,15 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
                 } catch (        ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+                //als paswoord fout is keer je terug naar dezelfde pagina.
             } else {
                 System.out.println("password fout");
-                fout = "Password doesn't match.";
                 doGet(req, resp);
                 req.setAttribute("USERNAME", req.getParameter("username"));
             }
 
         }
         
-        fout = "username niet gevonden";
-        req.setAttribute("FOUT", fout);
         HttpSession session = req.getSession();
         session.setAttribute("ARTISTBEAN", art);
         doGet(req, resp);

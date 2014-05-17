@@ -28,19 +28,21 @@ public class ArtistDeleteServlet extends HttpServlet {
             throws ServletException, IOException {
     }
 
+    //redirection naar de correcte pagina.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/pages/DeleteArtist.jsp").forward(request, response);
-        processRequest(request, response);
     }
 
+    //Functie om de account met die Id te verwijderen.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int ArtistId = Integer.parseInt(request.getParameter("ArtistId"));
         WebsiteDao dao = new WebsiteDao();
         try {
+        //delete de account, indien het niet werkt krijg je een melding.
             dao.DeleteArtist(ArtistId);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DeleteUserServlet.class.getName()).log(Level.SEVERE, null, ex);

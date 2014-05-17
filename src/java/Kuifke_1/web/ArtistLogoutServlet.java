@@ -40,6 +40,9 @@ public class ArtistLogoutServlet extends HttpServlet implements Constants {
         request.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(request, response);
     }
 
+    
+    //redirection naar de correcte pagina.
+    //Bean binnenhalen
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,6 +52,7 @@ public class ArtistLogoutServlet extends HttpServlet implements Constants {
     }
 
     @Override
+    //Sessie killen, uitloggen van de user.
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session1 = request.getSession();

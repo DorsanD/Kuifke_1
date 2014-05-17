@@ -12,12 +12,14 @@ import java.io.Serializable;
  * @author Dorsan
  */
 public class BIBean implements Serializable{
+    //invitiatie van de variabelen.
     private int id;
     private String table;
     private String column;
     private String type;
     private String data;
 
+    //getters en setters
     public int getId() {
         return id;
     }
