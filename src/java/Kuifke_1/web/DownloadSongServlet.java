@@ -30,6 +30,7 @@ public class DownloadSongServlet extends HttpServlet {
 
     }
 
+    //Methode die gaat nazien of je voldoende crredits hebt om een lied aan te kopen. Zoja redirect naar de correcte downloadlink.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,28 +38,32 @@ public class DownloadSongServlet extends HttpServlet {
         int trackid;
         String fileLocation="";
         WebsiteDao dao = new WebsiteDao();
+        //haalt de bean binnen
         CustomerBean Cbean = (CustomerBean) request.getSession().getAttribute("CUSTOMERBEAN");
         try {
             check = dao.RetractCustomerCredits(Cbean.getCustomerId());
             if (check) {
+            //kijkt na of je voldoende credits hebt, zoja rectract 50 credits.
                 System.out.println("If check true");
                 request.getRequestDispatcher("/WEB-INF/pages/DownloadPage.jsp").forward(request, response);
             } else {
+            //zo nee redirect naar de account pagina
                 System.out.println("If check false");
-
                 request.getRequestDispatcher("/WEB-INF/pages/Account.jsp").forward(request, response);
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(DownloadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //Zet de nieuwe amount of credits in de account
         Cbean.setCredits(Cbean.getCredits()- 50);
         trackid = Integer.parseInt(request.getParameter("downloadlink"));
         try {
+        //zet filelocatin in trackid
             fileLocation = dao.getTrackLocation(trackid);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DownloadSongServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        //zet de downloadid in de sessie
         request.getSession().setAttribute("downloadid", fileLocation);
     }
 

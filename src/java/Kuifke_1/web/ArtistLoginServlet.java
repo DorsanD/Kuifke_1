@@ -37,7 +37,7 @@ public class ArtistLoginServlet extends HttpServlet implements Constants{
 
 
     //redirection naar de correcte pagina.
-    //Bean binnenhalen
+    //Bean aanhalen
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

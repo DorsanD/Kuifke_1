@@ -24,11 +24,11 @@ public class FileDetailsServlet extends HttpServlet {
             throws ServletException, IOException {
     }
 
+    //redirect naar de juist pagina.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/FileDetails.jsp").forward(request, response);
-        processRequest(request, response);
     }
 
     @Override

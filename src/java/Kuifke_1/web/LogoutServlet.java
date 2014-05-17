@@ -23,13 +23,15 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
 
-    @Override
+    //redirection naar de correcte pagina.
+    //Bean binnenhalen    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean websiteBean = new CustomerBean();
         req.getSession().setAttribute(WEBSITE_BEAN, websiteBean);
         req.getRequestDispatcher("WEB-INF/pages/Logout.jsp").forward(req, resp);
     }
 
+    //Sessie killen, uitloggen van de user.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

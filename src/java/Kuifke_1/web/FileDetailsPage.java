@@ -35,18 +35,20 @@ public class FileDetailsPage extends HttpServlet {
         processRequest(request, response);
     }
 
+    //gaat de gegevens van de geuploade liedjes toevoegen aan de sessie en wegschrijvn in de databank
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         TrackBean track = (TrackBean) request.getSession().getAttribute("NEWTRACK");
-
+        //gegevens in de bean steken
         track.setTrack_Name(request.getParameter("Track_Name"));
         track.setGenre(request.getParameter("Genre"));
         track.setLength(Integer.parseInt(request.getParameter("Length")));
 
         WebsiteDao dao = new WebsiteDao();
         try {
+        //item in de databank steken
             dao.addTrackItem(track);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(FileUploadServlet.class.getName()).log(Level.SEVERE, null, ex);

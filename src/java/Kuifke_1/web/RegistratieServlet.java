@@ -29,10 +29,12 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "RegistratieServlet", urlPatterns = {"/RegistratieServlet"})
 public class RegistratieServlet extends HttpServlet implements Constants {
-
+    //variabelen initialiseren
     private String salt;
     private String pw;
 
+    //redirection naar de correcte pagina.
+    //Bean binnenhalen
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean websiteBean = new CustomerBean();
@@ -41,6 +43,7 @@ public class RegistratieServlet extends HttpServlet implements Constants {
     }
 
     @Override
+    //alle binnenkomende gegevens in de websitebean steken.    
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean bean = (CustomerBean) req.getSession().getAttribute(WEBSITE_BEAN);
         bean.setName(req.getParameter("name"));
@@ -50,6 +53,7 @@ public class RegistratieServlet extends HttpServlet implements Constants {
         bean.setUsername(req.getParameter("username"));
         bean.setLanguage(req.getParameter("language"));
         try {
+        //proberen paswoord om te zetten in een salt. (Encryptie)
             Password password = new Password(req.getParameter("password"));
             salt = password.getSalt();
             pw = password.getHash();
@@ -61,6 +65,7 @@ public class RegistratieServlet extends HttpServlet implements Constants {
         }
         WebsiteDao dao = new WebsiteDao();
         try {
+        //Customer toevoegen aan de databank.
             dao.addCustomerItem(bean);
             req.getRequestDispatcher("WEB-INF/pages/FirstPage.jsp").forward(req, resp);
         } catch (SQLException | ClassNotFoundException ex) {

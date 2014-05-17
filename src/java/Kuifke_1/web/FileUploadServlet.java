@@ -30,6 +30,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 @WebServlet(name = "FileUploadServlet", urlPatterns = {"/FileUploadServlet"})
 public class FileUploadServlet extends HttpServlet {
 
+    //invitiliseren van de variabelen.
     private boolean isMultipart;
     private int maxFileSize = 20 * 1024 * 1024;
     private int maxMemSize = 40 * 1024 * 1024;
@@ -46,62 +47,52 @@ public class FileUploadServlet extends HttpServlet {
     }
 
     @Override
+    //redirect naar de juiste pagina.
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/pages/TrackUpload.jsp").forward(request, response);
-        processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("uploadmodule gestart");
-        // Check that we have a file upload request
+        // Controleren of er een file upload request is
         isMultipart = ServletFileUpload.isMultipartContent(request);
 
         if (!isMultipart) {
             System.out.println("geen file om up te loaden?");
-            //geen upload => stuur door naar uploadpagina (geen upload)
+            //Indien geen upload, redirect
             request.getRequestDispatcher("WEB-INF/pages/TrackUpload.jsp").forward(request, response);
 
         }
 
         DiskFileItemFactory factory = new DiskFileItemFactory();
-        // maximum size that will be stored in memory
+        //Maxsize van het geheugen
         factory.setSizeThreshold(maxMemSize);
-        // Location to save data that is larger than maxMemSize.
+        // Indien groter, in een andere locatie opslaan:
         factory.setRepository(new File(base + "temp\\"));
 
-        // Create a new file upload handler
+        //Nieuwe file upload handler maken
         ServletFileUpload upload = new ServletFileUpload(factory);
-        // maximum file size to be uploaded.
+        //MaxSize van het bestand
         upload.setSizeMax(maxFileSize);
 
         System.out.println("upload config OK");
         try {
-            // Parse the request to get file items.
+            //Request parsen
             List fileItems = upload.parseRequest(request);
-
-            // Process the uploaded file items
             Iterator i = fileItems.iterator();
 
             while (i.hasNext()) {
                 FileItem fi = (FileItem) i.next();
                 if (!fi.isFormField()) {
-                    // Get the uploaded file parameters
-                    System.out.println("parameters van het bestand ophalen...");
-                    String fieldName = fi.getFieldName();
+                    // Geuploade file parameters binnenhalen
                     String fileName = fi.getName();
-                    String contentType = fi.getContentType();
-                    boolean isInMemory = fi.isInMemory();
-                    long sizeInBytes = fi.getSize();
-                    System.out.println("parameters opgehaald");
 
-                    // Write the file
-                    System.out.println("bestand wordt binnengehaald");
+                    //Bestand binnenhalen
                     if (fileName.contains(".mp3") || fileName.contains(".wma")) {
-                        //als de file een mp3 is
-                        System.out.println("muziekbestand upgeload");
+                        //als de file een mp3 of wma is naar volgende locatie opslaan
                         subPath = base + "music\\";
                         loc = subPath;
                         loc1 = fileName;
@@ -138,15 +129,9 @@ public class FileUploadServlet extends HttpServlet {
         } catch (Exception ex) {
             System.out.println(" " + ex);
         }
-        // eind van de upload \\
-
         //steek de bestandslocatie in de trackbean
         TrackBean track = new TrackBean();
-
-
         track.setFile_Location(loc1);
-        System.out.println("De artlocatie: " + artLoc1);
-        System.out.println("Muzieklocatie is: " + loc1);
         track.setImage_Location(artLoc1);
         request.getSession().setAttribute("NEWTRACK", track);
 

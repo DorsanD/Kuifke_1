@@ -31,19 +31,20 @@ public class MusicPageServlet extends HttpServlet {
             throws ServletException, IOException {
     }
 
+    //redirect naar de juist pagina en haalt alle gegevens van track op 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         WebsiteDao dao = new WebsiteDao();
         List<TrackBean> tracks = null;
         try {
+        //alle gegevens van de tracks in de databank ophalen
             tracks = dao.getAllTracks();
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(MusicPageServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         request.getSession().setAttribute("TRACK_BEAN", tracks);
-        processRequest(request, response);
-        System.out.println(tracks);
+        //alle gegevens opslaan in de tracks list
         request.getRequestDispatcher("WEB-INF/pages/Music.jsp").forward(request, response);
     }
 

@@ -28,7 +28,8 @@ import javax.servlet.http.HttpSession;
  * @author Dorsan
  */
 public class LoginServlet extends HttpServlet implements Constants {
-
+    //redirection naar de correcte pagina.
+    //Bean aanhalen
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CustomerBean websiteBean = new CustomerBean();
@@ -38,10 +39,11 @@ public class LoginServlet extends HttpServlet implements Constants {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String fout = "";
+        //initialiseren van de variabalen
         WebsiteDao dao = new WebsiteDao();
         CustomerBean cust = null;
         try {
+        //gaat na of de username wel degelijk bestaat
             cust = dao.UserCheck(req.getParameter("username"));
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -49,10 +51,10 @@ public class LoginServlet extends HttpServlet implements Constants {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (cust.getPassword() != "1") {
-
+           //gaat na of de wachtwoord juist is. 
             PasswordCheck pwCheck = new PasswordCheck(cust, req.getParameter("password"));
             if (pwCheck.check()) {
-                //pw matched
+                //als paswoord juist is, redirect naar de pagina
                 System.out.println("passwoord juist");
                 req.getRequestDispatcher("WEB-INF/pages/WelcomePage.jsp").forward(req, resp);
                 try {
@@ -62,16 +64,14 @@ public class LoginServlet extends HttpServlet implements Constants {
                 }
 
             } else {
+                //als paswoord fout is keer je terug naar dezelfde pagina.
                 System.out.println("password fout");
-                fout = "Password doesn't match.";
                 doGet(req, resp);
                 req.setAttribute("USERNAME", req.getParameter("username"));
             }
 
         }
 
-        fout = "username niet gevonden";
-        req.setAttribute("FOUT", fout);
         HttpSession session = req.getSession();
         session.setAttribute("CUSTOMERBEAN", cust);
         doGet(req, resp);
