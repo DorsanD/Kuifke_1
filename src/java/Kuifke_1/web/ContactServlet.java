@@ -24,11 +24,11 @@ public class ContactServlet extends HttpServlet {
             throws ServletException, IOException {
     }
 
+    //redirection naar de correcte pagina.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/Contact.jsp").forward(request, response);
-        processRequest(request, response);
     }
 
     @Override

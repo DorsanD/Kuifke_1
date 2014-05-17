@@ -6,6 +6,7 @@ package Kuifke_1.web;
  */
 public interface Constants {
 
+    //initialisatie van de constanten
     String DAO = "websiteDAO";
     String WEBSITE_BEAN = "websiteBean";
     String ARTIST_BEAN = "artistBean";
