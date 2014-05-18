@@ -68,6 +68,7 @@
             </div>
         </div>
         
+                <!-- Download link + bijhorende tekst en terugkeer knop -->
                 <div class="downl">
         <h2> Please click on the link to download your song: </h2> 
         <a class="btn btn-primary btn-lg downl" href="./Music/${downloadid}" download>${downloadid}</a>

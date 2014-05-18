@@ -60,7 +60,7 @@
                     </ul>
                 </div><!--/.nav-collapse -->
 
-                <!-- Main jumbotron for a primary marketing message or call to action -->
+                <!-- Muziektabel die een rij aanmaakt per song in de databank -->
                 <div class="jumbotron">
                     <div class="container">
                         <h1> Music </h1>

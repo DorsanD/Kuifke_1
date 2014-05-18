@@ -61,7 +61,7 @@
         </div>
 
         <h1>Select 1 or more fields from the list below.</h1>
-
+        <!-- BI selecteer formulier -->
         <form action="BIServlet" method="post">
             <select multiple class="form-control" id="SelectColumns" name="selectedColumns">
                 <c:forEach items="${COLUMNS}" var="BIBean">

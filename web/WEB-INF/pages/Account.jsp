@@ -64,7 +64,7 @@
             </div>
         </div>  
 
-        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <!-- Account info tabel met links om account te verwijderen of credits te kopen -->
         <div class="jumbotron">
             <div class="container">
                 <h1>My account</h1>

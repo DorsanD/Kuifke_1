@@ -5,6 +5,7 @@ body{
     background-color: #e7e7e7;
 }
 
+/*Opmaak lettertypes*/
 h4{
     font-size: 16px;
     text-align: center;
@@ -17,6 +18,7 @@ h4{
     margin-top: 0px;
 }
 
+/*Opmaak tabel*/
 .jumbotron{
     background-color: #FFF;
     padding-top: 30px;

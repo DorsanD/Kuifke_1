@@ -64,6 +64,7 @@
             </div>
         </div>
 
+        <!-- BI resultaat tabel -->
         <div class="MijnProfiel">
             <h1>Here you can find your requested results:</h1>
             <div id="knoppen">

@@ -58,6 +58,7 @@
             </div>
         </div>
 
+        <!-- Song upload formulier -->
         <h1>Upload a song!</h1>
         <div class="Alter">
             <form class="form-signin" action="FileUploadServlet" method="post" enctype="multipart/form-data" multiple>

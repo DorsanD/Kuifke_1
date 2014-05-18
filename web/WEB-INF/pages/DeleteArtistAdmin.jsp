@@ -34,6 +34,8 @@
         <![endif]-->
     </head>
     <body>
+        
+        <!-- Delete artist formulier -->
         <h1>Do you want to delete an artist?</h1>
         <div class="delete">
                         <form action="DeleteArtistAdminServlet" method="post">

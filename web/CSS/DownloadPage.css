@@ -1,3 +1,6 @@
+/*Styling van de Music page*/
+
+/*Opmaak lettertypes */
 h2{
     color: #8E0606;
     text-align: center;
@@ -11,6 +14,7 @@ h3{
     color: #8B8B8F
 }
 
+/*Plaatsing div*/
 .downl{
     text-align: center;
     margin: auto;
@@ -18,12 +22,14 @@ h3{
     font-weight: bold;
 }
 
+/*plaatsing knop*/
 #knop{
     margin-top: 30px;
     font-size: 16px;
     margin-left: 0px;
 }
 
+/*opmaak musiclink*/
 .music{
     text-align: center;
     font-size: 16px;

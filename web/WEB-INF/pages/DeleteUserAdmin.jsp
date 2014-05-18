@@ -34,6 +34,8 @@
         <![endif]-->
     </head>
     <body>
+        
+        <!-- Delete user formulier -->
         <h1>Do you want to delete a user?</h1>
         <div class="delete">
                         <form action="DeleteUserAdminServlet" method="post">

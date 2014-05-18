@@ -58,6 +58,7 @@
             </div>
         </div>
 
+        <!-- Account info tabel -->
         <div class="jumbotron">
             <div class="container">
                 <h1>My account</h1>
@@ -92,6 +93,7 @@
             </div>
         </div>
 
+        <!-- Upload a song en delete account links -->
         <div class="upload">
             <h2>Click here to upload a song:</h2>
             <a href="FileUploadServlet" class="btn btn-primary btn-lg" type="submit">Upload a song!</a>

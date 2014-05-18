@@ -59,6 +59,7 @@
             </div>
         </div>
 
+        <!-- Track detail formulier -->
         <h1>Fill in your tracks details!</h1>
         <div class="Alter">
             <form class="form-signin" action="FileDetailsPage" method="post">

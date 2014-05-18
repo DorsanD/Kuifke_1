@@ -58,6 +58,8 @@
             </div>
         </div>
 
+                
+        <!-- Verander artiest voornaam formulier -->
         <h1>Change your first name!</h1>
         <div class="Alter">
             <p>Current name: ${ARTISTBEAN.getFirst_Name()}</p>

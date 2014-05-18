@@ -59,6 +59,7 @@
             </div>
         </div>  
 
+            <!-- Koop credits formulier -->
             <h1>Buy some extra credits</h1>
             <div class="Alter">
                 <p>Current amount of credits: ${CUSTOMERBEAN.getCredits()}</p>

@@ -50,6 +50,9 @@
                 </div><!--/.nav-collapse -->
             </div>
         </div>
+                
+                
+        <!-- Delete artist contact formulier -->
         <div class="container" id="contact">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">

@@ -16,6 +16,7 @@ img{
     height: 200px;
     border-radius: 150px;
     margin: auto;
+    cursor: default;
 }
 
 /*Tekst in het midden aligneren*/

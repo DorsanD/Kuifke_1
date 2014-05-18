@@ -59,6 +59,7 @@
             </div>
         </div>
 
+        <!-- Log out formulier voor een artiest -->
         <h1>Log out</h1>
         <form class="Alter" action="ArtistLogoutServlet" method="post">
             <p>Are you sure you want to log out?</p>

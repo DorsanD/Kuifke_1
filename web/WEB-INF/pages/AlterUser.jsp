@@ -67,6 +67,7 @@
             </div>
         </div>
 
+        <!-- Verander usernaam formulier -->
         <h1>Change your first name!</h1>
         <div class="Alter">
             <p>Current name: ${CUSTOMERBEAN.getFirst_Name()}</p>

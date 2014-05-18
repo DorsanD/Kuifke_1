@@ -101,6 +101,7 @@
             </div>
         </div>
 
+        <!-- Footer -->
         <div class="footer">
             <div class="row">
                 <div class="col-md-4" id="footer-left">Project Programmeren</div>
